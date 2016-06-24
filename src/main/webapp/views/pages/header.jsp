@@ -6,11 +6,13 @@
   To change this template use File | Settings | File Templates.
 --%>
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
-<html>
-<head>
-    <title>Title</title>
-</head>
-<body>
+<meta charset="UTF-8">
+<title>UniWin</title>
+<link rel="stylesheet" href="<%=request.getContextPath() %>/views/css/bootstrap.min.css">
+<link rel="stylesheet" href="<%=request.getContextPath() %>/views/css/style.css" />
+<link rel="stylesheet" href="<%=request.getContextPath() %>/views/css/nav-style.css" />
+<link rel="stylesheet" href="<%=request.getContextPath() %>/views/css/material.css" />
 
-</body>
-</html>
+<script src="<%=request.getContextPath() %>/views/js/jquery-1.12.4.js" charset="utf-8"></script>
+<script src="<%=request.getContextPath() %>/views/js/bootstrap.js" charset="utf-8"></script>
+<script src="<%=request.getContextPath() %>/views/js/nav.js" charset="utf-8"></script>
