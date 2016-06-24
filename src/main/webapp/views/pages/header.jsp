@@ -8,6 +8,7 @@
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
 <meta charset="UTF-8">
 <title>UniWin</title>
+<link rel="shortcut icon" href="<%=request.getContextPath() %>/views/img/management.png">
 <link rel="stylesheet" href="<%=request.getContextPath() %>/views/css/bootstrap.min.css">
 <link rel="stylesheet" href="<%=request.getContextPath() %>/views/css/style.css" />
 <link rel="stylesheet" href="<%=request.getContextPath() %>/views/css/nav-style.css" />
