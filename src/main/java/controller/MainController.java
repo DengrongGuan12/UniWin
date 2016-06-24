@@ -24,15 +24,20 @@ public class MainController {
 
     @RequestMapping("")
     public String home(){
-        List<User> us = new ArrayList<User>();
-        User u = new User();
-        u.setUsername("MarK");
-        us.add(u);
-        u = new User();
-        u.setUsername("Fawofolo");
-        us.add(u);
-        userService.saveUsers(us);
+//        List<User> us = new ArrayList<User>();
+//        User u = new User();
+//        u.setUsername("MarK");
+//        us.add(u);
+//        u = new User();
+//        u.setUsername("Fawofolo");
+//        us.add(u);
+//        userService.saveUsers(us);
         return "index";
+    }
+
+    @RequestMapping("materialadd")
+    public String materialAdd(){
+        return "material/material_add";
     }
 
     @RequestMapping("/json")
