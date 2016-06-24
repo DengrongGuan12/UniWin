@@ -20,7 +20,7 @@
         <main>
             <div class="main-header">
                 <h1>首页
-                    <small></small>
+                    <small>index</small>
                 </h1>
             </div>
             <div class="main-content">
