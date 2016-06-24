@@ -1,0 +1,46 @@
+.main-material-add {
+  height: 600px;
+  display: flex;
+  flex-direction: column;
+}
+.main-material-add label {
+  margin: 8px;
+  width: 100px;
+  font-size: 12px;
+  font-weight: 300;
+}
+.main-material-add input {
+  width: 150px;
+  height: 30px;
+  margin: 5px;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+}
+.main-material-add select {
+  width: 150px;
+  height: 30px;
+  margin: 5px;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+}
+.main-material-add .bar {
+  flex: 1 1 40px;
+  padding-left: 20px;
+  display: inline-block;
+}
+.main-material-add > .material-info {
+  flex: 1 1 350px;
+  display: flex;
+  flex-direction: column;
+}
+.main-material-add > .material-inventory {
+  flex: 1 1 150px;
+  display: flex;
+  flex-direction: column;
+}
+.main-material-add > .material-add-submit {
+  flex: 1 1 100px;
+}
+.table-header {
+  line-height: 50px;
+}
