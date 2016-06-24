@@ -70,6 +70,13 @@
         </main>
     </div>
 </div>
+
+<script>
+    window.onload = function () {
+        highlightTab('nav-material','nav-material-add');
+    };
+</script>
+
 </body>
 </html>
 

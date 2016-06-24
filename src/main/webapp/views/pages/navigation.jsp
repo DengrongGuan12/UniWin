@@ -10,8 +10,8 @@
     <li id="nav-material">
         <div class="link"><i class="glyphicon glyphicon-th"></i>物料管理<i class="glyphicon glyphicon-chevron-down"></i></div>
         <ul class="submenu">
-            <li id="nav-material-add"><a href="">物料新增</a></li>
-            <li id="nav-material-query"><a href="">物料查询</a></li>
+            <li id="nav-material-add"><a href="<%=request.getContextPath() %>/main/materialadd">物料新增</a></li>
+            <li id="nav-material-query"><a href="<%=request.getContextPath() %>/main/materialquery">物料查询</a></li>
             <li id="nav-material-modify"><a href="">物料修改</a></li>
             <li id="nav-material-supplier"><a href="">供应商管理</a></li>
         </ul>
@@ -19,14 +19,14 @@
     <li id="nav-inRepertory">
         <div class="link"><i class="glyphicon glyphicon-th"></i>入库管理<i class="glyphicon glyphicon-chevron-down"></i></div>
         <ul class="submenu">
-            <li id="nav-inRepertory-query"><a href="">入库查询</a></li>
+            <li id="nav-inRepertory-manage"><a href="">入库管理</a></li>
             <li id="nav-inRepertory-import"><a href="">入库</a></li>
         </ul>
     </li>
     <li id="nav-outRepertory">
         <div class="link"><i class="glyphicon glyphicon-th"></i>出库管理<i class="glyphicon glyphicon-chevron-down"></i></div>
         <ul class="submenu">
-            <li id="nav-outRepertory-query"><a href="">出库查询</a></li>
+            <li id="nav-outRepertory-manage"><a href="">出库管理</a></li>
             <li id="nav-outRepertory-export"><a href="">出库</a></li>
         </ul>
     </li>
@@ -98,17 +98,16 @@
             <li><a href="">成衣查询</a></li>
         </ul>
     </li>
-    <li>
+    <li id="nav-customer">
         <div class="link"><i class="glyphicon glyphicon-th"></i>客户管理<i class="glyphicon glyphicon-chevron-down"></i></div>
         <ul class="submenu">
-            <li><a href="">客户查询</a></li>
-            <li><a href="">客户修改</a></li>
+            <li id="nav-customer-manage"><a href="">客户管理</a></li>
         </ul>
     </li>
-    <li>
+    <li id="nav-system">
         <div class="link"><i class="glyphicon glyphicon-th"></i>系统管理<i class="glyphicon glyphicon-chevron-down"></i></div>
         <ul class="submenu">
-            <li><a href="">用户管理</a></li>
+            <li id="nav-system-user"><a href="">用户管理</a></li>
             <li><a href="">权限分配</a></li>
             <li><a href="">角色管理</a></li>
         </ul>

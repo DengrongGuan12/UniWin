@@ -40,6 +40,11 @@ public class MainController {
         return "material/material_add";
     }
 
+    @RequestMapping("materialquery")
+    public String materialQuery(){
+        return "material/material_query";
+    }
+
     @RequestMapping("/json")
     @ResponseBody
     public RestResult json(){
