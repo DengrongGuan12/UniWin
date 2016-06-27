@@ -9,10 +9,10 @@
 <meta charset="UTF-8">
 <title>UniWin</title>
 <link rel="shortcut icon" href="<%=request.getContextPath() %>/views/img/management.png">
-<link rel="stylesheet" href="<%=request.getContextPath() %>/views/css/bootstrap.min.css">
-<link rel="stylesheet" href="<%=request.getContextPath() %>/views/css/style.css" />
-<link rel="stylesheet" href="<%=request.getContextPath() %>/views/css/nav-style.css" />
-<link rel="stylesheet" href="<%=request.getContextPath() %>/views/css/material.css" />
+<link rel="stylesheet" href="<%=request.getContextPath() %>/views/css/common/bootstrap.min.css">
+<link rel="stylesheet" href="<%=request.getContextPath() %>/views/css/common/layout.css" />
+<link rel="stylesheet" href="<%=request.getContextPath() %>/views/css/common/nav-style.css" />
+<link rel="stylesheet" href="<%=request.getContextPath() %>/views/css/custom/material.css" />
 
 <script src="<%=request.getContextPath() %>/views/js/jquery-1.12.4.js" charset="utf-8"></script>
 <script src="<%=request.getContextPath() %>/views/js/bootstrap.js" charset="utf-8"></script>
