@@ -16,6 +16,13 @@
   border: 1px solid #ccc;
   border-radius: 4px;
 }
+.main-material-add .input-lg {
+  width: 436px;
+  height: 30px;
+  margin: 5px;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+}
 .main-material-add select {
   width: 150px;
   height: 30px;
@@ -27,6 +34,10 @@
   flex: 1 1 40px;
   padding-left: 20px;
   display: inline-block;
+}
+.main-material-add .table-header {
+  text-decoration: none;
+  line-height: 50px;
 }
 .main-material-add > .material-info {
   flex: 1 1 350px;
@@ -41,6 +52,28 @@
 .main-material-add > .material-add-submit {
   flex: 1 1 100px;
 }
-.main-material-add > .material-info .table-header {
-  line-height: 50px;
+.main-material-add > .material-add-submit > .bar {
+  padding-left: 40px;
+}
+.main-material-add > .material-add-submit > .bar > .btn-save {
+  color: #fff;
+  background-color: #337ab7;
+  margin-right: 20px;
+}
+.main-material-add > .material-add-submit button {
+  display: inline-block;
+  padding: 6px 12px;
+  margin-bottom: 0;
+  font-size: 14px;
+  font-weight: 400;
+  line-height: 1.42857143;
+  text-align: center;
+  white-space: nowrap;
+  vertical-align: middle;
+  touch-action: manipulation;
+  cursor: pointer;
+  -webkit-user-select: none;
+  background-image: none;
+  border: 1px solid transparent;
+  border-radius: 4px;
 }
