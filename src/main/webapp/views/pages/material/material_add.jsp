@@ -90,8 +90,8 @@
                     </div>
                     <div class="material-add-submit">
                         <div class="bar">
-                            <button type="submit" name="save" class="btn-save">保存</button>
-                            <button type="button" name="back">返回</button>
+                            <button type="submit" class="btn-save">保存</button>
+                            <button type="button" >返回</button>
                         </div>
                     </div>
                 </div>

@@ -38,10 +38,11 @@ button {
 th {
   text-align: center;
   font-size: 16px;
-  font-weight: 500;
+  font-weight: 900;
 }
 td {
   text-align: center;
+  font-weight: 450;
 }
 .btn-save {
   color: #fff;
@@ -135,6 +136,20 @@ td {
 .main-material-query > .material-list {
   flex: 1 1 720px;
   padding: 10px 20px 10px 20px;
+}
+.main-material-query > .material-list > .material-table {
+  border-top: 2px solid #3c8dbc;
+  background: #ffffff;
+  margin-bottom: 20px;
+  -webkit-border-radius: 3px;
+  -moz-border-radius: 3px;
+  border-radius: 3px;
+  width: 100%;
+  box-shadow: 0px 1px 3px rgba(0, 0, 0, 0.1);
+}
+.main-material-query > .material-list > .material-table > nav {
+  float: right;
+  margin-right: 20px;
 }
 .main-material-query > .material-list input[type="radio"] {
   width: 15px;
