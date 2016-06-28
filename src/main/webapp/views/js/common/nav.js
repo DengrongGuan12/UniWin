@@ -28,7 +28,7 @@ $(function() {
 });
 
 function highlightTab(tab_1, tab_2){
-    $(`#${tab_1} .submenu`).slideToggle();
-    $(`#${tab_1}`).toggleClass('open');
-    $(`#${tab_2} a`).toggleClass('open');
+    $("#" + tab_1 +" .submenu").slideToggle();
+    $("#" + tab_1).toggleClass('open');
+    $("#" + tab_2 + " a").toggleClass('open');
 }
