@@ -48,8 +48,7 @@ public class ActiController {
     @RequestMapping(method = RequestMethod.POST, value = "/employee")
     public String dealEmployee(String tid) {
         if(tid.equals("first")){
-            ProcessInstance processInstance = runtimeService.startProcessInstanceByKey("miniProcess");
-
+            ProcessInstance processInstance = runtimeService.startProcessInstanceByKey(processDefKey);
             Task task = taskService.createTaskQuery().taskName("employee").processInstanceId(processInstance.getProcessInstanceId()).singleResult();
 
             taskService.complete(task.getId());
