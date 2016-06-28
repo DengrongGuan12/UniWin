@@ -11,6 +11,10 @@ input {
     border: 1px solid #ccc;
     border-radius: 4px;
 }
+input[type="radio"] {
+  width: 15px;
+  height: 15px;
+}
 select {
     width: 150px;
     height: 30px;
@@ -60,4 +64,29 @@ button{
         float:right;
         margin-right: 20px;
     }
+}
+th {
+  text-align: center;
+  font-size: 16px;
+  font-weight: 900;
+}
+td {
+  text-align: center;
+  font-weight: 450;
+}
+.btn-save {
+  color: #fff;
+  background-color: #337ab7;
+}
+.btn-query {
+  color: #fff;
+  background-color: #337ab7;
+}
+.btn-add {
+  color: #fff;
+  background-color: #f0ad4e;
+}
+.btn-modify {
+  color: #fff;
+  background-color: #31b0d5;
 }
