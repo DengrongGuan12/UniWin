@@ -41,6 +41,6 @@
 .main-material-add > .material-add-submit {
   flex: 1 1 100px;
 }
-.material-info .table-header {
+.main-material-add > .material-info .table-header {
   line-height: 50px;
 }
