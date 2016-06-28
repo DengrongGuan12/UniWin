@@ -101,7 +101,7 @@
     <li id="nav-customer">
         <div class="link"><i class="glyphicon glyphicon-th"></i>客户管理<i class="glyphicon glyphicon-chevron-down"></i></div>
         <ul class="submenu">
-            <li id="nav-customer-manage"><a href="">客户管理</a></li>
+            <li id="nav-customer-manage"><a href="<%=request.getContextPath() %>/main/customermanage">客户管理</a></li>
         </ul>
     </li>
     <li id="nav-system">

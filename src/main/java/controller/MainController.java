@@ -45,9 +45,14 @@ public class MainController {
         return "material/material_query";
     }
 
+    @RequestMapping("customermanage")
+    public String customerManage() { return "customer/customer_manage"; }
+
     @RequestMapping("/json")
     @ResponseBody
     public RestResult json(){
         return RestResult.CreateResult(1,userService.getAllUsernames());
     }
+
+
 }
