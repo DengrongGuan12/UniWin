@@ -11,6 +11,10 @@ input {
   border: 1px solid #ccc;
   border-radius: 4px;
 }
+input[type="radio"] {
+  width: 15px;
+  height: 15px;
+}
 select {
   width: 150px;
   height: 30px;
@@ -45,6 +49,10 @@ td {
   font-weight: 450;
 }
 .btn-save {
+  color: #fff;
+  background-color: #337ab7;
+}
+.btn-query {
   color: #fff;
   background-color: #337ab7;
 }
@@ -124,6 +132,9 @@ td {
   padding-left: 20px;
   display: inline-block;
 }
+.main-material-query > .material-query-header > .query-info .btn-query {
+  margin-left: 40px;
+}
 .main-material-query > .material-query-header > .material-operation {
   flex: 1 1 10%;
 }
@@ -151,7 +162,46 @@ td {
   float: right;
   margin-right: 20px;
 }
-.main-material-query > .material-list input[type="radio"] {
-  width: 15px;
-  height: 15px;
+/*
+    material_modify css
+*/
+.main-material-modify {
+  height: 600px;
+  display: flex;
+  flex-direction: column;
+}
+.main-material-modify .input-lg {
+  width: 436px;
+  height: 30px;
+  margin: 5px;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+}
+.main-material-modify .bar {
+  flex: 1 1 40px;
+  padding-left: 20px;
+  display: inline-block;
+}
+.main-material-modify .table-header {
+  text-decoration: none;
+  line-height: 50px;
+}
+.main-material-modify > .material-info {
+  flex: 1 1 350px;
+  display: flex;
+  flex-direction: column;
+}
+.main-material-modify > .material-inventory {
+  flex: 1 1 150px;
+  display: flex;
+  flex-direction: column;
+}
+.main-material-modify > .material-modify-submit {
+  flex: 1 1 100px;
+}
+.main-material-modify > .material-modify-submit > .bar {
+  padding-left: 40px;
+}
+.main-material-modify > .material-modify-submit > .bar > button {
+  margin-right: 20px;
 }

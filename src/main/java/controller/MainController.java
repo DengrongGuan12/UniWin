@@ -45,6 +45,16 @@ public class MainController {
         return "material/material_query";
     }
 
+    @RequestMapping("materialmodify")
+    public String materialModify(){
+        return "material/material_modify";
+    }
+
+    @RequestMapping("materialsupplier")
+    public String materialSupplier(){
+        return "material/material_supplier";
+    }
+
     @RequestMapping("customermanage")
     public String customerManage() { return "customer/customer_manage"; }
 

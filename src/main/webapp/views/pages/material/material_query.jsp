@@ -40,6 +40,7 @@
                                 <select>
                                     <option value ="type">Type</option>
                                 </select>
+                                <button type="button" class="btn-query">查询</button>
                             </div>
                         </div>
                         <div class="material-operation">
@@ -63,6 +64,18 @@
                                     </tr>
                                 </thead>
                                 <tbody>
+                                    <tr>
+                                        <td>
+                                            <input type="radio">
+                                        </td>
+                                        <td>1</td>
+                                        <td>1</td>
+                                        <td>1</td>
+                                        <td>1</td>
+                                        <td>1</td>
+                                        <td>1</td>
+                                        <td>1</td>
+                                    </tr>
                                     <tr>
                                         <td>
                                             <input type="radio">
@@ -104,10 +117,7 @@
     </div>
 </div>
 
-<script>
-    window.onload = function () {
-        highlightTab('nav-material','nav-material-query');
-    };
-</script>
+<script src="<%=request.getContextPath() %>/views/js/custom/material/material_query.js" charset="utf-8"></script>
+
 </body>
 </html>
