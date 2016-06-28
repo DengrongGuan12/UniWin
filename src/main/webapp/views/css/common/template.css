@@ -1,3 +1,6 @@
+/*
+   控件组
+*/
 label {
     margin: 8px;
     width: 100px;
@@ -50,6 +53,9 @@ button{
     line-height: 50px;
 }
 
+/*
+   table属性
+*/
 .table-wrapper{
     border-top: 2px solid #3c8dbc;
     background: #ffffff;
@@ -74,6 +80,10 @@ td {
   text-align: center;
   font-weight: 450;
 }
+
+/*
+   button颜色
+*/
 .btn-save {
   color: #fff;
   background-color: #337ab7;
@@ -89,4 +99,26 @@ td {
 .btn-modify {
   color: #fff;
   background-color: #31b0d5;
+}
+
+/*
+   模态框
+*/
+.modal{
+
+    .modal-header{
+        background-color: #3c8dbc;
+    }
+
+    .modal-title{
+        color: #ffffff;
+    }
+
+    .modal-dialog{
+        width:650px;
+    }
+
+    .modal-body{
+
+    }
 }
