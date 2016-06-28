@@ -2,7 +2,7 @@ label {
   margin: 8px;
   width: 100px;
   font-size: 12px;
-  font-weight: 300;
+  font-weight: 400;
 }
 input {
   width: 150px;
@@ -257,24 +257,24 @@ td {
   float: right;
   margin-right: 20px;
 }
-#model_addsupplier .modal-header {
+#modal_addsupplier .modal-header {
   background-color: #3c8dbc;
 }
-#model_addsupplier .modal-title {
+#modal_addsupplier .modal-title {
   color: #ffffff;
 }
-#model_addsupplier .modal-dialog {
+#modal_addsupplier .modal-dialog {
   width: 650px;
 }
-#model_addsupplier .modal-body {
+#modal_addsupplier .modal-body {
   display: flex;
   flex-direction: column;
 }
-#model_addsupplier .modal-body .bar {
+#modal_addsupplier .modal-body .bar {
   flex: 1 1 50px;
   padding: 5px 10px 5px 10px;
 }
-#model_addsupplier .modal-body .input-lg {
+#modal_addsupplier .modal-body .input-lg {
   width: 434px;
   height: 30px;
 }
