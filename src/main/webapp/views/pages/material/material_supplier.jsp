@@ -3,6 +3,7 @@
 <html lang="en">
 <head>
     <jsp:include page="../header.jsp"></jsp:include>
+    <link rel="stylesheet" href="<%=request.getContextPath() %>/views/css/custom/material.css" />
 </head>
 <body>
 <div class="app">
@@ -28,15 +29,13 @@
                     <div class="material-supplier-header">
                         <div class="supplier-query-info">
                             <div class="bar">
-                                <label>物料名称:</label>
+                                <label>供应商名称:</label>
                                 <input type="text"/>
-                                <label>物料编号:</label>
-                                <input type="text"/>
+                                <button type="button" class="btn-query">查询</button>
                             </div>
                         </div>
-                        <div class="material-operation">
+                        <div class="supplier-operation">
                             <button type="button" class="btn-add">新增</button>
-                            <button type="button" class="btn-modify">修改</button>
                         </div>
                     </div>
                     <div class="material-list">
@@ -44,23 +43,15 @@
                             <table class="table table-striped table-hover">
                                 <thead>
                                     <tr>
-                                        <th></th>
-                                        <th>物料编号</th>
-                                        <th>物料名称</th>
-                                        <th>类型</th>
-                                        <th>供应商</th>
-                                        <th>库存数量</th>
-                                        <th>规格</th>
-                                        <th>成分</th>
+                                        <th>供应商名称</th>
+                                        <th>供应商编号</th>
+                                        <th>供应商电话</th>
+                                        <th>供应商手机</th>
+                                        <th>供应商地址</th>
                                     </tr>
                                 </thead>
                                 <tbody>
                                     <tr>
-                                        <td>
-                                            <input type="radio">
-                                        </td>
-                                        <td>1</td>
-                                        <td>1</td>
                                         <td>1</td>
                                         <td>1</td>
                                         <td>1</td>

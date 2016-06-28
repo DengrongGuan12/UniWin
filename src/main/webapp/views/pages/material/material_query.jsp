@@ -3,6 +3,7 @@
 <html lang="en">
 <head>
     <jsp:include page="../header.jsp"></jsp:include>
+    <link rel="stylesheet" href="<%=request.getContextPath() %>/views/css/custom/material.css" />
 </head>
 <body>
 <div class="app">

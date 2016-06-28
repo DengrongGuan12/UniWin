@@ -205,3 +205,55 @@ td {
 .main-material-modify > .material-modify-submit > .bar > button {
   margin-right: 20px;
 }
+/*
+    material_supplier css
+*/
+.main-material-supplier {
+  height: 800px;
+  display: flex;
+  flex-direction: column;
+}
+.main-material-supplier > .material-supplier-header {
+  padding-top: 20px;
+  padding-bottom: 20px;
+  flex: 1 1 80px;
+  display: flex;
+  flex-direction: row;
+}
+.main-material-supplier > .material-supplier-header > .supplier-query-info {
+  flex: 1 1 90%;
+  display: flex;
+  flex-direction: column;
+}
+.main-material-supplier > .material-supplier-header > .supplier-query-info .bar {
+  flex: 1 1 40px;
+  padding-left: 20px;
+  display: inline-block;
+}
+.main-material-supplier > .material-supplier-header > .supplier-query-info .btn-query {
+  margin-left: 40px;
+}
+.main-material-supplier > .material-supplier-header > .supplier-operation {
+  flex: 1 1 10%;
+}
+.main-material-supplier > .material-supplier-header > .supplier-operation button {
+  display: block;
+}
+.main-material-supplier > .material-list {
+  flex: 1 1 720px;
+  padding: 10px 20px 10px 20px;
+}
+.main-material-supplier > .material-list > .material-table {
+  border-top: 2px solid #3c8dbc;
+  background: #ffffff;
+  margin-bottom: 20px;
+  -webkit-border-radius: 3px;
+  -moz-border-radius: 3px;
+  border-radius: 3px;
+  width: 100%;
+  box-shadow: 0px 1px 3px rgba(0, 0, 0, 0.1);
+}
+.main-material-supplier > .material-list > .material-table > nav {
+  float: right;
+  margin-right: 20px;
+}
