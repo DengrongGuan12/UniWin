@@ -1,5 +1,5 @@
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
-<div class="modal fade" id="modal-user" tabindex="-1" role="dialog">
+<div class="modal fade" id="modal-department" tabindex="-1" role="dialog">
   <div class="modal-dialog">
     <div class="modal-content">
       <div class="modal-header">
@@ -8,35 +8,22 @@
       </div>
       <div class="modal-body">
         <div class="bar">
-            <label>账号:</label>
+            <label>名称:</label>
             <input type="text"/>
-            <label>初始密码:</label>
-            <input type="text"/>
-        </div>
-        <div class="bar">
-            <label>姓名:</label>
-            <input type="text"/>
-            <label>手机号码:</label>
+            <label>部门编码:</label>
             <input type="text"/>
         </div>
         <div class="bar">
-            <label>E-mail:</label>
+            <label>英文名称:</label>
             <input type="text"/>
-            <label>微信号:</label>
+            <label>简称:</label>
             <input type="text"/>
         </div>
         <div class="bar">
-            <label>公司名称:</label>
+            <label>电话:</label>
             <input type="text"/>
-            <label>所属部门:</label>
-            <select>
-                <option value ="1">生产部</option>
-                <option value ="2">采购部</option>
-            </select>
-        </div>
-        <div class="bar">
-            <label>地址:</label>
-            <input type="text" class="input-lg"/>
+            <label>简要描述:</label>
+            <input type="text"/>
         </div>
       </div>
       <div class="modal-footer">

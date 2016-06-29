@@ -161,7 +161,98 @@ td{
     }
 }
 
-#modal_adduser{
+#modal-user{
+
+    .modal-header{
+        background-color: #3c8dbc;
+    }
+
+    .modal-title{
+        color: #ffffff;
+    }
+
+    .modal-dialog{
+        width:650px;
+    }
+
+    .modal-body{
+        display: flex;
+        flex-direction: column;
+        .bar{
+            flex:1 1 50px;
+            padding: 5px 10px 5px 10px;
+        }
+
+        .input-lg{
+            width:434px;
+            height: 30px;
+        }
+    }
+}
+
+/*
+    department_manage css
+*/
+.main-system-department{
+    height:800px;
+    display: flex;
+    flex-direction: column;
+
+    > .system-department-header{
+        padding-top: 5px;
+        padding-bottom: 5px;
+        flex:1 1 100px;
+        display: flex;
+        flex-direction: row;
+
+        > .department-query-info{
+            padding-top: 15px;
+            flex:1 1 90%;
+            display: flex;
+            flex-direction: column;
+
+            .bar{
+                flex:1 1 40px;
+                padding-left: 20px;
+                display: inline-block;
+            }
+        }
+
+        > .department-operation{
+            flex:1 1 10%;
+
+            button{
+                display: block;
+                margin:10px 5px 5px 10px;
+            }
+        }
+
+    }
+
+    > .department-list{
+        flex:1 1 720px;
+        padding: 10px 20px 10px 20px;
+
+
+        > .department-table{
+            border-top: 2px solid #3c8dbc;
+            background: #ffffff;
+            margin-bottom: 20px;
+            -webkit-border-radius: 3px;
+            -moz-border-radius: 3px;
+            border-radius: 3px;
+            width: 100%;
+            box-shadow: 0px 1px 3px rgba(0, 0, 0, 0.1);
+
+            > nav{
+                float:right;
+                margin-right: 20px;
+            }
+        }
+    }
+}
+
+#modal-department{
 
     .modal-header{
         background-color: #3c8dbc;

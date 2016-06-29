@@ -135,24 +135,97 @@ td {
   float: right;
   margin-right: 20px;
 }
-#modal_adduser .modal-header {
+#modal-user .modal-header {
   background-color: #3c8dbc;
 }
-#modal_adduser .modal-title {
+#modal-user .modal-title {
   color: #ffffff;
 }
-#modal_adduser .modal-dialog {
+#modal-user .modal-dialog {
   width: 650px;
 }
-#modal_adduser .modal-body {
+#modal-user .modal-body {
   display: flex;
   flex-direction: column;
 }
-#modal_adduser .modal-body .bar {
+#modal-user .modal-body .bar {
   flex: 1 1 50px;
   padding: 5px 10px 5px 10px;
 }
-#modal_adduser .modal-body .input-lg {
+#modal-user .modal-body .input-lg {
+  width: 434px;
+  height: 30px;
+}
+/*
+    department_manage css
+*/
+.main-system-department {
+  height: 800px;
+  display: flex;
+  flex-direction: column;
+}
+.main-system-department > .system-department-header {
+  padding-top: 5px;
+  padding-bottom: 5px;
+  flex: 1 1 100px;
+  display: flex;
+  flex-direction: row;
+}
+.main-system-department > .system-department-header > .department-query-info {
+  padding-top: 15px;
+  padding-bottom: 25px;
+  flex: 1 1 90%;
+  display: flex;
+  flex-direction: column;
+}
+.main-system-department > .system-department-header > .department-query-info .bar {
+  flex: 1 1 40px;
+  padding-left: 20px;
+  display: inline-block;
+}
+.main-system-department > .system-department-header > .department-operation {
+  flex: 1 1 10%;
+}
+.main-system-department > .system-department-header > .department-operation button {
+  display: block;
+  margin: 10px 5px 5px 10px;
+}
+.main-system-department > .department-list {
+  flex: 1 1 720px;
+  padding: 10px 20px 10px 20px;
+}
+.main-system-department > .department-list > .department-table {
+  border-top: 2px solid #3c8dbc;
+  background: #ffffff;
+  margin-bottom: 20px;
+  -webkit-border-radius: 3px;
+  -moz-border-radius: 3px;
+  border-radius: 3px;
+  width: 100%;
+  box-shadow: 0px 1px 3px rgba(0, 0, 0, 0.1);
+}
+.main-system-department > .department-list > .department-table > nav {
+  float: right;
+  margin-right: 20px;
+}
+#modal-department .modal-header {
+  background-color: #3c8dbc;
+}
+#modal-department .modal-title {
+  color: #ffffff;
+}
+#modal-department .modal-dialog {
+  width: 650px;
+}
+#modal-department .modal-body {
+  display: flex;
+  flex-direction: column;
+}
+#modal-department .modal-body .bar {
+  flex: 1 1 50px;
+  padding: 5px 10px 5px 10px;
+}
+#modal-department .modal-body .input-lg {
   width: 434px;
   height: 30px;
 }
