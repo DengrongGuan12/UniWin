@@ -53,6 +53,16 @@ public class MainController {
         return "material/material_modify";
     }
 
+    @RequestMapping("usermanage")
+    public String SystemUser(){
+        return "system/user_manage";
+    }
+
+    @RequestMapping("departmentmanage")
+    public String SystemDepartment(){
+        return "system/department_manage";
+    }
+
     @RequestMapping("materialsupplier")
     public String materialSupplier(){
         return "material/material_supplier";
