@@ -1,5 +1,6 @@
 package controller;
 
+import model.Role;
 import model.User;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
@@ -24,14 +25,16 @@ public class MainController {
 
     @RequestMapping("")
     public String home(){
-//        List<User> us = new ArrayList<User>();
-//        User u = new User();
-//        u.setUsername("MarK");
-//        us.add(u);
-//        u = new User();
-//        u.setUsername("Fawofolo");
-//        us.add(u);
-//        userService.saveUsers(us);
+        List<User> us = new ArrayList<User>();
+        User u = new User();
+        u.setUsername("MarK");
+        u.setUserrole(Role.EMPLOYEE);
+        us.add(u);
+        u = new User();
+        u.setUsername("Fawofolo");
+        us.add(u);
+        u.setUserrole(Role.EMPLOYER);
+        userService.saveUsers(us);
         return "index";
     }
 
