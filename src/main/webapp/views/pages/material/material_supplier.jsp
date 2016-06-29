@@ -35,7 +35,7 @@
                             </div>
                         </div>
                         <div class="supplier-operation">
-                            <button type="button" class="btn-add" data-toggle="modal" data-target="#modal_addsupplier">新增</button>
+                            <button type="button" class="btn-add" data-toggle="modal" data-target="#modal-supplier-add">新增</button>
                         </div>
                     </div>
                     <div class="material-list">
