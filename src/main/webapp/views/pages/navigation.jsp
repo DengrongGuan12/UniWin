@@ -107,7 +107,8 @@
     <li id="nav-system">
         <div class="link"><i class="glyphicon glyphicon-th"></i>系统管理<i class="glyphicon glyphicon-chevron-down"></i></div>
         <ul class="submenu">
-            <li id="nav-system-user"><a href="">用户管理</a></li>
+            <li id="nav-system-user"><a href="<%=request.getContextPath() %>/main/usermanage">用户管理</a></li>
+            <li id="nav-system-department"><a href="<%=request.getContextPath() %>/main/departmentmanage">组织管理</a></li>
             <li><a href="">权限分配</a></li>
             <li><a href="">角色管理</a></li>
         </ul>

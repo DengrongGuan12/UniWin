@@ -3,6 +3,7 @@
 <html lang="en">
 <head>
     <jsp:include page="../header.jsp"></jsp:include>
+    <link rel="stylesheet" href="<%=request.getContextPath() %>/views/css/custom/system.css" />
 </head>
 <body>
 <div class="app">
@@ -20,7 +21,7 @@
         <main>
             <div class="main-header">
                 <h1>系统管理
-                    <small>用户管理</small>
+                    <small>组织管理</small>
                 </h1>
             </div>
             <div class="main-content">
@@ -29,6 +30,7 @@
     </div>
 </div>
 
-<script src="<%=request.getContextPath() %>/views/js/custom/system/user_manage.js" charset="utf-8"></script>
+<script src="<%=request.getContextPath() %>/views/js/custom/system/department_manage.js" charset="utf-8"></script>
+
 </body>
 </html>
