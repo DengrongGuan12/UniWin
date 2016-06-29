@@ -85,75 +85,33 @@ td{
     border-color: #d43f3a;
 }
 
-
-/*
-    material_add css
-*/
-.main-material-add{
-    height:600px;
-    display: flex;
-    flex-direction: column;
-
-    .input-lg{
-        width:436px;
-        height:30px;
-        margin: 5px;
-        border: 1px solid #ccc;
-        border-radius: 4px;
-    }
-
-    .bar{
-        flex:1 1 40px;
-        padding-left: 20px;
-        display: inline-block;
-    }
-
-    .table-header{
-        text-decoration:none;
-        line-height: 50px;
-    }
-
-    > .material-info{
-        flex:1 1 350px;
-        display: flex;
-        flex-direction: column;
-    }
-
-    > .material-inventory{
-        flex:1 1 150px;
-        display: flex;
-        flex-direction: column;
-    }
-
-    > .material-add-submit{
-        flex:1 1 100px;
-
-        >.bar{
-            padding-left: 40px;
-
-            > button{
-                margin-right: 20px;
-            }
-        }
-    }
+.input-lg{
+    width:436px;
+    height:30px;
+    margin: 5px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
 }
 
+
 /*
-    material_query css
+    user_manage css
 */
-.main-material-query{
+.main-system-user{
     height:800px;
     display: flex;
     flex-direction: column;
 
-    > .material-query-header{
-        padding-top: 20px;
-        padding-bottom: 20px;
+    > .system-user-header{
+        padding-top: 5px;
+        padding-bottom: 10px;
         flex:1 1 120px;
         display: flex;
         flex-direction: row;
 
-        > .query-info{
+        > .user-query-info{
+            padding-top: 35px;
+            padding-bottom: 30px;
             flex:1 1 90%;
             display: flex;
             flex-direction: column;
@@ -169,25 +127,23 @@ td{
             }
         }
 
-        > .material-operation{
+        > .user-operation{
             flex:1 1 10%;
 
             button{
                 display: block;
-            }
-            button:last-child{
-                margin-top: 10px;
+                margin:0 5px 5px 10px;
             }
         }
 
     }
 
-    > .material-list{
+    > .user-list{
         flex:1 1 720px;
         padding: 10px 20px 10px 20px;
 
 
-        > .material-table{
+        > .user-table{
             border-top: 2px solid #3c8dbc;
             background: #ffffff;
             margin-bottom: 20px;
@@ -205,74 +161,52 @@ td{
     }
 }
 
-/*
-    material_modify css
-*/
-.main-material-modify{
-    height:600px;
-    display: flex;
-    flex-direction: column;
+#modal-user{
 
-    .input-lg{
-        width:436px;
-        height:30px;
-        margin: 5px;
-        border: 1px solid #ccc;
-        border-radius: 4px;
+    .modal-header{
+        background-color: #3c8dbc;
     }
 
-    .bar{
-        flex:1 1 40px;
-        padding-left: 20px;
-        display: inline-block;
+    .modal-title{
+        color: #ffffff;
     }
 
-    .table-header{
-        text-decoration:none;
-        line-height: 50px;
+    .modal-dialog{
+        width:650px;
     }
 
-    > .material-info{
-        flex:1 1 350px;
+    .modal-body{
         display: flex;
         flex-direction: column;
-    }
+        .bar{
+            flex:1 1 50px;
+            padding: 5px 10px 5px 10px;
+        }
 
-    > .material-inventory{
-        flex:1 1 150px;
-        display: flex;
-        flex-direction: column;
-    }
-
-    > .material-modify-submit{
-        flex:1 1 100px;
-
-        >.bar{
-            padding-left: 40px;
-
-            > button{
-                margin-right: 20px;
-            }
+        .input-lg{
+            width:434px;
+            height: 30px;
         }
     }
 }
 
 /*
-    material_supplier css
+    department_manage css
 */
-.main-material-supplier{
+.main-system-department{
     height:800px;
     display: flex;
     flex-direction: column;
 
-    > .material-supplier-header{
-        padding-top: 20px;
-        padding-bottom: 20px;
-        flex:1 1 80px;
+    > .system-department-header{
+        padding-top: 5px;
+        padding-bottom: 5px;
+        flex:1 1 100px;
         display: flex;
         flex-direction: row;
 
-        > .supplier-query-info{
+        > .department-query-info{
+            padding-top: 15px;
             flex:1 1 90%;
             display: flex;
             flex-direction: column;
@@ -282,28 +216,25 @@ td{
                 padding-left: 20px;
                 display: inline-block;
             }
-
-            .btn-query{
-                margin-left: 40px;
-            }
         }
 
-        > .supplier-operation{
+        > .department-operation{
             flex:1 1 10%;
 
             button{
                 display: block;
+                margin:10px 5px 5px 10px;
             }
         }
 
     }
 
-    > .material-list{
+    > .department-list{
         flex:1 1 720px;
         padding: 10px 20px 10px 20px;
 
 
-        > .material-table{
+        > .department-table{
             border-top: 2px solid #3c8dbc;
             background: #ffffff;
             margin-bottom: 20px;
@@ -321,7 +252,7 @@ td{
     }
 }
 
-#modal_addsupplier{
+#modal-department{
 
     .modal-header{
         background-color: #3c8dbc;

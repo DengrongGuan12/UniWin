@@ -1,34 +1,42 @@
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
-<div class="modal fade" id="modal-supplier-add" tabindex="-1" role="dialog">
+<div class="modal fade" id="modal-user" tabindex="-1" role="dialog">
   <div class="modal-dialog">
     <div class="modal-content">
       <div class="modal-header">
         <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
-        <h4 class="modal-title">新增供应商</h4>
+        <h4 class="modal-title"></h4>
       </div>
       <div class="modal-body">
         <div class="bar">
-            <label>供应商编号:</label>
+            <label>账号:</label>
             <input type="text"/>
-            <label>供应商名称:</label>
-            <input type="text"/>
-        </div>
-        <div class="bar">
-            <label>供应商电话:</label>
-            <input type="text"/>
-            <label>供应商手机:</label>
+            <label>初始密码:</label>
             <input type="text"/>
         </div>
         <div class="bar">
-            <label>供应商地址:</label>
-            <input type="text" class="input-lg"/>
+            <label>姓名:</label>
+            <input type="text"/>
+            <label>手机号码:</label>
+            <input type="text"/>
         </div>
         <div class="bar">
-            <label>供应商等级：</label>
+            <label>E-mail:</label>
+            <input type="text"/>
+            <label>微信号:</label>
+            <input type="text"/>
+        </div>
+        <div class="bar">
+            <label>公司名称:</label>
+            <input type="text"/>
+            <label>所属部门:</label>
             <select>
-                <option value ="volvo">Volvo</option>
-                <option value ="volvo">Volvo</option>
+                <option value ="1">生产部</option>
+                <option value ="2">采购部</option>
             </select>
+        </div>
+        <div class="bar">
+            <label>地址:</label>
+            <input type="text" class="input-lg"/>
         </div>
       </div>
       <div class="modal-footer">
