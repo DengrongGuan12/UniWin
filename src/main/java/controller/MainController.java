@@ -71,6 +71,12 @@ public class MainController {
     @RequestMapping("customermanage")
     public String customerManage() { return "customer/customer_manage"; }
 
+    @RequestMapping("repertoryrecords")
+    public String repertoryRecords() { return "repertory/repertory_records"; }
+
+    @RequestMapping("repertorycontrolrecords")
+    public String repertoryControlRecords() { return "repertory/repertory_control_records"; }
+
     @RequestMapping("/json")
     @ResponseBody
     public RestResult json(){

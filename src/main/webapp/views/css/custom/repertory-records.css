@@ -65,47 +65,47 @@ td {
     background-color: #31b0d5;
 }
 /*
-    customer_query css
+    repertory-records_query css
 */
-.main-customer-query {
+.main-repertory-records-query {
     height: 800px;
     display: flex;
     flex-direction: column;
 }
-.main-customer-query > .customer-query-header {
+.main-repertory-records-query > .repertory-records-query-header {
     padding-top: 20px;
     padding-bottom: 20px;
     flex: 1 1 120px;
     display: flex;
     flex-direction: row;
 }
-.main-customer-query > .customer-query-header > .query-info {
+.main-repertory-records-query > .repertory-records-query-header > .query-info {
     flex: 1 1 90%;
     display: flex;
     flex-direction: column;
 }
-.main-customer-query > .customer-query-header > .query-info .bar {
+.main-repertory-records-query > .repertory-records-query-header > .query-info .bar {
     flex: 1 1 40px;
     padding-left: 20px;
     display: inline-block;
 }
-.main-customer-query > .customer-query-header > .query-info .btn-query {
+.main-repertory-records-query > .repertory-records-query-header > .query-info .btn-query {
     margin-left: 40px;
 }
-.main-customer-query > .customer-query-header > .customer-operation {
+.main-repertory-records-query > .repertory-records-query-header > .repertory-records-operation {
     flex: 1 1 10%;
 }
-.main-customer-query > .customer-query-header > .customer-operation button {
+.main-repertory-records-query > .repertory-records-query-header > .repertory-records-operation button {
     display: block;
 }
-.main-customer-query > .customer-query-header > .customer-operation button:last-child {
+.main-repertory-records-query > .repertory-records-query-header > .repertory-records-operation button:last-child {
     margin-top: 10px;
 }
-.main-customer-query > .customer-list {
+.main-repertory-records-query > .repertory-records-list {
     flex: 1 1 720px;
     padding: 10px 20px 10px 20px;
 }
-.main-customer-query > .customer-list > .customer-table {
+.main-repertory-records-query > .repertory-records-list > .repertory-records-table {
     border-top: 2px solid #3c8dbc;
     background: #ffffff;
     margin-bottom: 20px;
@@ -115,7 +115,7 @@ td {
     width: 100%;
     box-shadow: 0px 1px 3px rgba(0, 0, 0, 0.1);
 }
-.main-customer-query > .customer-list > .customer-table > nav {
+.main-repertory-records-query > .repertory-records-list > .repertory-records-table > nav {
     float: right;
     margin-right: 20px;
 }

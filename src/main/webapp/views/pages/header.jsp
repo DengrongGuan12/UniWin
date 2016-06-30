@@ -12,6 +12,7 @@
 <link rel="stylesheet" href="<%=request.getContextPath() %>/views/css/common/bootstrap.min.css">
 <link rel="stylesheet" href="<%=request.getContextPath() %>/views/css/common/layout.css" />
 <link rel="stylesheet" href="<%=request.getContextPath() %>/views/css/common/nav-style.css" />
+<link rel="stylesheet" href="<%=request.getContextPath() %>/views/css/common/bootstrap-datetimepicker.min.css" />
 
 <script src="<%=request.getContextPath() %>/views/js/common/jquery-1.12.4.js" charset="utf-8"></script>
 <script src="<%=request.getContextPath() %>/views/js/common/bootstrap.js" charset="utf-8"></script>

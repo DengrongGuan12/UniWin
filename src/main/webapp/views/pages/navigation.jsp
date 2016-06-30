@@ -16,18 +16,11 @@
             <li id="nav-material-supplier"><a href="<%=request.getContextPath() %>/main/materialsupplier">供应商管理</a></li>
         </ul>
     </li>
-    <li id="nav-inRepertory">
-        <div class="link"><i class="glyphicon glyphicon-th"></i>入库管理<i class="glyphicon glyphicon-chevron-down"></i></div>
+    <li id="nav-repertory">
+        <div class="link"><i class="glyphicon glyphicon-th"></i>库存管理<i class="glyphicon glyphicon-chevron-down"></i></div>
         <ul class="submenu">
-            <li id="nav-inRepertory-manage"><a href="">入库管理</a></li>
-            <li id="nav-inRepertory-import"><a href="">入库</a></li>
-        </ul>
-    </li>
-    <li id="nav-outRepertory">
-        <div class="link"><i class="glyphicon glyphicon-th"></i>出库管理<i class="glyphicon glyphicon-chevron-down"></i></div>
-        <ul class="submenu">
-            <li id="nav-outRepertory-manage"><a href="">出库管理</a></li>
-            <li id="nav-outRepertory-export"><a href="">出库</a></li>
+            <li id="nav-repertory-records"><a href="<%=request.getContextPath() %>/main/repertoryrecords">库存</a></li>
+            <li id="nav-repertory-control-records"><a href="<%=request.getContextPath() %>/main/repertorycontrolrecords">库存调度</a></li>
         </ul>
     </li>
     <li id="nav-inquiry">
