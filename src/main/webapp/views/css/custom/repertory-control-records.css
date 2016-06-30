@@ -89,6 +89,13 @@ td {
     padding-left: 20px;
     display: inline-block;
 }
+.main-repertory-control-records-query > .repertory-control-records-query-header > .query-info .bar input{
+    width: 123px;
+    height: 30px;
+    margin: 5px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+}
 .main-repertory-control-records-query > .repertory-control-records-query-header > .query-info .btn-query {
     margin-left: 40px;
 }

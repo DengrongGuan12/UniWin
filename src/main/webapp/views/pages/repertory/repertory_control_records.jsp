@@ -88,7 +88,7 @@
                                     <td>1</td>
                                     <td>1</td>
                                     <td>1</td>
-                                    <td>1</td>
+                                    <td><a href="">更多信息</a></td>
                                 </tr>
                                 <tr>
                                     <td>
@@ -100,7 +100,7 @@
                                     <td>1</td>
                                     <td>1</td>
                                     <td>1</td>
-                                    <td>1</td>
+                                    <td><a href="">更多信息</a></td>
                                 </tr>
                                 </tbody>
                             </table>
