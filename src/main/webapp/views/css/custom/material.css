@@ -266,24 +266,24 @@ td {
   float: right;
   margin-right: 20px;
 }
-#modal_addsupplier .modal-header {
+#modal-supplier-add .modal-header {
   background-color: #3c8dbc;
 }
-#modal_addsupplier .modal-title {
+#modal-supplier-add .modal-title {
   color: #ffffff;
 }
-#modal_addsupplier .modal-dialog {
+#modal-supplier-add .modal-dialog {
   width: 650px;
 }
-#modal_addsupplier .modal-body {
+#modal-supplier-add .modal-body {
   display: flex;
   flex-direction: column;
 }
-#modal_addsupplier .modal-body .bar {
+#modal-supplier-add .modal-body .bar {
   flex: 1 1 50px;
   padding: 5px 10px 5px 10px;
 }
-#modal_addsupplier .modal-body .input-lg {
+#modal-supplier-add .modal-body .input-lg {
   width: 434px;
   height: 30px;
 }
