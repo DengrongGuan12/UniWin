@@ -31,21 +31,33 @@
     <exclusiveGateway gatewayDirection="Unspecified" id="_25" name="ExclusiveGateway"/>
     <sequenceFlow id="_26" sourceRef="_10" targetRef="_25"/>
     <endEvent id="_27" name="EndEvent"/>
-    <sequenceFlow id="_28" sourceRef="_21" targetRef="_27"/>
-    <sequenceFlow id="_29" sourceRef="_21" targetRef="_15"/>
-    <sequenceFlow id="_30" sourceRef="_23" targetRef="_15"/>
+    <sequenceFlow id="_28" sourceRef="_21" targetRef="_27">
+      <conditionExpression xsi:type="tFormalExpression"><![CDATA[${agree==false}]]></conditionExpression>
+    </sequenceFlow>
+    <sequenceFlow id="_29" sourceRef="_21" targetRef="_15">
+      <conditionExpression xsi:type="tFormalExpression"><![CDATA[${agree==true}]]></conditionExpression>
+    </sequenceFlow>
+    <sequenceFlow id="_30" sourceRef="_23" targetRef="_15">
+      <conditionExpression xsi:type="tFormalExpression"><![CDATA[${agree==true}]]></conditionExpression>
+    </sequenceFlow>
     <endEvent id="_31" name="EndEvent"/>
-    <sequenceFlow id="_32" sourceRef="_23" targetRef="_31"/>
+    <sequenceFlow id="_32" sourceRef="_23" targetRef="_31">
+      <conditionExpression xsi:type="tFormalExpression"><![CDATA[${agree==false}]]></conditionExpression>
+    </sequenceFlow>
     <endEvent id="_33" name="EndEvent"/>
-    <sequenceFlow id="_34" sourceRef="_25" targetRef="_33"/>
-    <sequenceFlow id="_35" sourceRef="_25" targetRef="_15"/>
+    <sequenceFlow id="_34" sourceRef="_25" targetRef="_33">
+      <conditionExpression xsi:type="tFormalExpression"><![CDATA[${agree==false}]]></conditionExpression>
+    </sequenceFlow>
+    <sequenceFlow id="_35" sourceRef="_25" targetRef="_15">
+      <conditionExpression xsi:type="tFormalExpression"><![CDATA[${agree == true}]]></conditionExpression>
+    </sequenceFlow>
   </process>
   <bpmndi:BPMNDiagram documentation="background=#FFFFFF;count=1;horizontalcount=1;orientation=0;width=842.4;height=1195.2;imageableWidth=832.4;imageableHeight=1185.2;imageableX=5.0;imageableY=5.0" id="Diagram-_1" name="New Diagram">
     <bpmndi:BPMNPlane bpmnElement="myProcess_1">
       <bpmndi:BPMNShape bpmnElement="_2" id="Shape-_2">
         <omgdc:Bounds height="32.0" width="32.0" x="0.0" y="160.0"/>
         <bpmndi:BPMNLabel>
-          <omgdc:Bounds height="32.0" width="32.0" x="0.0" y="-3.0"/>
+          <omgdc:Bounds height="32.0" width="32.0" x="0.0" y="0.0"/>
         </bpmndi:BPMNLabel>
       </bpmndi:BPMNShape>
       <bpmndi:BPMNShape bpmnElement="_3" id="Shape-_3">
