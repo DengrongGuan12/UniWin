@@ -51,6 +51,10 @@
     <sequenceFlow id="_35" sourceRef="_25" targetRef="_15">
       <conditionExpression xsi:type="tFormalExpression"><![CDATA[${agree == true}]]></conditionExpression>
     </sequenceFlow>
+    <userTask activiti:exclusive="true" id="_36" name="Platemaking"/>
+    <userTask activiti:exclusive="true" id="_37" name="Purchase"/>
+    <userTask activiti:exclusive="true" id="_38" name="Produce"/>
+    <userTask activiti:exclusive="true" id="_39" name="UserTask"/>
   </process>
   <bpmndi:BPMNDiagram documentation="background=#FFFFFF;count=1;horizontalcount=1;orientation=0;width=842.4;height=1195.2;imageableWidth=832.4;imageableHeight=1185.2;imageableX=5.0;imageableY=5.0" id="Diagram-_1" name="New Diagram">
     <bpmndi:BPMNPlane bpmnElement="myProcess_1">
@@ -148,6 +152,30 @@
         <omgdc:Bounds height="32.0" width="32.0" x="525.0" y="390.0"/>
         <bpmndi:BPMNLabel>
           <omgdc:Bounds height="32.0" width="32.0" x="0.0" y="0.0"/>
+        </bpmndi:BPMNLabel>
+      </bpmndi:BPMNShape>
+      <bpmndi:BPMNShape bpmnElement="_36" id="Shape-_36">
+        <omgdc:Bounds height="55.0" width="85.0" x="710.0" y="95.0"/>
+        <bpmndi:BPMNLabel>
+          <omgdc:Bounds height="55.0" width="85.0" x="0.0" y="0.0"/>
+        </bpmndi:BPMNLabel>
+      </bpmndi:BPMNShape>
+      <bpmndi:BPMNShape bpmnElement="_37" id="Shape-_37">
+        <omgdc:Bounds height="55.0" width="85.0" x="740.0" y="285.0"/>
+        <bpmndi:BPMNLabel>
+          <omgdc:Bounds height="55.0" width="85.0" x="0.0" y="0.0"/>
+        </bpmndi:BPMNLabel>
+      </bpmndi:BPMNShape>
+      <bpmndi:BPMNShape bpmnElement="_38" id="Shape-_38">
+        <omgdc:Bounds height="55.0" width="85.0" x="895.0" y="190.0"/>
+        <bpmndi:BPMNLabel>
+          <omgdc:Bounds height="55.0" width="85.0" x="0.0" y="0.0"/>
+        </bpmndi:BPMNLabel>
+      </bpmndi:BPMNShape>
+      <bpmndi:BPMNShape bpmnElement="_39" id="Shape-_39">
+        <omgdc:Bounds height="55.0" width="85.0" x="1030.0" y="360.0"/>
+        <bpmndi:BPMNLabel>
+          <omgdc:Bounds height="55.0" width="85.0" x="0.0" y="0.0"/>
         </bpmndi:BPMNLabel>
       </bpmndi:BPMNShape>
       <bpmndi:BPMNEdge bpmnElement="_13" id="BPMNEdge__13" sourceElement="_5" targetElement="_9">
