@@ -25,16 +25,6 @@ public class MainController {
 
     @RequestMapping("")
     public String home(){
-        List<User> us = new ArrayList<User>();
-        User u = new User();
-        u.setUsername("MarK");
-        u.setUserrole(Role.EMPLOYEE);
-        us.add(u);
-        u = new User();
-        u.setUsername("Fawofolo");
-        us.add(u);
-        u.setUserrole(Role.EMPLOYER);
-        userService.saveUsers(us);
         return "index";
     }
 
