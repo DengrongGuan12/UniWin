@@ -77,6 +77,15 @@ public class MainController {
     @RequestMapping("repertorycontrolrecords")
     public String repertoryControlRecords() { return "repertory/repertory_control_records"; }
 
+    @RequestMapping("inrepertory")
+    public String inPertory() { return "repertory/repertory_in"; };
+
+    @RequestMapping("outrepertory")
+    public String outPertory() { return "repertory/repertory_out"; };
+
+    @RequestMapping("repertoryinfo")
+    public String pertoryInfo() { return "repertory/repertory_info"; };
+
     @RequestMapping("/json")
     @ResponseBody
     public RestResult json(){

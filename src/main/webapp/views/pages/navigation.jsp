@@ -21,6 +21,8 @@
         <ul class="submenu">
             <li id="nav-repertory-records"><a href="<%=request.getContextPath() %>/main/repertoryrecords">库存</a></li>
             <li id="nav-repertory-control-records"><a href="<%=request.getContextPath() %>/main/repertorycontrolrecords">库存调度</a></li>
+            <li id="nav-inRepertory"><a href="<%=request.getContextPath() %>/main/inrepertory">入库</a></li>
+            <li id="nav-outRepertory"><a href="<%=request.getContextPath() %>/main/outrepertory">出库</a></li>
         </ul>
     </li>
     <li id="nav-inquiry">

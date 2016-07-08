@@ -10,7 +10,7 @@
 <html lang="en">
 <head>
     <jsp:include page="../header.jsp"></jsp:include>
-    <link rel="stylesheet" type="text/css" href="<%=request.getContextPath() %>/views/css/custom/repertory-control-records.css" />
+    <link rel="stylesheet" type="text/css" href="<%=request.getContextPath() %>/views/css/custom/repertory/repertory-control-records.css" />
 </head>
 <body>
 <div class="app">
@@ -28,7 +28,7 @@
         <main>
             <div class="main-header">
                 <h1>库存管理
-                    <small>库存</small>
+                    <small>库存调度</small>
                 </h1>
             </div>
             <div class="main-content">
@@ -40,26 +40,20 @@
                                 <input type="text"/>
                                 <label>物料编号:</label>
                                 <input type="text"/>
+                            </div>
+                            <div class="bar">
+                                <label>负责人</label>
+                                <input type="text"/>
                                 <label>调度类型</label>
                                 <select>
                                     <option value ="type">Type</option>
                                 </select>
-                            </div>
-                            <div class="bar small">
-                                <label>数量区间:</label>
-                                <input type="text"/>
-                                -
-                                <input type="text"/>
                                 <label>时间期间:</label>
-                                <input  type="text" data-date-format="dd-mm-yyyy" id="datetimepicker-start">
+                                <input  type="text" data-date-format="dd-mm-yyyy" class="dateInput" id="datetimepicker-start">
                                 -
-                                <input  type="text" data-date-format="dd-mm-yyyy" id="datetimepicker-end">
+                                <input  type="text" data-date-format="dd-mm-yyyy" class="dateInput" id="datetimepicker-end">
                                 <button type="button" class="btn-query">查询</button>
                             </div>
-                        </div>
-                        <div class="repertory-control-records-operation">
-                            <button type="button" class="btn-add">新增</button>
-                            <button type="button" class="btn-modify">修改</button>
                         </div>
                     </div>
                     <div class="repertory-control-records-list">
@@ -72,6 +66,7 @@
                                     <th>物料名称</th>
                                     <th>调度类型</th>
                                     <th>仓储位置</th>
+                                    <th>负责人</th>
                                     <th>调度数量</th>
                                     <th>调度时间</th>
                                     <th>更多信息</th>
@@ -88,12 +83,14 @@
                                     <td>1</td>
                                     <td>1</td>
                                     <td>1</td>
+                                    <td>1</td>
                                     <td><a href="">更多信息</a></td>
                                 </tr>
                                 <tr>
                                     <td>
                                         <input type="radio">
                                     </td>
+                                    <td>1</td>
                                     <td>1</td>
                                     <td>1</td>
                                     <td>1</td>

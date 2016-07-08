@@ -89,8 +89,8 @@ td {
     padding-left: 20px;
     display: inline-block;
 }
-.main-repertory-control-records-query > .repertory-control-records-query-header > .query-info .bar input{
-    width: 123px;
+.main-repertory-control-records-query > .repertory-control-records-query-header > .query-info .bar .dateInput{
+    width: 80px;
     height: 30px;
     margin: 5px;
     border: 1px solid #ccc;
@@ -98,15 +98,6 @@ td {
 }
 .main-repertory-control-records-query > .repertory-control-records-query-header > .query-info .btn-query {
     margin-left: 40px;
-}
-.main-repertory-control-records-query > .repertory-control-records-query-header > .repertory-control-records-operation {
-    flex: 1 1 10%;
-}
-.main-repertory-control-records-query > .repertory-control-records-query-header > .repertory-control-records-operation button {
-    display: block;
-}
-.main-repertory-control-records-query > .repertory-control-records-query-header > .repertory-control-records-operation button:last-child {
-    margin-top: 10px;
 }
 .main-repertory-control-records-query > .repertory-control-records-list {
     flex: 1 1 720px;
