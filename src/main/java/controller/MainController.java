@@ -86,6 +86,9 @@ public class MainController {
     @RequestMapping("repertoryinfo")
     public String pertoryInfo() { return "repertory/repertory_info"; };
 
+    @RequestMapping("repertorycontrolrecordinfo")
+    public String repertorycontrolrecordinfo() { return "repertory/repertory_control_record_info"; };
+
     @RequestMapping("/json")
     @ResponseBody
     public RestResult json(){

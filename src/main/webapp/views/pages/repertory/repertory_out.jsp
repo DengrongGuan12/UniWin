@@ -10,19 +10,6 @@
 <html lang="en">
 <head>
     <jsp:include page="../header.jsp"></jsp:include>
-</head>
-<body><%--
-  Created by IntelliJ IDEA.
-  User: I330558
-  Date: 6/30/2016
-  Time: 1:16 PM
-  To change this template use File | Settings | File Templates.
---%>
-<%@ page contentType="text/html;charset=UTF-8" language="java" %>
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <jsp:include page="../header.jsp"></jsp:include>
     <link rel="stylesheet" href="<%=request.getContextPath() %>/views/css/custom/repertory/repertory-out.css" />
 </head>
 <body>
@@ -123,7 +110,7 @@
 
 <script>
     window.onload = function () {
-        highlightTab('nav-repertory','nav-inRepertory');
+        highlightTab('nav-repertory','nav-outRepertory');
     };
 </script>
 </body>
