@@ -67,7 +67,6 @@ public class ActiController {
             varMap.put("agree",false);
         }
         taskService.complete(tid,varMap);
-
         return "redirect:/act/employer";
     }
 
