@@ -4,6 +4,8 @@ import org.hibernate.annotations.GenericGenerator;
 
 import javax.persistence.*;
 import java.io.Serializable;
+import java.sql.Timestamp;
+import java.util.Date;
 
 /**
  * Created by DengrongGuan on 2016/7/4.
@@ -33,12 +35,22 @@ public class Material implements Serializable{
     private double unitprice;
     private String measurement;
     private MaterialType type = MaterialType.DEFAULT;
+    private Timestamp timestamp = new Timestamp(new Date().getTime());
     private String colorExplain;
     private double width;
     private double outAmount;
     private int supplierId;
     private String storagePos;
     private double inventoryAmount;
+
+    @Column(name = "time",nullable = false)
+    public Timestamp getTimestamp() {
+        return timestamp;
+    }
+
+    public void setTimestamp(Timestamp timestamp) {
+        this.timestamp = timestamp;
+    }
 
     @Column(name = "inventory_amount",nullable = false)
     public double getInventoryAmount() {
