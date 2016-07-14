@@ -1,7 +1,12 @@
 package controller;
 
+import org.activiti.engine.RepositoryService;
 import org.activiti.engine.RuntimeService;
 import org.activiti.engine.TaskService;
+import org.activiti.engine.impl.RepositoryServiceImpl;
+import org.activiti.engine.impl.persistence.entity.ProcessDefinitionEntity;
+import org.activiti.engine.impl.pvm.process.ActivityImpl;
+import org.activiti.engine.runtime.Execution;
 import org.activiti.engine.runtime.ProcessInstance;
 import org.activiti.engine.task.Task;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -27,6 +32,8 @@ public class ActiController {
     RuntimeService runtimeService;
     @Autowired
     TaskService taskService;
+    @Autowired
+    RepositoryService repositoryService;
 
     private final String processDefKey = "miniProcess";
 
@@ -35,6 +42,18 @@ public class ActiController {
         if(username.equals("employee")) {
             List<ProcessInstance> processInstanceList = runtimeService.createProcessInstanceQuery().list();
             model.addAttribute("processList", processInstanceList);
+            for(ProcessInstance processInstance:processInstanceList){
+                System.out.println(processInstance.getId()+":"+processInstance.getActivityId());
+                ProcessDefinitionEntity processDefinition1 = (ProcessDefinitionEntity) ((RepositoryServiceImpl) repositoryService)
+                        .getDeployedProcessDefinition(processInstance.getProcessDefinitionId());
+                List<ActivityImpl> activitiList = processDefinition1.getActivities();//获得当前任务的所有节点
+                for(ActivityImpl activity:activitiList){
+                    if(activity.getId().equals(processInstance.getActivityId())){
+                        System.out.println(activity.getProperty("name"));
+                    }
+                }
+//                Execution execution =  runtimeService.createExecutionQuery().activityId(processInstance.getActivityId()).singleResult();
+            }
             List<Task> taskList = taskService.createTaskQuery().taskName("employee").processDefinitionKey(processDefKey).list();
             model.addAttribute("taskList",taskList);
             return "act/employee";
