@@ -24,6 +24,27 @@ public class MaterialController {
     @RequestMapping(method = RequestMethod.POST)
     @ResponseBody
     public RestResult post(@ModelAttribute("material")Material material){
+        //添加
         return RestResult.CreateResult(1,material);
+    }
+
+    @RequestMapping(method = RequestMethod.PUT)
+    @ResponseBody
+    public RestResult put(){
+        //在服务器更新资源（客户端提供改变后的完整资源)
+        return RestResult.CreateResult(1,null);
+    }
+
+    @RequestMapping(method = RequestMethod.PATCH)
+    @ResponseBody
+    public RestResult patch(){
+        //在服务器更新资源（客户端提供改变的属性）
+        return RestResult.CreateResult(1,null);
+    }
+
+    @RequestMapping(method = RequestMethod.DELETE)
+    @ResponseBody
+    public RestResult delete(){
+        return RestResult.CreateResult(1,null);
     }
 }
