@@ -67,6 +67,13 @@ public class MainController {
     @RequestMapping("repertorycontrolrecords")
     public String repertoryControlRecords() { return "repertory/repertory_control_records"; }
 
+
+    @RequestMapping("designadd")
+    public String designAdd() { return "design/design_add"; }
+
+    @RequestMapping("designlist")
+    public String designList() { return "design/design_list"; }
+
     @RequestMapping("/json")
     @ResponseBody
     public RestResult json(){

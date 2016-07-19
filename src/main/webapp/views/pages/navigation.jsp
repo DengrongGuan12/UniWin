@@ -7,6 +7,7 @@
 --%>
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
 <ul id="accordion" class="accordion">
+
     <li id="nav-material">
         <div class="link"><i class="glyphicon glyphicon-th"></i>物料管理<i class="glyphicon glyphicon-chevron-down"></i></div>
         <ul class="submenu">
@@ -16,6 +17,7 @@
             <li id="nav-material-supplier"><a href="<%=request.getContextPath() %>/main/materialsupplier">供应商管理</a></li>
         </ul>
     </li>
+
     <li id="nav-repertory">
         <div class="link"><i class="glyphicon glyphicon-th"></i>库存管理<i class="glyphicon glyphicon-chevron-down"></i></div>
         <ul class="submenu">
@@ -23,80 +25,14 @@
             <li id="nav-repertory-control-records"><a href="<%=request.getContextPath() %>/main/repertorycontrolrecords">库存调度</a></li>
         </ul>
     </li>
-    <li id="nav-inquiry">
-        <div class="link"><i class="glyphicon glyphicon-th"></i>询价管理<i class="glyphicon glyphicon-chevron-down"></i></div>
-        <ul class="submenu">
-            <li id="nav-inquiry-manage"><a href="">询价单管理</a></li>
-            <li id="nav-inquiry-add"><a href="">新增询价单</a></li>
-        </ul>
-    </li>
-    <li>
-        <div class="link"><i class="glyphicon glyphicon-th"></i>款式管理<i class="glyphicon glyphicon-chevron-down"></i></div>
-        <ul class="submenu">
-            <li><a href="">款式新增</a></li>
-            <li><a href="">BOM物料管理</a></li>
-        </ul>
-    </li>
-    <li>
-        <div class="link"><i class="glyphicon glyphicon-th"></i>订单管理<i class="glyphicon glyphicon-chevron-down"></i></div>
-        <ul class="submenu">
-            <li><a href="">订单管理</a></li>
-            <li><a href="">新建订单</a></li>
-        </ul>
-    </li>
-    <li>
-        <div class="link"><i class="glyphicon glyphicon-th"></i>采购管理<i class="glyphicon glyphicon-chevron-down"></i></div>
-        <ul class="submenu">
-            <li><a href="">采购单管理</a></li>
-            <li><a href="">采购单审核</a></li>
-        </ul>
-    </li>
-    <li>
-        <div class="link"><i class="glyphicon glyphicon-th"></i>制版管理<i class="glyphicon glyphicon-chevron-down"></i></div>
-        <ul class="submenu">
-            <li><a href="">制版单管理</a></li>
-            <li><a href="">制版单修改</a></li>
-            <li><a href="">样衣管理</a></li>
-            <li><a href="">样衣入库</a></li>
-        </ul>
-    </li>
-    <li>
-        <div class="link"><i class="glyphicon glyphicon-th"></i>生产管理<i class="glyphicon glyphicon-chevron-down"></i></div>
-        <ul class="submenu">
-            <li><a href="">生产单管理</a></li>
-            <li><a href="">生产单审核</a></li>
-        </ul>
-    </li>
-    <li>
-        <div class="link"><i class="glyphicon glyphicon-th"></i>加工管理<i class="glyphicon glyphicon-chevron-down"></i></div>
-        <ul class="submenu">
-            <li><a href="">加工方管理</a></li>
-            <li><a href="">新增外发单</a></li>
-            <li><a href="">外发单管理</a></li>
-            <li><a href="">收货单管理</a></li>
-        </ul>
-    </li>
-    <li>
-        <div class="link"><i class="glyphicon glyphicon-th"></i>质检管理<i class="glyphicon glyphicon-chevron-down"></i></div>
-        <ul class="submenu">
-            <li><a href="">质检单管理</a></li>
-            <li><a href="">新增质检单</a></li>
-        </ul>
-    </li>
-    <li>
-        <div class="link"><i class="glyphicon glyphicon-th"></i>成衣管理<i class="glyphicon glyphicon-chevron-down"></i></div>
-        <ul class="submenu">
-            <li><a href="">成衣单管理</a></li>
-            <li><a href="">成衣入库</a></li>
-            <li><a href="">成衣查询</a></li>
-        </ul>
-    </li>
+
     <li id="nav-customer">
         <div class="link"><i class="glyphicon glyphicon-th"></i>客户管理<i class="glyphicon glyphicon-chevron-down"></i></div>
         <ul class="submenu">
             <li id="nav-customer-manage"><a href="<%=request.getContextPath() %>/main/customermanage">客户管理</a></li>
         </ul>
     </li>
+
     <li id="nav-system">
         <div class="link"><i class="glyphicon glyphicon-th"></i>系统管理<i class="glyphicon glyphicon-chevron-down"></i></div>
         <ul class="submenu">
@@ -106,4 +42,84 @@
             <li><a href="">角色管理</a></li>
         </ul>
     </li>
+
+    <li id="nav-design">
+        <div class="link"><i class="glyphicon glyphicon-th"></i>款式管理<i class="glyphicon glyphicon-chevron-down"></i></div>
+        <ul class="submenu">
+            <li id="nav-design-add"><a href="<%=request.getContextPath() %>/main/designadd">款式新增</a></li>
+            <li id="nav-design-list"><a href="<%=request.getContextPath() %>/main/designlist">款式列表</a></li>
+        </ul>
+    </li>
+
+    <li id="nav-inquiry">
+        <div class="link"><i class="glyphicon glyphicon-th"></i>询价管理<i class="glyphicon glyphicon-chevron-down"></i></div>
+        <ul class="submenu">
+            <li id="nav-inquiry-manage"><a href="">询价单管理</a></li>
+            <li id="nav-inquiry-add"><a href="">新增询价单</a></li>
+        </ul>
+    </li>
+
+    <li>
+        <div class="link"><i class="glyphicon glyphicon-th"></i>生产管理<i class="glyphicon glyphicon-chevron-down"></i></div>
+        <ul class="submenu">
+            <li><a href="">生产单管理</a></li>
+            <li><a href="">生产单审核</a></li>
+        </ul>
+    </li>
+
+    <li>
+        <div class="link"><i class="glyphicon glyphicon-th"></i>订单管理<i class="glyphicon glyphicon-chevron-down"></i></div>
+        <ul class="submenu">
+            <li><a href="">订单管理</a></li>
+            <li><a href="">新建订单</a></li>
+        </ul>
+    </li>
+
+    <li>
+        <div class="link"><i class="glyphicon glyphicon-th"></i>采购管理<i class="glyphicon glyphicon-chevron-down"></i></div>
+        <ul class="submenu">
+            <li><a href="">采购单管理</a></li>
+            <li><a href="">采购单审核</a></li>
+        </ul>
+    </li>
+
+    <li>
+        <div class="link"><i class="glyphicon glyphicon-th"></i>制版管理<i class="glyphicon glyphicon-chevron-down"></i></div>
+        <ul class="submenu">
+            <li><a href="">制版单管理</a></li>
+            <li><a href="">制版单修改</a></li>
+            <li><a href="">样衣管理</a></li>
+            <li><a href="">样衣入库</a></li>
+        </ul>
+    </li>
+
+
+
+    <li>
+        <div class="link"><i class="glyphicon glyphicon-th"></i>加工管理<i class="glyphicon glyphicon-chevron-down"></i></div>
+        <ul class="submenu">
+            <li><a href="">加工方管理</a></li>
+            <li><a href="">新增外发单</a></li>
+            <li><a href="">外发单管理</a></li>
+            <li><a href="">收货单管理</a></li>
+        </ul>
+    </li>
+
+    <li>
+        <div class="link"><i class="glyphicon glyphicon-th"></i>质检管理<i class="glyphicon glyphicon-chevron-down"></i></div>
+        <ul class="submenu">
+            <li><a href="">质检单管理</a></li>
+            <li><a href="">新增质检单</a></li>
+        </ul>
+    </li>
+
+    <li>
+        <div class="link"><i class="glyphicon glyphicon-th"></i>成衣管理<i class="glyphicon glyphicon-chevron-down"></i></div>
+        <ul class="submenu">
+            <li><a href="">成衣单管理</a></li>
+            <li><a href="">成衣入库</a></li>
+            <li><a href="">成衣查询</a></li>
+        </ul>
+    </li>
+
 </ul>
