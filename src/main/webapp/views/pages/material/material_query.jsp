@@ -50,7 +50,7 @@
                         </div>
                     </div>
                     <div class="material-list">
-                        <div class="material-table table-responsive">
+                        <div class="table-wrapper table-responsive">
                             <table class="table table-striped table-hover">
                                 <thead>
                                     <tr>
