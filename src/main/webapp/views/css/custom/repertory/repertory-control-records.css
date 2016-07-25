@@ -1,0 +1,91 @@
+@import "common.css";
+/*
+    repertory-control-records_query css
+*/
+.main-repertory-control-records-query {
+    height: 800px;
+    display: flex;
+    flex-direction: column;
+}
+.main-repertory-control-records-query > .repertory-control-records-query-header {
+    padding-top: 20px;
+    padding-bottom: 20px;
+    flex: 1 1 120px;
+    display: flex;
+    flex-direction: row;
+}
+.main-repertory-control-records-query > .repertory-control-records-query-header > .query-info {
+    flex: 1 1 90%;
+    display: flex;
+    flex-direction: column;
+}
+.main-repertory-control-records-query > .repertory-control-records-query-header > .query-info .bar {
+    flex: 1 1 40px;
+    padding-left: 20px;
+    display: inline-block;
+}
+.main-repertory-control-records-query > .repertory-control-records-query-header > .query-info .bar .dateInput{
+    width: 80px;
+    height: 30px;
+    margin: 5px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+}
+.main-repertory-control-records-query > .repertory-control-records-query-header > .query-info .btn-query {
+    margin-left: 40px;
+}
+.main-repertory-control-records-query > .repertory-control-records-list {
+    flex: 1 1 720px;
+    padding: 10px 20px 10px 20px;
+}
+.main-repertory-control-records-query > .repertory-control-records-list > .repertory-control-records-table {
+    border-top: 2px solid #3c8dbc;
+    background: #ffffff;
+    margin-bottom: 20px;
+    -webkit-border-radius: 3px;
+    -moz-border-radius: 3px;
+    border-radius: 3px;
+    width: 100%;
+    box-shadow: 0px 1px 3px rgba(0, 0, 0, 0.1);
+}
+.main-repertory-control-records-query > .repertory-control-records-list > .repertory-control-records-table > nav {
+    float: right;
+    margin-right: 20px;
+}
+
+/*
+repertory-control-record-info  csss
+*/
+
+.main-repertory-control-record-add {
+    height: 600px;
+    display: flex;
+    flex-direction: column;
+}
+.main-repertory-control-record-add .input-lg {
+    width: 436px;
+    height: 30px;
+    margin: 5px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+}
+.main-repertory-control-record-add .bar {
+    flex: 1 1 40px;
+    padding-left: 20px;
+    display: inline-block;
+}
+.main-repertory-control-record-add .table-header {
+    text-decoration: none;
+    line-height: 50px;
+}
+.main-repertory-control-record-add > .material-info {
+    flex: 1 1 350px;
+    display: flex;
+    flex-direction: column;
+}
+.main-repertory-control-record-add > .material-inventory {
+    flex: 1 1 100px;
+    display: flex;
+    flex-direction: column;
+}
+

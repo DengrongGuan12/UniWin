@@ -1,0 +1,44 @@
+@import "common.css";
+/*
+    repertoru-out_add css
+*/
+.main-repertoryOut-add {
+    height: 600px;
+    display: flex;
+    flex-direction: column;
+}
+.main-repertoryOut-add .input-lg {
+    width: 436px;
+    height: 30px;
+    margin: 5px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+}
+.main-repertoryOut-add .bar {
+    flex: 1 1 40px;
+    padding-left: 20px;
+    display: inline-block;
+}
+.main-repertoryOut-add .table-header {
+    text-decoration: none;
+    line-height: 50px;
+}
+.main-repertoryOut-add > .material-info {
+    flex: 1 1 350px;
+    display: flex;
+    flex-direction: column;
+}
+.main-repertoryOut-add > .material-inventory {
+    flex: 1 1 150px;
+    display: flex;
+    flex-direction: column;
+}
+.main-repertoryOut-add > .repertoryOut-add-submit {
+    flex: 1 1 100px;
+}
+.main-repertoryOut-add > .repertoryOut-add-submit > .bar {
+    padding-left: 40px;
+}
+.main-repertoryOut-add > .repertoryOut-add-submit > .bar > button {
+    margin-right: 20px;
+}

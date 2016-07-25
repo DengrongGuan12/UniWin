@@ -1,0 +1,53 @@
+#%RAML 0.8
+---
+title: uniwin API
+baseUri: http://localhost:8080/uniwin
+version: v1
+
+#---method---
+/v1:
+  /materials:
+    description: 物料相关接口
+    get:
+      description:
+    post:
+      queryParameters:
+        password:
+          displayName: password
+          type: string
+          example: 12345
+          required: true
+          description: 使用token加密
+        userName:
+          type: string
+          example: abcd
+          required: true
+          description: 必须由字母数字组成
+        sex:
+          type: string
+          example: 0(男),1(女)
+          required: true
+        birthday:
+          type: string
+          example: 2015-11-09,注意格式
+          required: true
+        schoolId:
+          type: number
+          example: 1
+          required: true
+        departmentId:
+          type: number
+          example: 1
+          required: true
+      responses:
+        200:
+          body:
+            application/json:
+              example: |
+                {
+                  "data":{
+                    "result":0(表示失败,用户名重复),非0(表示userId)
+                  },
+                  "success": true,
+                  "status": 200
+                }
