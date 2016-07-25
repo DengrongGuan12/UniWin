@@ -1,90 +1,6 @@
 label{
-    margin: 8px;
-    width: 100px;
-    font-size: 12px;
-    font-weight: 400;
-}
-
-input{
-    width:150px;
-    height:30px;
-    margin: 5px;
-    border: 1px solid #ccc;
-    border-radius: 4px;
-}
-
-input[type="radio"]{
-    width: 15px;
-    height: 15px;
-}
-
-select{
-    width:150px;
-    height:30px;
-    margin: 5px;
-    border: 1px solid #ccc;
-    border-radius: 4px;
-}
-
-button{
-    display: inline-block;
-    padding: 6px 12px;
-    margin-bottom: 0;
-    font-size: 14px;
-    font-weight: 400;
-    line-height: 1.42857143;
-    text-align: center;
-    white-space: nowrap;
-    vertical-align: middle;
-    touch-action: manipulation;
-    cursor: pointer;
-    -webkit-user-select: none;
-    background-image: none;
-    border: 1px solid transparent;
-    border-radius: 4px;
-}
-
-th{
-    text-align: center;
     font-size: 16px;
-    font-weight: 900;
 }
-
-td{
-    text-align: center;
-    font-weight: 450;
-}
-
-.btn-save{
-    color:#fff;
-    background-color: #337ab7;
-    border-color: #204d74;
-}
-
-.btn-query{
-    color:#fff;
-    background-color: #337ab7;
-    border-color: #204d74;
-}
-
-.btn-add{
-    color:#fff;
-    background-color: #f0ad4e;
-    border-color: #eea236;
-}
-
-.btn-modify{
-    color:#fff;
-    background-color: #31b0d5;
-    border-color: #269abc;
-}
-
-.btn-delete{
-    color:#fff;
-    background-color: #d9534f;
-    border-color: #d43f3a;
-}
-
 
 
 /*
@@ -104,31 +20,224 @@ td{
     }
 
     .bar{
-        flex:1 1 40px;
+        flex:0 1 60px;
         padding-left: 20px;
+        padding-top: 8px;
+        padding-bottom: 8px;
         display: inline-block;
     }
 
-    .table-header{
-        text-decoration:none;
-        line-height: 50px;
+    .bar-text-field{
+        flex:0 1 240px;
+        padding-left: 20px;
+        padding-top: 8px;
+        padding-bottom: 8px;
+        display: flex;
+
+
+        > label{
+            flex:0 0 50px;
+        }
+
+        > .text-area{
+            padding-top: 8px;
+            padding-left: 60px;
+            flex:0 0 400px;
+            margin-top: 1px;
+            > textarea{
+                resize:none;
+            }
+        }
+
     }
 
     > .design-info{
         flex:1 1 350px;
         display: flex;
         flex-direction: column;
-    }
 
-    > .design-add-submit{
-        flex:1 1 100px;
 
-        >.bar{
-            padding-left: 40px;
+        .input-file {
+            position: relative;
+            left: 4px;
+            top: 8px;
+            display: inline-block;
+            background: #D0EEFF;
+            border: 1px solid #99D3F5;
+            border-radius: 4px;
+            padding: 4px 16px;
+            overflow: hidden;
+            color: #1E88C7;
+            text-decoration: none;
+            text-indent: 0;
+            line-height: 20px;
 
-            > button{
-                margin-right: 20px;
+
+            &:hover {
+                background: #AADFFD;
+                border-color: #78C3F3;
+                color: #004974;
+                text-decoration: none;
+            }
+
+            > input {
+                position: absolute;
+                font-size: 100px;
+                right: 0;
+                top: 0;
+                opacity: 0;
+            }
+        }
+
+        .showFileName{
+            display: inline;
+            padding-left: 20px;
+        }
+
+        > .design-add-submit{
+            flex:1 1 100px;
+            padding-top: 20px;
+
+            > .submit-bar{
+                padding-left: 40px;
+
+                > button{
+                    margin-right: 20px;
+                }
             }
         }
     }
+}
+
+
+/*
+    design_list css
+*/
+.main-design-list{
+    height:800px;
+    display: flex;
+    flex-direction: column;
+
+    > .design-query-header{
+        padding-top: 20px;
+        padding-bottom: 20px;
+        flex:1 1 120px;
+        display: flex;
+        flex-direction: row;
+
+        > .query-info{
+            flex:1 1 90%;
+            display: flex;
+            flex-direction: column;
+
+            .bar{
+                flex:1 1 40px;
+                padding-left: 20px;
+                display: inline-block;
+            }
+
+            .btn-query{
+                margin-left: 40px;
+            }
+        }
+
+        > .design-operation{
+            flex:1 1 10%;
+
+            button{
+                display: block;
+            }
+            button:last-child{
+                margin-top: 10px;
+            }
+        }
+
+    }
+
+    > .design-list{
+        flex:1 1 720px;
+        padding: 10px 20px 10px 20px;
+    }
+
+}
+
+
+/*
+    design_detail css
+*/
+.main-design-detail{
+    height:800px;
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+
+    .input-lg{
+        width:436px;
+        height:30px;
+        margin: 5px;
+        border: 1px solid #ccc;
+        border-radius: 4px;
+    }
+
+    .bar{
+        flex:0 1 60px;
+        padding-left: 20px;
+        padding-top: 8px;
+        padding-bottom: 8px;
+        display: inline-block;
+    }
+
+    > .design-info{
+        flex:1 1 600px;
+        display: flex;
+        flex-direction: column;
+
+        .bar-text-field{
+            flex:0 1 240px;
+            padding-left: 20px;
+            padding-top: 8px;
+            padding-bottom: 8px;
+            display: flex;
+
+
+            > label{
+                flex:0 0 50px;
+            }
+
+            > .text-area{
+                padding-top: 8px;
+                padding-left: 60px;
+                flex:0 0 400px;
+                margin-top: 1px;
+                > textarea{
+                    resize:none;
+                }
+            }
+        }
+
+        > .design-modify-submit{
+            flex:1 1 100px;
+            padding-top: 20px;
+
+            > .submit-bar{
+                padding-left: 100px;
+
+                > button{
+                    margin-right: 20px;
+                }
+            }
+        }
+    }
+
+    > .design-img{
+        flex:1 0 200px;
+        margin-top: 65px;
+        margin-left: 50px;
+    }
+
+    > .design-query-list{
+        flex:1 1 720px;
+        padding: 10px 20px 10px 20px;
+    }
+
 }
