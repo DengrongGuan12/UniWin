@@ -10,7 +10,7 @@
 <html lang="en">
 <head>
     <jsp:include page="../header.jsp"></jsp:include>
-    <link rel="stylesheet" type="text/css" href="<%=request.getContextPath() %>/views/css/custom/repertory-records.css" />
+    <link rel="stylesheet" type="text/css" href="<%=request.getContextPath() %>/views/css/custom/repertory/repertory-records.css" />
 </head>
 <body>
 <div class="app">
@@ -56,8 +56,8 @@
                             </div>
                         </div>
                         <div class="repertory-records-operation">
-                            <button type="button" class="btn-add">新增</button>
-                            <button type="button" class="btn-modify">修改</button>
+                            <button type="button" class="btn-add">出库</button>
+                            <button type="button" class="btn-modify">入库</button>
                         </div>
                     </div>
                     <div class="repertory-records-list">
@@ -88,7 +88,7 @@
                                     <td>1</td>
                                     <td>1</td>
                                     <td>1</td>
-                                    <td><a href="">更多信息</a></td>
+                                    <td><a href="<%=request.getContextPath() %>/main/repertoryinfo">更多信息</a></td>
                                 </tr>
                                 <tr>
                                     <td>
@@ -101,7 +101,7 @@
                                     <td>1</td>
                                     <td>1</td>
                                     <td>1</td>
-                                    <td><a href="">更多信息</a></td>
+                                    <td><a href="<%=request.getContextPath() %>/main/repertoryinfo">更多信息</a></td>
                                 </tr>
                                 </tbody>
                             </table>
