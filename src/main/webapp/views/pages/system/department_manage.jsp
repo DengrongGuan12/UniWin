@@ -38,7 +38,7 @@
                         </div>
                     </div>
                     <div class="department-list">
-                        <div class="department-table table-responsive">
+                        <div class="table-wrapper table-responsive">
                             <table class="table table-striped table-hover">
                                 <thead>
                                     <tr>

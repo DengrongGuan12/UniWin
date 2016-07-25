@@ -43,7 +43,7 @@
                         </div>
                     </div>
                     <div class="user-list">
-                        <div class="user-table table-responsive">
+                        <div class="table-wrapper table-responsive">
                             <table class="table table-striped table-hover">
                                 <thead>
                                     <tr>
