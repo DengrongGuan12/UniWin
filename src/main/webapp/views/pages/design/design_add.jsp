@@ -4,6 +4,7 @@
 <head>
     <jsp:include page="../header.jsp"></jsp:include>
     <link rel="stylesheet" href="<%=request.getContextPath() %>/views/css/custom/design.css" />
+
 </head>
 <body>
 <div class="app">
