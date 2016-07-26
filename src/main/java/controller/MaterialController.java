@@ -30,9 +30,9 @@ public class MaterialController {
 
     @RequestMapping(method = RequestMethod.PUT)
     @ResponseBody
-    public RestResult put(){
+    public RestResult put(String a, String b){
         //在服务器更新资源（客户端提供改变后的完整资源)
-        return RestResult.CreateResult(1,null);
+        return RestResult.CreateResult(1,a+";"+b);
     }
 
     @RequestMapping(method = RequestMethod.PATCH)
