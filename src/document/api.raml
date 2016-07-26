@@ -6,10 +6,70 @@ version: v1
 
 #---method---
 /v1:
+  /styles:
+    description: 款式相关接口
+    get:
+      description: 获取款式列表
+      queryParameters:
+        page:
+          displayName: page
+          type: integer
+          example: 1
+          required: true
+          description: 页数从0开始
+        num:
+          type: integer
+          example: 10
+          required: true
+          description: 每页多少项
+        operation:
+          type: string
+          example: SEARCH/NORMAL
+          required: true
+        key:
+          type: string
+          example: 201674
+          required: false
+          description: 如果operation是SEARCH,该值就是要搜索的关键词
+        field:
+          type: string
+          example: NUMBER|NAME
+          description: 要搜索的域,域之间用|隔开
+          required: false
+      responses:
+        200:
+          body:
+            application/json:
+              example: |
+                {
+                  "result":0失败1成功,
+                  "data":[{
+                  "number":款号,
+                  "imgUrl": 图片地址,
+                  "description": 描述,
+                  "pass":true或false
+                  },{},...],
+                  "error":{
+                    "code":错误码,"message":错误信息
+                  }
+                }
+    post:
+      description: 新建款式
+      queryParameters:
+        number:
+          type: string
+          example: 20160606
+          required: true
+          description: 款号
+        imgUrl:
+          type: string
+          example: http://asdf.com/
+          required: true
+          description: 图片地址，先上传到七牛云然后获取地址
   /materials:
     description: 物料相关接口
     get:
-      description:
+      description: 获取物料信息
     post:
       queryParameters:
         password:
