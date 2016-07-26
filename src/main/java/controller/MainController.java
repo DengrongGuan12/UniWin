@@ -74,6 +74,9 @@ public class MainController {
     @RequestMapping("designlist")
     public String designList() { return "design/design_list"; }
 
+    @RequestMapping("designdetail")
+    public String designDetail() { return "design/design_detail"; }
+
     @RequestMapping("/json")
     @ResponseBody
     public RestResult json(){
