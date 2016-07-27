@@ -22,17 +22,30 @@ public class StyleController {
     @RequestMapping(method = RequestMethod.POST)
     @ResponseBody
     public RestResult post(@ModelAttribute("style")Style style){
-        Error error = styleService.addStyle(style);
-        if(error == null){
-            return RestResult.CreateResult(1,null);
-        }else{
-            return RestResult.CreateResult(0,error);
-        }
+        return styleService.addStyle(style);
     }
 
     @RequestMapping(method = RequestMethod.GET)
     @ResponseBody
     public RestResult get(Integer page,Integer num,String operation,String key,String field){
         return styleService.searchStyles(num);
+    }
+
+    @RequestMapping(method = RequestMethod.PUT)
+    @ResponseBody
+    public RestResult put(@ModelAttribute("style")Style style){
+        return styleService.updateStyle(style);
+    }
+
+    @RequestMapping(method = RequestMethod.DELETE)
+    @ResponseBody
+    public RestResult delete(String code){
+        return styleService.deleteStyle(code);
+    }
+
+    @RequestMapping(value = "/detail",method = RequestMethod.GET)
+    @ResponseBody
+    public RestResult detail(String code){
+        return styleService.getDetail(code);
     }
 }

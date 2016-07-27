@@ -16,8 +16,8 @@ import java.util.List;
 @Service
 public class StyleServiceImpl implements StyleService {
     @Override
-    public Error addStyle(Style style) {
-        return null;
+    public RestResult addStyle(Style style) {
+        return RestResult.CreateResult(1,null);
     }
 
     @Override
@@ -36,5 +36,29 @@ public class StyleServiceImpl implements StyleService {
             list.add(styleItem);
         }
         return RestResult.CreateResult(1,list);
+    }
+
+    @Override
+    public RestResult updateStyle(Style style) {
+        if(style.getCode() == null){
+            return RestResult.CreateResult(0,new Error(Error.BAD_PARAM,"款号不能为空"));
+        }
+        return RestResult.CreateResult(1,null);
+    }
+
+    @Override
+    public RestResult deleteStyle(String code) {
+        if(code == null){
+            return RestResult.CreateResult(0,new Error(Error.BAD_PARAM,"款号不能为空"));
+        }
+        return RestResult.CreateResult(1,null);
+    }
+
+    @Override
+    public RestResult getDetail(String code) {
+        if(code == null){
+            return RestResult.CreateResult(0,new Error(Error.BAD_PARAM,"款号不能为空"));
+        }
+        return RestResult.CreateResult(1,"尚未实现");
     }
 }
