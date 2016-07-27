@@ -43,12 +43,15 @@ version: v1
               example: |
                 {
                   "result":0失败1成功,
-                  "data":[{
-                  "code":款号,
-                  "imgUrl": 图片地址,
-                  "description": 描述,
-                  "pass":true或false
-                  },{},...],
+                  "data":{
+                      "count":100,
+                      "list":[{
+                          "code":款号,
+                          "imgUrl": 图片地址,
+                          "description": 描述,
+                          "pass":true或false
+                          },{},...]
+                  },
                   "error":{
                     "code":错误码,"message":错误信息
                   }
@@ -137,7 +140,7 @@ version: v1
       description: 款式详情
       get:
           queryParameters:
-            number:
+            code:
               type: string
               example: 20160606
               required: true
@@ -150,7 +153,7 @@ version: v1
                     {
                       "result":0失败1成功,
                       "data":{
-                      "number":款号,
+                      "code":款号,
                       "imgUrl": 图片地址,
                       "description": 描述,
                       "pass":true或false,
@@ -169,6 +172,7 @@ version: v1
     description: 物料相关接口
     get:
       description: 获取物料信息
+
     post:
       queryParameters:
         password:

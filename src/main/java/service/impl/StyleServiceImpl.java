@@ -6,6 +6,7 @@ import service.StyleService;
 import vo.Error;
 import vo.RestResult;
 import vo.StyleItem;
+import vo.Styles;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -26,6 +27,7 @@ public class StyleServiceImpl implements StyleService {
             return RestResult.CreateResult(0,new Error(Error.BAD_PARAM,"每页数量不能为空"));
         }
         List<StyleItem> list = new ArrayList<>();
+        Styles styles = new Styles();
         for(int i = 0;i<num;i++){
             StyleItem styleItem = new StyleItem();
             styleItem.setId(i);
@@ -35,7 +37,9 @@ public class StyleServiceImpl implements StyleService {
             styleItem.setImgUrl("http://photo.enterdesk.com/2011-2-16/enterdesk.com-1AA0C93EFFA51E6D7EFE1AE7B671951F.jpg");
             list.add(styleItem);
         }
-        return RestResult.CreateResult(1,list);
+        styles.setCount(100);
+        styles.setList(list);
+        return RestResult.CreateResult(1,styles);
     }
 
     @Override
