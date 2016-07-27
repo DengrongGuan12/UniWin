@@ -40,7 +40,7 @@
                     </div>
                     <div class="design-list">
                         <div class="table-wrapper table-responsive">
-                            <table class="table table-striped table-hover">
+                            <table id="design-table" class="table table-striped table-hover">
                                 <thead>
                                     <tr>
                                         <th></th>
@@ -90,5 +90,8 @@
         </main>
     </div>
 </div>
+
+<script src="<%=request.getContextPath() %>/views/js/custom/design/design_list.js" charset="utf-8"></script>
+
 </body>
 </html>

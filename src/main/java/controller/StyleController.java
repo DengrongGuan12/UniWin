@@ -19,6 +19,17 @@ import vo.RestResult;
 public class StyleController {
     @Autowired
     private StyleService styleService;
+
+    @RequestMapping("designadd")
+    public String designAdd() { return "design/design_add"; }
+
+    @RequestMapping("designlist")
+    public String designList() { return "design/design_list"; }
+
+    @RequestMapping("designdetail")
+    public String designDetail() { return "design/design_detail"; }
+
+
     @RequestMapping(method = RequestMethod.POST)
     @ResponseBody
     public RestResult post(@ModelAttribute("style")Style style){

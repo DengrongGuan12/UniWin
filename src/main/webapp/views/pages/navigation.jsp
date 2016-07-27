@@ -48,8 +48,8 @@
     <li id="nav-design">
         <div class="link"><i class="glyphicon glyphicon-th"></i>款式管理<i class="glyphicon glyphicon-chevron-down"></i></div>
         <ul class="submenu">
-            <li id="nav-design-add"><a href="<%=request.getContextPath() %>/main/designadd">款式新增</a></li>
-            <li id="nav-design-list"><a href="<%=request.getContextPath() %>/main/designlist">款式列表</a></li>
+            <li id="nav-design-add"><a href="<%=request.getContextPath() %>/v1/styles/designadd">款式新增</a></li>
+            <li id="nav-design-list"><a href="<%=request.getContextPath() %>/v1/styles/designlist">款式列表</a></li>
         </ul>
     </li>
 
