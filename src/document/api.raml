@@ -33,7 +33,7 @@ version: v1
           description: 如果operation是SEARCH,该值就是要搜索的关键词
         field:
           type: string
-          example: NUMBER|NAME
+          example: CODE|NAME
           description: 要搜索的域,域之间用|隔开
           required: false
       responses:
@@ -44,7 +44,7 @@ version: v1
                 {
                   "result":0失败1成功,
                   "data":[{
-                  "number":款号,
+                  "code":款号,
                   "imgUrl": 图片地址,
                   "description": 描述,
                   "pass":true或false
@@ -56,6 +56,36 @@ version: v1
     post:
       description: 新建款式
       queryParameters:
+        code:
+          type: string
+          example: 20160606
+          required: true
+          description: 款号
+        imgUrl:
+          type: string
+          example: http://asdf.com/
+          required: true
+          description: 图片地址，先上传到七牛云然后获取地址
+        description:
+          type: string
+          example: asdfasdf
+          required: true
+          description: 描述
+      responses:
+        200:
+          body:
+            application/json:
+              example: |
+                {
+                  "result":0失败1成功,
+                  "data":null,
+                  "error":{
+                    "code":错误码,"message":错误信息
+                  }
+                }
+    put:
+      description: 修改款式，提供所有修改过和未修改的信息
+      queryParameters:
         number:
           type: string
           example: 20160606
@@ -66,6 +96,75 @@ version: v1
           example: http://asdf.com/
           required: true
           description: 图片地址，先上传到七牛云然后获取地址
+        description:
+          type: string
+          example: asdfasdf
+          required: true
+          description: 描述
+      responses:
+        200:
+          body:
+            application/json:
+              example: |
+                {
+                  "result":0失败1成功,
+                  "data":null,
+                  "error":{
+                    "code":错误码,"message":错误信息
+                  }
+                }
+    delete:
+      description: 删除款式
+      queryParameters:
+        number:
+          type: string
+          example: 20160606
+          required: true
+          description: 款号
+      responses:
+        200:
+          body:
+            application/json:
+              example: |
+                {
+                  "result":0失败1成功,
+                  "data":null,
+                  "error":{
+                    "code":错误码,"message":错误信息
+                  }
+                }
+    /detail:
+      description: 款式详情
+      get:
+          queryParameters:
+            number:
+              type: string
+              example: 20160606
+              required: true
+              description: 款号
+          responses:
+            200:
+              body:
+                application/json:
+                  example: |
+                    {
+                      "result":0失败1成功,
+                      "data":{
+                      "number":款号,
+                      "imgUrl": 图片地址,
+                      "description": 描述,
+                      "pass":true或false,
+                      "orderList":[
+                      {
+                      "id":10,
+                      "state":状态描述
+                      },{},...
+                      ]
+                      },
+                      "error":{
+                        "code":错误码,"message":错误信息
+                      }
+                    }
   /materials:
     description: 物料相关接口
     get:
