@@ -1,7 +1,5 @@
 package controller;
 
-import model.Role;
-import model.User;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.RequestMapping;
@@ -13,7 +11,6 @@ import service.UserService;
 import vo.Error;
 import vo.RestResult;
 import vo.UrlInfo;
-
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import java.io.*;
@@ -75,6 +72,23 @@ public class MainController {
     @RequestMapping("repertorycontrolrecords")
     public String repertoryControlRecords() { return "repertory/repertory_control_records"; }
 
+    @RequestMapping("repertoryin")
+    public String repertoryIn() { return "repertory/repertory_in"; };
+
+    @RequestMapping("repertoryout")
+    public String repertoryOut() { return "repertory/repertory_out"; };
+
+    @RequestMapping("repertorycontrolrecordinfo")
+    public String repertoryControlRecordInfo() { return "repertory/repertory_control_record_info"; };
+
+    @RequestMapping("repertoryinfo")
+    public String repertoryInfo() { return "repertory/repertory_info";};
+
+    @RequestMapping("inquirymodify")
+    public String inquiryModify() { return "inquiry/inquiry-modify"; }
+
+    @RequestMapping("inquirymanage")
+    public String inquiryManage() { return "inquiry/inquiry-manage"; }
 
 
     @RequestMapping("/json")

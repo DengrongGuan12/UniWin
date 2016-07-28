@@ -66,12 +66,12 @@ inherint from cengshuo
     text-decoration: none;
     line-height: 50px;
 }
-.tab-panel > .material-info {
+.tab-panel > .repertory-info {
     flex: 1 1 350px;
     display: flex;
     flex-direction: column;
 }
-.tab-panel > .material-inventory {
+.tab-panel > .repertory-inventory {
     flex: 1 1 150px;
     display: flex;
     flex-direction: column;
