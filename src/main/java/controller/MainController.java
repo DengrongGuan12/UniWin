@@ -1,18 +1,11 @@
 package controller;
 
-import model.Role;
-import model.User;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.ResponseBody;
 import service.UserService;
 import vo.RestResult;
-
-import java.util.ArrayList;
-import java.util.HashMap;
-import java.util.List;
-import java.util.Map;
 
 /**
  * Created by I322233 on 6/23/2016.
@@ -67,6 +60,23 @@ public class MainController {
     @RequestMapping("repertorycontrolrecords")
     public String repertoryControlRecords() { return "repertory/repertory_control_records"; }
 
+    @RequestMapping("repertoryin")
+    public String repertoryIn() { return "repertory/repertory_in"; };
+
+    @RequestMapping("repertoryout")
+    public String repertoryOut() { return "repertory/repertory_out"; };
+
+    @RequestMapping("repertorycontrolrecordinfo")
+    public String repertoryControlRecordInfo() { return "repertory/repertory_control_record_info"; };
+
+    @RequestMapping("repertoryinfo")
+    public String repertoryInfo() { return "repertory/repertory_info";};
+
+    @RequestMapping("inquirymodify")
+    public String inquiryModify() { return "inquiry/inquiry-modify"; }
+
+    @RequestMapping("inquirymanage")
+    public String inquiryManage() { return "inquiry/inquiry-manage"; }
 
     @RequestMapping("designadd")
     public String designAdd() { return "design/design_add"; }
