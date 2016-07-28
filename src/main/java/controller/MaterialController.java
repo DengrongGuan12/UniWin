@@ -17,7 +17,7 @@ public class MaterialController {
 
     @RequestMapping(method = RequestMethod.GET)
     @ResponseBody
-    public RestResult get(Integer page, Integer per_page){
+    public RestResult get(Integer page, Integer num){
         return RestResult.CreateResult(1,page);
     }
 

@@ -2,12 +2,14 @@ package model;
 
 import javax.persistence.Column;
 import javax.persistence.Entity;
+import javax.persistence.Id;
+import java.io.Serializable;
 
 /**
  * Created by DengrongGuan on 2016/7/27.
  */
 @Entity(name = "style_processes")
-public class StyleProcesses {
+public class StyleProcesses implements Serializable{
     private int styleId;
     private String processId;
 
@@ -19,6 +21,7 @@ public class StyleProcesses {
         this.styleId = styleId;
     }
 
+    @Id
     @Column(name = "process_id",nullable = false)
     public String getProcessId() {
         return processId;
