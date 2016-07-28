@@ -10,4 +10,6 @@ import java.util.List;
 public interface UserService {
     public void saveUsers(List<User> us);
     public List<User> getAllUsernames();
+    public String addFile(String storName);
+    public String getFilePathById(String id);
 }

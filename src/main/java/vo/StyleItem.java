@@ -6,7 +6,7 @@ import model.Style;
  * Created by DengrongGuan on 2016/7/27.
  */
 public class StyleItem extends Style{
-    private boolean pass;
+    protected boolean pass;
 
     public boolean isPass() {
         return pass;
