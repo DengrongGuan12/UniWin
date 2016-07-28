@@ -1,11 +1,14 @@
 package service.impl;
 
+import dao.FileDao;
 import dao.UserDao;
+import model.FilePath;
 import model.User;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 import service.UserService;
+import util.MD5Util;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -20,6 +23,8 @@ public class UserServiceImpl implements UserService {
 
     @Autowired
     private UserDao userDao;
+    @Autowired
+    private FileDao fileDao;
 
     public void saveUsers(List<User> us) {
         for (User u : us) {
@@ -29,6 +34,25 @@ public class UserServiceImpl implements UserService {
 
     public List<User> getAllUsernames() {
         return userDao.findAll();
+    }
+
+    @Override
+    public String addFile(String storName) {
+        String uniqId = MD5Util.MD5(storName);
+        FilePath filePath = new FilePath();
+        filePath.setPath(storName);
+        filePath.setUniqId(uniqId);
+        fileDao.save(filePath);
+        return uniqId;
+    }
+
+    @Override
+    public String getFilePathById(String id) {
+        FilePath filePath = fileDao.getByUniqueId(id);
+        if(filePath == null){
+            return null;
+        }
+        return filePath.getPath();
     }
 
 }
