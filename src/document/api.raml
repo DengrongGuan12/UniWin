@@ -412,7 +412,7 @@ version: v1
                       "code":错误码,"message":错误信息
                     }
                 }
-  /StockDispatch:
+  /stockDispatch:
     get:
       description: 获取库存调度列表
       queryParameters:
@@ -466,4 +466,53 @@ version: v1
                       "code":错误码,"message":错误信息
                     }
                 }
+  /inquiry:
+    description: 询价单相关接口
+    post:
+      description: 添加询价单
+      queryParameters:
+        styleId:
+          description: 款式id
+      responses:
+        200:
+          body:
+            application/json:
+              example: |
+                {
+                    "result":0失败1成功,
+                    "data":null,
+                    "error":{
+                      "code":错误码,"message":错误信息
+                    }
+                }
+    get:
+      description: 根据款式id查询询价单
+      queryParameters:
+        styleId:
+          description: 款式id
+      responses:
+        200:
+          body:
+            application/json:
+              example: |
+                {
+                    "result":0失败1成功,
+                    "data":{
+                    "createTime":创建时间,
+                    "technologyPrice":,
+                    "producePrice":,
+                    "purchasePrice":,
+                    "plateMakePrice":,
+                    "techRemark":,
+                    "prodRemark":,
+                    "purcRemark":,
+                    "platRemark":,
+                    "checkTime":,
+
+                    },
+                    "error":{
+                      "code":错误码,"message":错误信息
+                    }
+                }
+
 

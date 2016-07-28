@@ -88,7 +88,7 @@ public class MainController {
     public RestResult uploadPicture(@RequestParam("file") MultipartFile file){
         if (!file.isEmpty()) {
 //            String path = "/store/picture/";
-            String path = "e://tmp//";
+            String path = "c://tmp//";
             String storeName ="";
             int length = 0;
             try {

@@ -16,6 +16,7 @@ import java.util.Date;
 @Entity(name = "inquiry")
 public class Inquiry implements Serializable {
     private int id;
+    private int styleId;
     private Timestamp createTime = new Timestamp(new Date().getTime());//创建时间
     private double technologyPrice;
     private double producePrice;
@@ -26,6 +27,15 @@ public class Inquiry implements Serializable {
     private String purcRemark;
     private String platRemark;
     private Boolean passed = false;
+
+    @Column(name = "style_id",nullable = false)
+    public int getStyleId() {
+        return styleId;
+    }
+
+    public void setStyleId(int styleId) {
+        this.styleId = styleId;
+    }
 
     @Column(name = "check_time")
     public Timestamp getCheckTime() {
