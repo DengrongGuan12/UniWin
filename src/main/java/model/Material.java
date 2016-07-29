@@ -41,7 +41,7 @@ public class Material implements Serializable{
     private double outAmount;
     private int supplierId;
     private String storagePos;
-    private double inventoryAmount;
+    private double inventoryAmount= 0;
 
     @Column(name = "time",nullable = false)
     public Timestamp getTimestamp() {

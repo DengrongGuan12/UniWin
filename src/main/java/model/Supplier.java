@@ -93,6 +93,6 @@ public class Supplier implements Serializable{
         this.address = address;
     }
 
-    private String level;
+    private String level = "优质";
 
 }
