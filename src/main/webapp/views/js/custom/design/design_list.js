@@ -118,6 +118,7 @@ function renderDesignTable(data)
 function renderDesignItem(item)
 {
     var status = item.pass ? "已审核" : "未审核";
+    var c = $("#design-table").data("curPage");
     var $tr = $(`
         <tr>
             <td>
@@ -125,7 +126,7 @@ function renderDesignItem(item)
             </td>
             <td><img width=30px height=20px src=${item.imgUrl}></td>
             <td>${item.code}</td>
-            <td>${item.code}</td>
+            <td>${c}</td>
             <td>${status}</td>
             <td>${item.description}</td>
         </tr>
