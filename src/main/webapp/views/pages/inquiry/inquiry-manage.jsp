@@ -118,10 +118,12 @@
         </main>
     </div>
 </div>
+
 <script>
     window.onload = function () {
         highlightTab('nav-inquiry','nav-inquiry-manage');
     };
+
 </script>
 </body>
 </html>
