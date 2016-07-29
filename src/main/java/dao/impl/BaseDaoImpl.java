@@ -56,6 +56,27 @@ public class BaseDaoImpl implements BaseDao {
         return session.createQuery(hql).list();
     }
 
+    @Override
+    public List getAllList(Class c, String[] orderFields, boolean[] isAsc) {
+        String hql = "from " + c.getName();
+        if(orderFields.length > 0){
+            for(int i = 0;i<orderFields.length;i++){
+                if(i == 0){
+                    hql += " order by ";
+                }
+                hql+= orderFields[i];
+                if(!isAsc[i]){
+                    hql += " desc,";
+                }else{
+                    hql += ",";
+                }
+            }
+        }
+        hql = hql.substring(0,hql.length()-1);
+        Session session = getSession();
+        return session.createQuery(hql).list();
+    }
+
     public List getList(Class c, String para, String val) {
         try {
             String hql = "from " + c.getName() + " where " + para + " = " + val;
@@ -97,6 +118,26 @@ public class BaseDaoImpl implements BaseDao {
                 hql = hql + " and " + para[i] + " " + operation[i] + " "
                         + val[i];
             }
+        }
+        Session session = getSession();
+        return session.createQuery(hql).list();
+    }
+
+    @Override
+    public List getList(Class c, String[] para, String[] val, String[] operation, String condition,String order, boolean isAsc) {
+        String hql = "from " + c.getName();
+        for (int i = 0; i < para.length; i++) {
+            if (i == 0) {
+                hql = hql + " where " + para[i] + " " + operation[i] + " "
+                        + val[i];
+            } else {
+                hql = hql + " "+condition+" " + para[i] + " " + operation[i] + " "
+                        + val[i];
+            }
+        }
+        hql = hql + " order by " + order;
+        if (!isAsc) {
+            hql += " desc";
         }
         Session session = getSession();
         return session.createQuery(hql).list();

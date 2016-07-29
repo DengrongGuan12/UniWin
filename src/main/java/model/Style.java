@@ -19,6 +19,7 @@ public class Style implements Serializable{
     protected String imgUrl;
     protected String code;//款式编号
     protected String description;//款式描述
+    protected Boolean passed = false;
 
     @Column(name = "create_time", nullable = false)
     public Timestamp getCreateTime() {
@@ -70,5 +71,12 @@ public class Style implements Serializable{
         this.description = description;
     }
 
+    @Column(name = "passed", nullable = false)
+    public Boolean getPassed() {
+        return passed;
+    }
 
+    public void setPassed(Boolean passed) {
+        this.passed = passed;
+    }
 }

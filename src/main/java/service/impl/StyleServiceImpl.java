@@ -6,11 +6,13 @@ import model.Style;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 import service.StyleService;
+import util.ListUtil;
 import vo.*;
 import vo.Error;
 import vo.Process;
 
 import java.sql.Timestamp;
+import java.text.SimpleDateFormat;
 import java.util.ArrayList;
 import java.util.Date;
 import java.util.List;
@@ -32,24 +34,49 @@ public class StyleServiceImpl implements StyleService {
     }
 
     @Override
-    public RestResult searchStyles(Integer num) {
-        if(num == null){
-            return RestResult.CreateResult(0,new Error(Error.BAD_PARAM,"每页数量不能为空"));
+    public RestResult searchStyles(Integer page,Integer num,String operation,String key,String field) {
+        if(num == null || page == null || operation == null){
+            return RestResult.CreateResult(0,new Error(Error.BAD_PARAM,"num,page,operation 均不能为空"));
         }
-        List<StyleItem> list = new ArrayList<>();
-        Styles styles = new Styles();
-        for(int i = 0;i<num;i++){
-            StyleItem styleItem = new StyleItem();
-            styleItem.setId(i);
-            styleItem.setPass(i%2==0?true:false);
-            styleItem.setCode("S"+i);
-            styleItem.setDescription("sdfsdfsdf");
-            styleItem.setImgUrl("http://photo.enterdesk.com/2011-2-16/enterdesk.com-1AA0C93EFFA51E6D7EFE1AE7B671951F.jpg");
-            list.add(styleItem);
+        List<Style> styles;
+        if(operation.equals("SEARCH")){
+            //搜索
+            if(key == null || field == null){
+                return RestResult.CreateResult(0,new Error(Error.BAD_PARAM,"key field 不能为空"));
+            }
+            String[] para = field.split("\\|");
+            String[] values = new String[para.length];
+            String[] operations = new String[para.length];
+            for(int i = 0;i<para.length;i++){
+                values[i] = "'%"+key+"%'";
+                operations[i] = "like";
+            }
+            styles = styleDao.selectByCondition(para,values,operations,"or","create_time",false);
+        }else{
+            String[] orderFields = new String[1];
+            orderFields[0] = "create_time";
+            boolean[] isAsc = new boolean[1];
+            isAsc[0] = false;
+            styles = styleDao.getAllList(orderFields,isAsc);
         }
-        styles.setCount(100);
-        styles.setList(list);
-        return RestResult.CreateResult(1,styles);
+        Styles stylesRes = new Styles();
+        stylesRes.setCount(styles.size());
+        SimpleDateFormat df = new SimpleDateFormat("yyyy-MM-dd HH:mm:ss");
+        styles = ListUtil.slice(styles,page,num);
+        List<StyleItem> items = new ArrayList<>();
+        for (Style style:styles
+             ) {
+            StyleItem item = new StyleItem();
+            item.setId(style.getId());
+            item.setImgUrl(style.getImgUrl());
+            item.setDescription(style.getDescription());
+            item.setCode(style.getCode());
+            item.setCreateTime(style.getCreateTime());
+            item.setCreateTimeStr(df.format(style.getCreateTime()));
+            items.add(item);
+        }
+        stylesRes.setList(items);
+        return RestResult.CreateResult(1,stylesRes);
     }
 
     @Override

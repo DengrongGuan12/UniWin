@@ -6,6 +6,9 @@ import model.Style;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Repository;
 
+import java.util.List;
+import java.util.Map;
+
 /**
  * Created by DengrongGuan on 2016/7/27.
  */
@@ -17,4 +20,15 @@ public class StyleDaoImpl implements StyleDao{
     public void save(Style style) {
         baseDao.save(style);
     }
+
+    @Override
+    public List<Style> selectByCondition(String[] param, String[] val, String[] operation, String condition,String order,boolean isAsc) {
+        return baseDao.getList(Style.class,param,val,operation,condition,order,isAsc);
+    }
+
+    @Override
+    public List<Style> getAllList(String[] orderFields, boolean[] isAsc) {
+        return baseDao.getAllList(Style.class,orderFields,isAsc);
+    }
+
 }

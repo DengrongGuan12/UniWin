@@ -39,7 +39,7 @@ public class StyleController {
     @RequestMapping(method = RequestMethod.GET)
     @ResponseBody
     public RestResult get(Integer page,Integer num,String operation,String key,String field){
-        return styleService.searchStyles(num);
+        return styleService.searchStyles(page,num,operation,key,field);
     }
 
     @RequestMapping(method = RequestMethod.PUT)

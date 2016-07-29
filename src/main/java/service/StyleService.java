@@ -9,7 +9,7 @@ import vo.RestResult;
  */
 public interface StyleService {
     public RestResult addStyle(Style style);
-    public RestResult searchStyles(Integer num);
+    public RestResult searchStyles(Integer page,Integer num,String operation,String key,String field);
     public RestResult updateStyle(Style style);
     public RestResult deleteStyle(String code);
     public RestResult getDetail(String code);

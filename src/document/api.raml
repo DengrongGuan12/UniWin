@@ -33,7 +33,7 @@ version: v1
           description: 如果operation是SEARCH,该值就是要搜索的关键词
         field:
           type: string
-          example: CODE|NAME
+          example: code|description
           description: 要搜索的域,域之间用|隔开
           required: false
       responses:
@@ -49,7 +49,8 @@ version: v1
                           "code":款号,
                           "imgUrl": 图片地址,
                           "description": 描述,
-                          "pass":true或false
+                          "passed":true或false,
+                          "createTimeStr":创建时间
                           },{},...]
                   },
                   "error":{
@@ -276,7 +277,7 @@ version: v1
                     }
                 }
     put:
-      description: 提供修改过河未修改过的所有信息
+      description: 提供修改过和未修改过的所有信息
       queryParameters:
         name:
           displayName: name
@@ -499,17 +500,35 @@ version: v1
                     "result":0失败1成功,
                     "data":{
                     "createTime":创建时间,
-                    "technologyPrice":,
-                    "producePrice":,
-                    "purchasePrice":,
-                    "plateMakePrice":,
-                    "techRemark":,
-                    "prodRemark":,
-                    "purcRemark":,
-                    "platRemark":,
-                    "checkTime":,
-
+                    "technologyPrice":工艺部报价,
+                    "producePrice":生产部报价,
+                    "purchasePrice":采购部报价,
+                    "plateMakePrice":制版部报价,
+                    "techRemark":工艺部备注,
+                    "prodRemark":生产部备注,
+                    "purcRemark":采购部备注,
+                    "platRemark":制版部备注,
+                    "checkTime":审核时间
                     },
+                    "error":{
+                      "code":错误码,"message":错误信息
+                    }
+                }
+    patch:
+      description: 更新询价单信息
+      queryParameters:
+        updateValues:
+          type: string
+          description: 需要更新的信息的键值对
+          example: "{technologyPrice:12,producePrice:34}"
+      responses:
+        200:
+          body:
+            application/json:
+              example: |
+                {
+                    "result":0失败1成功,
+                    "data":null,
                     "error":{
                       "code":错误码,"message":错误信息
                     }
