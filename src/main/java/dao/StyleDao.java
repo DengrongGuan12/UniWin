@@ -13,4 +13,5 @@ public interface StyleDao {
     public List<Style> selectByCondition(String[] param, String[] val, String[] operation, String condition,String order,boolean isAsc);
     public List<Style> getAllList(String[] orderFields,boolean[] isAsc);
     public void update(Style style);
+    public boolean delete(Integer id);
 }

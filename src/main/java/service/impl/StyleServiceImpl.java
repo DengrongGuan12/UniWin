@@ -90,11 +90,15 @@ public class StyleServiceImpl implements StyleService {
     }
 
     @Override
-    public RestResult deleteStyle(String code) {
-        if(code == null){
-            return RestResult.CreateResult(0,new Error(Error.BAD_PARAM,"款号不能为空"));
+    public RestResult deleteStyle(Integer id) {
+        if(id == null){
+            return RestResult.CreateResult(0,new Error(Error.BAD_PARAM,"id不能为空"));
         }
-        return RestResult.CreateResult(1,null);
+        if(styleDao.delete(id)){
+            return RestResult.CreateResult(1,null);
+        }else{
+            return RestResult.CreateResult(0,new Error(Error.BAD_PARAM,"id不存在"));
+        }
     }
 
     @Override

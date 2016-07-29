@@ -43,4 +43,14 @@ public class StyleDaoImpl implements StyleDao{
         baseDao.update(oldStyle);
     }
 
+    @Override
+    public boolean delete(Integer id) {
+        try{
+            baseDao.delete(Style.class,id);
+            return true;
+        }catch (Exception e){
+            return false;
+        }
+    }
+
 }

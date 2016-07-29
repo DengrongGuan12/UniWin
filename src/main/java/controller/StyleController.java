@@ -50,8 +50,8 @@ public class StyleController {
 
     @RequestMapping(method = RequestMethod.DELETE)
     @ResponseBody
-    public RestResult delete(String code){
-        return styleService.deleteStyle(code);
+    public RestResult delete(Integer id){
+        return styleService.deleteStyle(id);
     }
 
     @RequestMapping(value = "/detail",method = RequestMethod.GET)
