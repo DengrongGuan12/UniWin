@@ -12,4 +12,5 @@ public interface StyleDao {
     public void save(Style style);
     public List<Style> selectByCondition(String[] param, String[] val, String[] operation, String condition,String order,boolean isAsc);
     public List<Style> getAllList(String[] orderFields,boolean[] isAsc);
+    public void update(Style style);
 }

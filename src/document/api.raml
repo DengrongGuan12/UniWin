@@ -90,7 +90,12 @@ version: v1
     put:
       description: 修改款式，提供所有修改过和未修改的信息
       queryParameters:
-        number:
+        id:
+          type: integer
+          example: 1
+          required: true
+          description: 款式id
+        code:
           type: string
           example: 20160606
           required: true
@@ -120,11 +125,11 @@ version: v1
     delete:
       description: 删除款式
       queryParameters:
-        code:
-          type: string
+        id:
+          type: integer
           example: 20160606
           required: true
-          description: 款号
+          description: 款式id
       responses:
         200:
           body:
@@ -141,11 +146,11 @@ version: v1
       description: 款式详情
       get:
           queryParameters:
-            code:
-              type: string
+            id:
+              type: integer
               example: 20160606
               required: true
-              description: 款号
+              description: 款式id
           responses:
             200:
               body:

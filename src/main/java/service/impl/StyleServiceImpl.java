@@ -81,9 +81,11 @@ public class StyleServiceImpl implements StyleService {
 
     @Override
     public RestResult updateStyle(Style style) {
-        if(style.getCode() == null){
-            return RestResult.CreateResult(0,new Error(Error.BAD_PARAM,"款号不能为空"));
+//        return RestResult.CreateResult(1,style);
+        if(style.getId() == 0 ||style.getCode() == null){
+            return RestResult.CreateResult(0,new Error(Error.BAD_PARAM,"款号和id不能为空"));
         }
+        styleDao.update(style);
         return RestResult.CreateResult(1,null);
     }
 

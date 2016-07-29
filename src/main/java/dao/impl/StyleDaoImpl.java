@@ -31,4 +31,16 @@ public class StyleDaoImpl implements StyleDao{
         return baseDao.getAllList(Style.class,orderFields,isAsc);
     }
 
+    @Override
+    public void update(Style style) {
+        Style oldStyle = (Style) baseDao.load(style.getClass(),style.getId());
+        if(style.getImgUrl() != null){
+            oldStyle.setImgUrl(style.getImgUrl());
+        }
+        if(style.getDescription() != null){
+            oldStyle.setDescription(style.getDescription());
+        }
+        baseDao.update(oldStyle);
+    }
+
 }
