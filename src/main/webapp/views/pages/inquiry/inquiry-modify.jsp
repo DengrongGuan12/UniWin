@@ -37,46 +37,18 @@
                     <div class="style-info">
                         <div class="bar"><a class="table-header">款式信息>></a></div>
                         <div class="bar">
-                            <label>物料名称:</label>
+                            <label>款号:</label>
                             <input type="text"/>
-                            <label>物料编号:</label>
-                            <input type="text"/>
-                        </div>
-                        <div class="bar">
-                            <label>物料成分:</label>
-                            <input type="text"/>
-                            <label>物料单价:</label>
+                            <label>状态:</label>
                             <input type="text"/>
                         </div>
-                        <div class="bar">
-                            <label>单位:</label>
-                            <input type="text"/>
-                            <label>类型:</label>
-                            <input type="text"/>
+                        <div class="big-bar">
+                            <label>图片:</label>
+                            <img class="normal-img" src="" alt="缺少图片">
                         </div>
-                        <div class="bar">
-                            <label>入库时间:</label>
-                            <input type="text" class="date-picker"/>
-                            <label>颜色说明:</label>
-                            <input type="text"/>
-                        </div>
-                        <div class="bar">
-                            <label>供应商编号:</label>
-                            <input type="text" />
-                            <label>门幅:</label>
-                            <input type="text"/>
-                            <label>米</label>
-                        </div>
-                        <div class="bar">
-                            <label>供应商名称:</label>
-                            <input type="text" disabled />
-                            <label>出量:</label>
-                            <input type="text"/>
-                            <label>米/公斤</label>
-                        </div>
-                        <div class="bar">
-                            <label>供应商地址:</label>
-                            <input type="text" class="input-lg" disabled />
+                        <div class="big-bar">
+                            <label>描述:</label>
+                            <textarea name=""  cols="59" rows="10"></textarea>
                         </div>
                     </div>
                     <div class="inquiry-price">
@@ -87,31 +59,31 @@
                         </div>
                         <div class="big-bar">
                             <label>生产部门备注:</label>
-                            <textarea name="" id="" cols="30" rows="10"></textarea>
+                            <textarea name=""  cols="59" rows="10"></textarea>
                         </div>
                         <div class="bar">
-                            <label>生产部门报价:</label>
+                            <label>工艺部门报价:</label>
                             <input type="text"/>
                         </div>
                         <div class="big-bar">
-                            <label>生产部门备注:</label>
-                            <textarea name="" id="" cols="30" rows="10"></textarea>
+                            <label>工艺部门备注:</label>
+                            <textarea name=""  cols="59" rows="10"></textarea>
                         </div>
                         <div class="bar">
-                            <label>生产部门报价:</label>
+                            <label>采购部门报价:</label>
                             <input type="text"/>
                         </div>
                         <div class="big-bar">
-                            <label>生产部门备注:</label>
-                            <textarea name="" id="" cols="30" rows="10"></textarea>
+                            <label>采购部门备注:</label>
+                            <textarea name=""  cols="59" rows="10"></textarea>
                         </div>
                         <div class="bar">
-                            <label>生产部门报价:</label>
+                            <label>制版部门报价:</label>
                             <input type="text"/>
                         </div>
                         <div class="big-bar">
-                            <label>生产部门备注:</label>
-                            <textarea name="" id="" cols="30" rows="10"></textarea>
+                            <label>制版部门备注:</label>
+                            <textarea name=""  cols="59" rows="10"></textarea>
                         </div>
                     </div>
                     <div class="inquiry-modify-submit">
