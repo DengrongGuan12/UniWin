@@ -6,7 +6,7 @@ body {
   margin: 0;
   padding: 0;
   width: 100%;
-  height: auto;
+  height: 100%;
 }
 .app {
   height: 100%;
@@ -39,14 +39,10 @@ body {
   flex: 0 0 230px;
   display: flex;
   flex-direction: column;
+  overflow-y: auto;
 }
 .app > .app-container > nav > .nav-container {
   flex: 0 0 auto;
-  border-right: 1px solid #CCC;
-}
-.app > .app-container > nav > .nav-end {
-  flex: 1 1 10px;
-  border-right: 1px solid #CCC;
 }
 .app > .app-container > main {
   flex: 1 1 auto;
@@ -69,6 +65,7 @@ body {
 }
 .app > .app-container > main > .main-content {
   flex: 1 1 auto;
+  overflow-y: auto;
 }
 ul {
   list-style-type: none;
