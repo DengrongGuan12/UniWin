@@ -20,6 +20,26 @@ public class MaterialController {
     @Autowired
     MaterialService materialService;
 
+    @RequestMapping("materialadd")
+    public String materialAdd(){
+        return "material/material_add";
+    }
+
+    @RequestMapping("materialquery")
+    public String materialQuery(){
+        return "material/material_query";
+    }
+
+    @RequestMapping("materialmodify")
+    public String materialModify(){
+        return "material/material_modify";
+    }
+
+    @RequestMapping("materialsupplier")
+    public String materialSupplier(){
+        return "material/material_supplier";
+    }
+
     @RequestMapping(method = RequestMethod.GET)
     @ResponseBody
     public RestResult get(Integer page, Integer num){

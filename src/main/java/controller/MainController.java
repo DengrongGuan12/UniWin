@@ -33,20 +33,7 @@ public class MainController {
         return "index";
     }
 
-    @RequestMapping("materialadd")
-    public String materialAdd(){
-        return "material/material_add";
-    }
 
-    @RequestMapping("materialquery")
-    public String materialQuery(){
-        return "material/material_query";
-    }
-
-    @RequestMapping("materialmodify")
-    public String materialModify(){
-        return "material/material_modify";
-    }
 
     @RequestMapping("usermanage")
     public String SystemUser(){
@@ -58,10 +45,7 @@ public class MainController {
         return "system/department_manage";
     }
 
-    @RequestMapping("materialsupplier")
-    public String materialSupplier(){
-        return "material/material_supplier";
-    }
+
 
     @RequestMapping("customermanage")
     public String customerManage() { return "customer/customer_manage"; }
