@@ -7,6 +7,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 import service.StyleService;
 import util.ListUtil;
+import util.TimeUtil;
 import vo.*;
 import vo.Error;
 import vo.Process;
@@ -26,8 +27,8 @@ public class StyleServiceImpl implements StyleService {
     StyleDao styleDao;
     @Override
     public RestResult addStyle(Style style) {
-        if(style.getCode() == null || style.getImgUrl() == null ){
-            return RestResult.CreateResult(0,new Error(Error.BAD_PARAM,"款式编号和图片地址均不能为空"));
+        if(style.getCode() == null || style.getImgUrl() == null || style.getName() == null){
+            return RestResult.CreateResult(0,new Error(Error.BAD_PARAM,"款式编号,图片地址,名称均不能为空"));
         }
         styleDao.save(style);
         return RestResult.CreateResult(1,null);
@@ -74,6 +75,7 @@ public class StyleServiceImpl implements StyleService {
             item.setImgUrl(style.getImgUrl());
             item.setDescription(style.getDescription());
             item.setCode(style.getCode());
+            item.setName(style.getName());
             item.setCreateTime(style.getCreateTime());
             item.setCreateTimeStr(df.format(style.getCreateTime()));
             items.add(item);
@@ -88,7 +90,20 @@ public class StyleServiceImpl implements StyleService {
         if(style.getId() == 0 ||style.getCode() == null){
             return RestResult.CreateResult(0,new Error(Error.BAD_PARAM,"款号和id不能为空"));
         }
-        styleDao.update(style);
+        Style style1 = styleDao.getById(style.getId());
+        if(style1 == null){
+            return RestResult.CreateResult(0,new Error(Error.BAD_PARAM,"款式id不存在"));
+        }
+        if(style.getName() != null){
+            style1.setName(style.getName());
+        }
+        if(style.getImgUrl() != null){
+            style1.setImgUrl(style.getImgUrl());
+        }
+        if(style.getDescription() != null){
+            style1.setDescription(style.getDescription());
+        }
+        styleDao.update(style1);
         return RestResult.CreateResult(1,null);
     }
 
@@ -105,17 +120,23 @@ public class StyleServiceImpl implements StyleService {
     }
 
     @Override
-    public RestResult getDetail(String code) {
-        if(code == null){
-            return RestResult.CreateResult(0,new Error(Error.BAD_PARAM,"款号不能为空"));
+    public RestResult getDetail(Integer id) {
+        if(id == null){
+            return RestResult.CreateResult(0,new Error(Error.BAD_PARAM,"款式id不能为空"));
+        }
+        Style style = styleDao.getById(id);
+        if(style == null){
+            return RestResult.CreateResult(0,new Error(Error.BAD_PARAM,"id 不存在"));
         }
         StyleDetail styleDetail = new StyleDetail();
-        styleDetail.setCode(code);
-        styleDetail.setCreateTime(new Timestamp(new Date().getTime()));
-        styleDetail.setDescription("sdfsdfsdf");
-        styleDetail.setId(1);
-        styleDetail.setImgUrl("http://photo.enterdesk.com/2011-2-16/enterdesk.com-1AA0C93EFFA51E6D7EFE1AE7B671951F.jpg");
-        styleDetail.setPass(true);
+        styleDetail.setId(id);
+        styleDetail.setName(style.getName());
+        styleDetail.setCode(style.getCode());
+        styleDetail.setCreateTime(style.getCreateTime());
+        styleDetail.setCreateTimeStr(TimeUtil.toString(style.getCreateTime()));
+        styleDetail.setDescription(style.getDescription());
+        styleDetail.setImgUrl(style.getImgUrl());
+        styleDetail.setPass(style.getPassed());
         List<Process> processes = new ArrayList<>();
         for(int i = 0;i<10;i++){
             Process process = new Process();

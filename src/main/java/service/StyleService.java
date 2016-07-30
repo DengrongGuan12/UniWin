@@ -12,5 +12,5 @@ public interface StyleService {
     public RestResult searchStyles(Integer page,Integer num,String operation,String key,String field);
     public RestResult updateStyle(Style style);
     public RestResult deleteStyle(Integer id);
-    public RestResult getDetail(String code);
+    public RestResult getDetail(Integer id);
 }

@@ -18,6 +18,7 @@ public class Style implements Serializable{
     protected int id;
     protected String imgUrl;
     protected String code;//款式编号
+    protected String name;//款式名称
     protected String description;//款式描述
     protected Boolean passed = false;
 
@@ -78,5 +79,14 @@ public class Style implements Serializable{
 
     public void setPassed(Boolean passed) {
         this.passed = passed;
+    }
+
+    @Column(name = "name",nullable = false)
+    public String getName() {
+        return name;
+    }
+
+    public void setName(String name) {
+        this.name = name;
     }
 }
