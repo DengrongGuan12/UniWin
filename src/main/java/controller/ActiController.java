@@ -89,5 +89,11 @@ public class ActiController {
         return "redirect:/act/employer";
     }
 
+    @RequestMapping(value = "/id/{id}",method = RequestMethod.GET)
+    public String testUrlParam(@PathVariable int id,Model model){
+        model.addAttribute("id",id);
+        return "/act/test";
+    }
+
 
 }
