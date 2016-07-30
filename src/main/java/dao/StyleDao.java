@@ -14,4 +14,5 @@ public interface StyleDao {
     public List<Style> getAllList(String[] orderFields,boolean[] isAsc);
     public void update(Style style);
     public boolean delete(Integer id);
+    public Style getById(int id);
 }

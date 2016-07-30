@@ -53,4 +53,9 @@ public class StyleDaoImpl implements StyleDao{
         }
     }
 
+    @Override
+    public Style getById(int id) {
+        return (Style) baseDao.load(Style.class,id);
+    }
+
 }

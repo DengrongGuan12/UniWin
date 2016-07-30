@@ -508,6 +508,7 @@ version: v1
                 {
                     "result":0失败1成功,
                     "data":{
+                    "id":询价单id,
                     "createTime":创建时间,
                     "technologyPrice":工艺部报价,
                     "producePrice":生产部报价,
@@ -523,13 +524,40 @@ version: v1
                       "code":错误码,"message":错误信息
                     }
                 }
-    patch:
+    put:
       description: 更新询价单信息
       queryParameters:
-        updateValues:
+        id:
+          type: integer
+          description: 询价单id
+          example: 1
+        technologyPrice:
           type: string
-          description: 需要更新的信息的键值对
-          example: "{technologyPrice:12,producePrice:34}"
+          description: 工艺部报价
+        producePrice:
+          type: string
+          description: 生产部报价
+        purchasePrice:
+          type: string
+          description: 采购部报价
+        plateMakePrice:
+          type: string
+          description: 制版部报价
+        techRemark:
+          type: string
+          description: 工艺部备注
+        prodRemark:
+          type: string
+          description: 生产部备注
+        purcRemark:
+          type: string
+          description: 采购部备注
+        platRemark:
+          type: string
+          description: 制版部备注
+        state:
+          type: string
+          description: PASS|REJECT
       responses:
         200:
           body:

@@ -2,10 +2,7 @@ package model;
 
 import org.hibernate.annotations.GenericGenerator;
 
-import javax.persistence.Column;
-import javax.persistence.Entity;
-import javax.persistence.GeneratedValue;
-import javax.persistence.Id;
+import javax.persistence.*;
 import java.io.Serializable;
 import java.sql.Timestamp;
 import java.util.Date;
@@ -26,7 +23,17 @@ public class Inquiry implements Serializable {
     private String prodRemark;
     private String purcRemark;
     private String platRemark;
-    private Boolean passed = false;
+    private InquiryState state = InquiryState.NOCHECK;
+
+    @Column(name = "state",nullable = false)
+    @Enumerated(EnumType.STRING)
+    public InquiryState getState() {
+        return state;
+    }
+
+    public void setState(InquiryState state) {
+        this.state = state;
+    }
 
     @Column(name = "style_id",nullable = false)
     public int getStyleId() {
@@ -142,12 +149,4 @@ public class Inquiry implements Serializable {
         this.platRemark = platRemark;
     }
 
-    @Column(name = "passed")
-    public Boolean getPassed() {
-        return passed;
-    }
-
-    public void setPassed(Boolean passed) {
-        this.passed = passed;
-    }
 }
