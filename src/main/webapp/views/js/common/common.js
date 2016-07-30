@@ -16,16 +16,22 @@ function getDataByAjax(url, data)
 
     var secureData = data ? data : null;
 
-    $.ajax({
-        url,
-        method: "GET",
-        dataType: "json",
-        data: secureData,
-        success: function(result) {
-            return $.extend({successful: true}, result);
-        },
-        error: defaultError
-    });
+
+    return new Promise((resolve, reject) => {
+            $.ajax({
+                url,
+                method: "GET",
+                dataType: "json",
+                data: secureData,
+                success: function(result) {
+                    resolve(result);
+                },
+                error: function(reason) {
+                    reject(reason);
+                }
+            });
+        }
+    );
 }
 
 function postDataByAjax(url, data)

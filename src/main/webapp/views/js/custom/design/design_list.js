@@ -1,4 +1,4 @@
-const rootApi = "./";
+var rootApi = "./";
 
 
 $(document).ready(function(){
@@ -74,28 +74,10 @@ function queryPageData(e)
 
 function loadDesignList(params)
 {
-    var url = rootApi + "?";
-    if (params.operation === "NORMAl")
-    {
-        url = url + `?page=${params.page}&num=${params.num}&operation=${params.operation}`;
-    }
-    else
-    {
-        url = url + `?page=${params.page}&num=${params.num}&operation=${params.operation}&key=${params.key}&field=${params.field}`;
-    }
-
-    $.ajax({
-        url,
-        method: "get",
-        success: function(data)
-        {
-            if (data.result === 1) {
-                renderDesignTable(data.data);
-            }
-        },
-        error: function(data)
-        {
-            console.log(data);
+    var url = "./?";
+    getDataByAjax(url, params).then((data) => {
+        if (data.result === 1) {
+            renderDesignTable(data.data);
         }
     });
 }
@@ -104,7 +86,6 @@ function renderDesignTable(data)
 {
     $("#design-table").data("sumPage", data.count);
     var items = data.list;
-    console.log(items);
     var $designtable = $("#design-table");
     $designtable.find("tbody").children("tr").remove();
     $("#current").text($("#design-table").data("curPage") + " 页");
