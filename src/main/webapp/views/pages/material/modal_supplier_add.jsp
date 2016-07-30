@@ -9,31 +9,32 @@
       <div class="modal-body">
         <div class="bar">
             <label>供应商编号:</label>
-            <input type="text"/>
+            <input type="text" name="supplier-number"/>
             <label>供应商名称:</label>
-            <input type="text"/>
+            <input type="text" name="supplier-name"/>
         </div>
         <div class="bar">
             <label>供应商电话:</label>
-            <input type="text"/>
+            <input type="text" name="supplier-telNo"/>
             <label>供应商手机:</label>
-            <input type="text"/>
+            <input type="text" name="supplier-mbNo"/>
         </div>
         <div class="bar">
             <label>供应商地址:</label>
-            <input type="text" class="input-lg"/>
+            <input type="text" name="supplier-address" class="input-lg"/>
         </div>
         <div class="bar">
             <label>供应商等级：</label>
-            <select>
-                <option value ="volvo">Volvo</option>
-                <option value ="volvo">Volvo</option>
+            <select name="supplier-level">
+                <option value ="优质">优质</option>
+                <option value ="中等">中等</option>
+                <option value ="劣质">劣质</option>
             </select>
         </div>
       </div>
       <div class="modal-footer">
         <button type="button" class="btn btn-default" data-dismiss="modal">关闭</button>
-        <button type="button" class="btn btn-primary">保存</button>
+        <button id="supplier-add-button" type="button" class="btn btn-primary">保存</button>
       </div>
     </div><!-- /.modal-content -->
   </div><!-- /.modal-dialog -->
