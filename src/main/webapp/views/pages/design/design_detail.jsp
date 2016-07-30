@@ -111,5 +111,6 @@
         </main>
     </div>
 </div>
+<script src="<%=request.getContextPath() %>/views/js/custom/design/design_detail.js" charset="utf-8"></script>
 </body>
 </html>

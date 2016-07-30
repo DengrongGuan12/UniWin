@@ -178,6 +178,8 @@ label {
 }
 .main-design-detail > .design-info .bar-text-field > .text-area > textarea {
   resize: none;
+  margin-top: 3px;
+  margin-left: 1px;
 }
 .main-design-detail > .design-info > .design-modify-submit {
   flex: 1 1 100px;

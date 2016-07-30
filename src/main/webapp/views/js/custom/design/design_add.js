@@ -51,7 +51,7 @@ function sendImg()
 {
     var formdata = new FormData();
     var fileObj = document.getElementById("input-file").files;
-    var url = "http://localhost:8080/uniwin/main/uploadPicture";
+    var url = "../../main/uploadPicture";
     formdata.append("file", fileObj[0]);
 
     return new Promise((resolve, reject) => {
