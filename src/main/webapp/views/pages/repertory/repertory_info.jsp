@@ -151,7 +151,7 @@
                             </tbody>
                         </table>
                         <nav>
-                          <ul class="paging-section">
+                          <ul id="reperory-in" class="paging-section">
                               <li id="first"><span class="icon iconfont icon-first"></span></li>
                               <li id="previous"><span class="icon iconfont icon-previous"></span></li>
                               <li id="current">1页</li>
@@ -215,7 +215,7 @@
                             </tbody>
                         </table>
                         <nav>
-                          <ul class="paging-section">
+                          <ul id="repertory-out" class="paging-section">
                               <li id="first"><span class="icon iconfont icon-first"></span></li>
                               <li id="previous"><span class="icon iconfont icon-previous"></span></li>
                               <li id="current">1页</li>
@@ -232,7 +232,7 @@
         </main>
     </div>
 </div>
-<script src="<%=request.getContextPath() %>/views/js/common/common.js" charset="utf-8"></script>
 <script src="<%=request.getContextPath() %>/views/js/custom/repertory/repertory_info.js"></script>
+<script src="<%=request.getContextPath() %>/views/js/common/common.js" charset="utf-8"></script>
 </body>
 </html>

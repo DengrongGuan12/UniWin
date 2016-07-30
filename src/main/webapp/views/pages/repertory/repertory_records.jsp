@@ -77,32 +77,6 @@
                                 </tr>
                                 </thead>
                                 <tbody>
-                                <tr>
-                                    <td>
-                                        <input type="radio">
-                                    </td>
-                                    <td>1</td>
-                                    <td>1</td>
-                                    <td>1</td>
-                                    <td>1</td>
-                                    <td>1</td>
-                                    <td>1</td>
-                                    <td>1</td>
-                                    <td><a href="<%=request.getContextPath() %>/main/repertoryinfo">更多信息</a></td>
-                                </tr>
-                                <tr>
-                                    <td>
-                                        <input type="radio">
-                                    </td>
-                                    <td>1</td>
-                                    <td>1</td>
-                                    <td>1</td>
-                                    <td>1</td>
-                                    <td>1</td>
-                                    <td>1</td>
-                                    <td>1</td>
-                                    <td><a href="<%=request.getContextPath() %>/main/repertoryinfo">更多信息</a></td>
-                                </tr>
                                 </tbody>
                             </table>
                             <nav>
@@ -122,10 +96,7 @@
         </main>
     </div>
 </div>
-<script>
-    window.onload = function () {
-        highlightTab('nav-repertory','nav-repertory-records');
-    };
-</script>
+<script src="<%=request.getContextPath() %>/views/js/common/common.js" charset="utf-8"></script>
+<script src="<%=request.getContextPath() %>/views/js/custom/repertory/repertory_records.js" charset="utf-8"></script>
 </body>
 </html>

@@ -93,23 +93,14 @@
                                 </tbody>
                             </table>
                             <nav>
-                                <ul class="pagination">
-                                    <li>
-                                        <a href="#" aria-label="Previous">
-                                            <span aria-hidden="true">&laquo;</span>
-                                        </a>
-                                    </li>
-                                    <li><a href="#">1</a></li>
-                                    <li><a href="#">2</a></li>
-                                    <li><a href="#">3</a></li>
-                                    <li><a href="#">4</a></li>
-                                    <li><a href="#">5</a></li>
-                                    <li>
-                                        <a href="#" aria-label="Next">
-                                            <span aria-hidden="true">&raquo;</span>
-                                        </a>
-                                    </li>
-                                </ul>
+                              <ul class="paging-section">
+                                  <li id="first"><span class="icon iconfont icon-first"></span></li>
+                                  <li id="previous"><span class="icon iconfont icon-previous"></span></li>
+                                  <li id="current">1页</li>
+                                  <li id="next"><span class="icon iconfont icon-next"></span></li>
+                                  <li id="last"><span class="icon iconfont icon-last"></span></li>
+                                  <li id="sum"><span>总共0页</span></li>
+                              </ul>
                             </nav>
                         </div>
                     </div>
@@ -119,11 +110,7 @@
     </div>
 </div>
 
-<script>
-    window.onload = function () {
-        highlightTab('nav-inquiry','nav-inquiry-manage');
-    };
-
-</script>
+<script src="<%=request.getContextPath() %>/views/js/common/common.js"></script>
+<script src="<%=request.getContextPath() %>/views/js/custom/inquiry/inquiry.js"></script>
 </body>
 </html>

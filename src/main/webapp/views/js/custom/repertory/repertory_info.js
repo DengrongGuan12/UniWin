@@ -1,17 +1,27 @@
-window.onload = function () {
-    highlightTab('nav-repertory','nav-repertory-records');
-};
-
-
 init();
 function init() {
     $("input").prop("disabled", true);
-    $("sele")
+    $("select").prop("disabled", true);
     $(".main-header h1 small").text("库存信息");
     $(".tab-panel.repertory-info").css("display", "flex");
     $(".tab-panel.repertoryIn-list").css("display", "none");
     $(".tab-panel.repertoryOut-list").css("display", "none");
+    const id = 1;
+    updateMaterial(id);
+    updateInTable(null);
+    updateOutTable(null);
 }
+
+function updateMaterial(id)
+{
+    //获得数据
+}
+
+function renderMaterial()
+{
+    //渲染
+}
+
 $(".tab-nav").each(function(index){
     $(this).bind("click", function() {
         $(".main-content > .tab-navs .tab-nav").removeClass("active");
@@ -44,30 +54,135 @@ $(".tab-nav").each(function(index){
     }
 });
 
-$(document).ready(() => {
+window.onload = function () {
+    highlightTab('nav-repertory','nav-repertory-records');
+};
 
+$(document).ready(() => {
+$("#repertory-in").on("click", "li", _pagination_in_click);
+$("#repertory-out").on("click", "li", _pagination_out_click);
 });
 
-function updateTable(options)
+function _pagination_in_click(e)
 {
+    const id = $(e.currentTarget).attr("id");
+    const sum = $(".repertoryIn-records-table > table").data("sumPage");
+    let page = $(".repertoryIn-records-table > table").data("curPage");
+    let canUpdate = true;
+    switch(id)
+    {
+        case "first":
+        if (page === 1)
+        {
+            canUpdate = false;
+            break;
+        }
+        page = 1;
+        break;
+        case "previous":
+        if (page <= 1)
+        {
+            canUpdate = false;
+            break;
+        }
+        page--;
+        break;
+        case "next":
+        if (page >= sum)
+        {
+            canUpdate = false;
+            break;
+        }
+        page++;
+        break;
+        case "last":
+        if (page === sum)
+        {
+            canUpdate = false;
+            break;
+        }
+        page = sum;
+        break;
+        default:
+        canUpdate = false;
+    }
 
+    if (canUpdate)
+    {
+        updateInTable({page, num: numOfPage});
+    }
 }
 
-function renderTable(data)
+function _pagination_out_click(e)
 {
-    /*
-    <th></th>
-    <th>出库时间</th>
-    <th>物料编号</th>
-    <th>物料名称</th>
-    <th>物料类型</th>
-    <th>出库数量</th>
-    <th>单价</th>
-    <th>负责人</th>
-    <th>供应商编号</th>
-    <th>供应商名称</th>
-    <th>供应商地址</th>
-    */
+    const id = $(e.currentTarget).attr("id");
+    const sum = $(".repertoryOut-records-table > table").data("sumPage");
+    let page = $(".repertoryOut-records-table > table").data("curPage");
+    let canUpdate = true;
+    switch(id)
+    {
+        case "first":
+        if (page === 1)
+        {
+            canUpdate = false;
+            break;
+        }
+        page = 1;
+        break;
+        case "previous":
+        if (page <= 1)
+        {
+            canUpdate = false;
+            break;
+        }
+        page--;
+        break;
+        case "next":
+        if (page >= sum)
+        {
+            canUpdate = false;
+            break;
+        }
+        page++;
+        break;
+        case "last":
+        if (page === sum)
+        {
+            canUpdate = false;
+            break;
+        }
+        page = sum;
+        break;
+        default:
+        canUpdate = false;
+    }
 
+    if (canUpdate)
+    {
+        updateOutTable({page, num: numOfPage});
+    }
+}
 
+function updateOutTable(options)
+{
+    console.log(options);
+    $(".repertoryIn-records-table > table").data("curPage", 1);
+    $(".repertoryIn-records-table > table").data("sumPage", 1);
+    const current = $(".repertoryIn-records-table > table").data("curPage");
+    const sum = $(".repertoryIn-records-table > table").data("sumPage");
+
+    $("#current").text(current + "页");
+    $("#sum > span").text("总共" + sum + "页");
+}
+
+function updateInTable(options)
+{
+    console.log(options);
+    $(".repertoryOut-records-table > table").data("curPage", 1);
+    $(".repertoryOut-records-table > table").data("sumPage", 1);
+    const current = $(".repertoryOut-records-table > table").data("curPage");
+    const sum = $(".repertoryOut-records-table > table").data("sumPage");
+
+    $("#current").text(current + "页");
+    $("#sum > span").text("总共" + sum + "页");
 }

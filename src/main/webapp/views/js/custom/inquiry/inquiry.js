@@ -1,14 +1,16 @@
-var repertoryRootURL = "/uniwin/v1/stockDispatch";
+
+var repertoryRootURL = "/uniwin/v1/inquiry";
 var numOfPage = 4;
+
 window.onload = function () {
-    highlightTab('nav-repertory','nav-repertory-control-records');
+    highlightTab('nav-inquiry','nav-inquiry-manage');
 };
 
 $(document).ready(function() {
-    updateTable({page: 1, num: 4});
+    //updateTable({page: 1, num: 4});
     $(".paging-section").on("click", "li", _pagination_click);
     $(".btn-query").on("click", _search);
-    $(".repertory-control-records-table > table").on("click", "tr", _toggleChecked);
+    $(".inquiry-table > table").on("click", "tr", _toggleChecked);
 });
 
 function _toggleChecked(e)
@@ -27,8 +29,8 @@ function _search(e)
 function _pagination_click(e)
 {
     const id = $(e.currentTarget).attr("id");
-    const sum = $(".repertory-control-records-table > table").data("sumPage");
-    let page = $(".repertory-control-records-table > table").data("curPage");
+    const sum = $(".inquiry-table > table").data("sumPage");
+    let page = $(".inquiry-table > table").data("curPage");
     let canUpdate = true;
     switch(id)
     {
@@ -70,7 +72,7 @@ function _pagination_click(e)
 
     if (canUpdate)
     {
-        updateTable({page, num: numOfPage});
+        //updateTable({page, num: numOfPage});
     }
 }
 
@@ -83,8 +85,9 @@ function updateTable(options)
         var result = getDataByAjax(url).then((result) => {
             if (result.result === 1)
             {
-                $(".repertory-control-records-table > table").data("curPage", options.page);
-                $(".repertory-control-records-table > table").data("sumPage", Math.ceil(result.data.count / options.num));
+                console.log(result.data);
+                $(".inquiry-table > table").data("curPage", options.page);
+                $(".inquiry-table > table").data("sumPage", Math.ceil(result.data.count / options.num));
                 updatePagination();
                 renderTable(result.data);
             }
@@ -97,8 +100,8 @@ function updateTable(options)
 // 更新分页信息
 function updatePagination()
 {
-    const current = $(".repertory-control-records-table > table").data("curPage");
-    const sum = $(".repertory-control-records-table > table").data("sumPage");
+    const current = $(".inquiry-table > table").data("curPage");
+    const sum = $(".inquiry-table > table").data("sumPage");
 
     $("#current").text(current + "页");
     $("#sum > span").text("总共" + sum + "页");
@@ -111,22 +114,29 @@ function renderTable(data)
     <th></th>
     <th>物料编号</th>
     <th>物料名称</th>
-    <th>调度类型</th>
+    <th>类型</th>
+    <th>供应商名称</th>
+    <th>供应商编号</th>
+    <th>仓储数量</th>
     <th>仓储位置</th>
-    <th>负责人</th>
-    <th>调度数量</th>
-    <th>调度时间</th>
+    <th>更多信息</th>
 
 
     table绑定数据和产生ID
-    "materialName":物料名称,
-      "type":类型(出库|入库),
-      "quantity":数量,
-      "time":时间,
-      "userName":用户名
+    id":询价单id,
+    "createTime":创建时间,
+    "technologyPrice":工艺部报价,
+    "producePrice":生产部报价,
+    "purchasePrice":采购部报价,
+    "plateMakePrice":制版部报价,
+    "techRemark":工艺部备注,
+    "prodRemark":生产部备注,
+    "purcRemark":采购部备注,
+    "platRemark":制版部备注,
+    "checkTime":审核时间
     */
     $(".repertory-control-records-list").data("data", data);
-    const $container = $(".repertory-control-records-table > table");
+    const $container = $(".inquiry-table > table");
     $container.children("tr").remove();
     if (data && data.list.length > 0)
     {
@@ -138,14 +148,16 @@ function renderTable(data)
             <td>
             <input type="radio">
             </td>
-            <td>1</td>
-            <td>${item.materialName}</td>
+            <td>${item.id}</td>
+            <td>${item.name}</td>
             <td>${item.type}</td>
+            <td>${item.supplier}</td>
+            <td>${item.supplierId}</td>
+            <td>${item.inventoryAmount}</td>
             <td>1</td>
-            <td>${item.userName}</td>
-            <td>${item.quantity}</td>
-            <td>${item.time}</td>
+            <td><a href="./repertoryinfo">更多信息</a></td>
             </tr>`);
+            $item.data("id", item.id);
             $container.append($item);
             index++;
         }
