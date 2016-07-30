@@ -41,6 +41,8 @@ label {
 }
 .main-design-add .bar-text-field > .text-area > textarea {
   resize: none;
+  margin-top: 3px;
+  margin-left: 1px;
 }
 .main-design-add > .design-info {
   flex: 1 1 350px;
@@ -176,6 +178,8 @@ label {
 }
 .main-design-detail > .design-info .bar-text-field > .text-area > textarea {
   resize: none;
+  margin-top: 3px;
+  margin-left: 1px;
 }
 .main-design-detail > .design-info > .design-modify-submit {
   flex: 1 1 100px;
@@ -192,7 +196,11 @@ label {
   margin-top: 65px;
   margin-left: 50px;
 }
-.main-design-detail > .design-query-list {
+.main-design-detail > .design-img > img {
+  width: 311px;
+  height: 309px;
+}
+.main-design-detail > .design-order-list {
   flex: 1 1 720px;
   padding: 10px 20px 10px 20px;
 }

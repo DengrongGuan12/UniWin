@@ -30,12 +30,12 @@
                         <div class="query-info">
                             <div class="bar">
                                 <label>款号:</label>
-                                <input id="design-code" type="text"/>
-                                <button type="button" class="btn-query">查询</button>
+                                <input id="query-code" type="text"/>
+                                <button id="query-button" type="button" class="btn-query">查询</button>
                             </div>
                         </div>
                         <div class="design-operation">
-                            <button type="button" class="btn-detail">详情</button>
+                            <button id="detail-button" type="button" class="btn-detail">详情</button>
                         </div>
                     </div>
                     <div class="design-list">
@@ -47,21 +47,12 @@
                                         <th>图片</th>
                                         <th>款号</th>
                                         <th>款式名称</th>
+                                        <th>创建时间</th>
                                         <th>状态</th>
                                         <th>描述</th>
                                     </tr>
                                 </thead>
                                 <tbody>
-                                    <tr>
-                                        <td>
-                                            <input type="radio">
-                                        </td>
-                                        <td>1</td>
-                                        <td>1</td>
-                                        <td>1</td>
-                                        <td>1</td>
-                                        <td>1</td>
-                                    </tr>
                                 </tbody>
                             </table>
                             <nav>

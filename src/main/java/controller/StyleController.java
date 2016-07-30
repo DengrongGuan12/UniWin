@@ -56,7 +56,7 @@ public class StyleController {
 
     @RequestMapping(value = "/detail",method = RequestMethod.GET)
     @ResponseBody
-    public RestResult detail(String code){
-        return styleService.getDetail(code);
+    public RestResult detail(Integer id){
+        return styleService.getDetail(id);
     }
 }
