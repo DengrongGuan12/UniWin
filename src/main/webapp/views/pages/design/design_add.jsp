@@ -31,29 +31,25 @@
                         <div class="bar"><a class="table-header">款式信息>></a></div>
                         <div class="bar">
                             <label>款号:</label>
-                            <input type="text"/>
-                            <label>状态:</label>
-                            <select>
-                                <option value ="volvo">Volvo</option>
-                                <option value ="volvo">Volvo</option>
-                            </select>
+                            <input id="design-code" type="text"/>
                         </div>
                         <div class="bar">
                             <label>图片:</label>
                             <div class="input-file">
-                                选择文件<input type="file" accept="image/png,image/jpg"/>
+                                选择文件<input id="input-file" type="file" accept="image/png,image/jpg"/>
+                                <input type="hidden" id="imgUrl" value="">
                             </div>
                             <div class="showFileName">文件名</div>
                         </div>
                         <div class="bar-text-field">
                             <label>描述:</label>
                             <div class="text-area">
-                                <textarea name="" id="" cols="59" rows="10"></textarea>
+                                <textarea name="" id="design-description" cols="59" rows="10"></textarea>
                             </div>
                         </div>
                         <div class="design-add-submit">
                             <div class="submit-bar">
-                                <button type="submit" class="btn-save">保存</button>
+                                <button type="submit" class="btn-save" id="submit">保存</button>
                                 <button type="button" >返回</button>
                             </div>
                         </div>

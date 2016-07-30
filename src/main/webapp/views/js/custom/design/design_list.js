@@ -1,6 +1,3 @@
-var rootApi = "./";
-
-
 $(document).ready(function(){
     highlightTab('nav-design','nav-design-list');
 
