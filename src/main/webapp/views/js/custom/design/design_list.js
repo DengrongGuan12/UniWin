@@ -5,6 +5,18 @@ $(document).ready(function(){
 
     $(".paging-section").on("click", "li", queryPageData);
 
+    $("#design-table > tbody").on("click", "tr", (e) => {
+        var $tr = $(e.currentTarget);
+        $tr.find("input").attr("checked", true);
+        $("#detail-button").data("id", $tr.data("id"));
+    });
+
+    $("#detail-button").on("click", (e) => {
+        var id = $(e.currentTarget).data("id");
+        location.href = "./designdetail?" + "id=" + id;
+    });
+
+
     loadDesignList({
         page: 1,
         num: 10,
@@ -100,7 +112,7 @@ function renderDesignItem(item)
     var $tr = $(`
         <tr>
             <td>
-                <input type="radio">
+                <input name="design-select" type="radio">
             </td>
             <td><img width=30px height=20px src=${item.imgUrl}></td>
             <td>${item.code}</td>
@@ -109,5 +121,6 @@ function renderDesignItem(item)
             <td>${item.description}</td>
         </tr>
     `);
+    $tr.data("id", item.id);
     return $tr;
 }

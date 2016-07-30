@@ -35,7 +35,7 @@
                             </div>
                         </div>
                         <div class="design-operation">
-                            <button type="button" class="btn-detail">详情</button>
+                            <button id="detail-button" type="button" class="btn-detail">详情</button>
                         </div>
                     </div>
                     <div class="design-list">
@@ -52,16 +52,6 @@
                                     </tr>
                                 </thead>
                                 <tbody>
-                                    <tr>
-                                        <td>
-                                            <input type="radio">
-                                        </td>
-                                        <td>1</td>
-                                        <td>1</td>
-                                        <td>1</td>
-                                        <td>1</td>
-                                        <td>1</td>
-                                    </tr>
                                 </tbody>
                             </table>
                             <nav>
