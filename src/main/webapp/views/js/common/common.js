@@ -43,16 +43,21 @@ function postDataByAjax(url, data)
 
     var secureData = data ? data : null;
 
-    $.ajax({
-        url,
-        method: "POST",
-        dataType: "json",
-        data: secureData,
-        success: function(result) {
-            return $.extend({successful: true}, result);
-        },
-        error: defaultError
-    });
+    return new Promise((resolve, reject) => {
+            $.ajax({
+                url,
+                method: "POST",
+                dataType: "json",
+                data: secureData,
+                success: function(result) {
+                    resolve(result);
+                },
+                error: function(reason) {
+                    reject(reason);
+                }
+            });
+        }
+    );
 }
 
 
@@ -65,15 +70,21 @@ function deleteDataByAjax(url, data)
 
     var secureData = data ? data : null;
 
-    $.ajax({
-        url,
-        type: "DELETE",
-        data: secureData,
-        success: function(result) {
-            return $.extend({successful: true}, result);
-        },
-        error: defaultError
-    });
+    return new Promise((resolve, reject) => {
+            $.ajax({
+                url,
+                type: "DELETE",
+                dataType: "json",
+                data: secureData,
+                success: function(result) {
+                    resolve(result);
+                },
+                error: function(reason) {
+                    reject(reason);
+                }
+            });
+        }
+    );
 }
 
 function putDataByAjax(url, data)
@@ -85,15 +96,21 @@ function putDataByAjax(url, data)
 
     var secureData = data ? data : null;
 
-    $.ajax({
-        url,
-        type: "PUT",
-        data: secureData,
-        success: function(result) {
-            return $.extend({successful: true}, result);
-        },
-        error: defaultError
-    });
+    return new Promise((resolve, reject) => {
+            $.ajax({
+                url,
+                type: "PUT",
+                dataType: "json",
+                data: secureData,
+                success: function(result) {
+                    resolve(result);
+                },
+                error: function(reason) {
+                    reject(reason);
+                }
+            });
+        }
+    );
 }
 
 function patchDataByAjax(url, data)
@@ -105,15 +122,21 @@ function patchDataByAjax(url, data)
 
     var secureData = data ? data : null;
 
-    $.ajax({
-        url,
-        type: "PATCH",
-        data: secureData,
-        success: function(result) {
-            return $.extend({successful: true}, result);
-        },
-        error: defaultError
-    });
+    return new Promise((resolve, reject) => {
+            $.ajax({
+                url,
+                type: "PATCH",
+                dataType: "json",
+                data: secureData,
+                success: function(result) {
+                    resolve(result);
+                },
+                error: function(reason) {
+                    reject(reason);
+                }
+            });
+        }
+    );
 }
 
 //默认错误处理函数
