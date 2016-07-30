@@ -199,6 +199,7 @@ version: v1
                   "data":{
                       "count":100,
                       "list":[{
+                          "id":物料id(更新时要用到),
                           "number":物料编号,
                           "name": 物料名称,
                           "type": 描述,
@@ -284,6 +285,9 @@ version: v1
     put:
       description: 提供修改过和未修改过的所有信息
       queryParameters:
+        id:
+          type: integer
+          description: 物料id
         name:
           displayName: name
           type: string

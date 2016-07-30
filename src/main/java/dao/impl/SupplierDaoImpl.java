@@ -36,4 +36,9 @@ public class SupplierDaoImpl implements SupplierDao {
     public List<Supplier> getAllList(String[] orderFields, boolean[] isAsc) {
         return baseDao.getAllList(Supplier.class,orderFields,isAsc);
     }
+
+    @Override
+    public Supplier getById(int id) {
+        return (Supplier) baseDao.load(Supplier.class,id);
+    }
 }

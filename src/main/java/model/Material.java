@@ -32,14 +32,14 @@ public class Material implements Serializable{
     private String name;
     private String number;
     private String component;
-    private double unitprice;
+    private double unitprice=0;
     private String measurement;
     private MaterialType type = MaterialType.DEFAULT;
     private Timestamp timestamp = new Timestamp(new Date().getTime());
     private String colorExplain;
-    private double width;
-    private double outAmount;
-    private int supplierId;
+    private double width=0;
+    private double outAmount=0;
+    private int supplierId=0;
     private String storagePos;
     private double inventoryAmount= 0;
 

@@ -38,6 +38,9 @@ public class StyleServiceImpl implements StyleService {
         if(num == null || page == null || operation == null){
             return RestResult.CreateResult(0,new Error(Error.BAD_PARAM,"num,page,operation 均不能为空"));
         }
+        if(page < 1){
+            return RestResult.CreateResult(0,new Error(Error.BAD_PARAM,"page 从1开始"));
+        }
         List<Style> styles;
         if(operation.equals("SEARCH")){
             //搜索
