@@ -32,6 +32,8 @@
                         <div class="bar">
                             <label>款号:</label>
                             <input id="design-code" type="text"/>
+                            <label>款式名称:</label>
+                            <input id="design-name" type="text"/>
                         </div>
                         <div class="bar">
                             <label>图片:</label>
