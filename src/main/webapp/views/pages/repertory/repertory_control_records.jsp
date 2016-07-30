@@ -38,12 +38,10 @@
                             <div class="bar">
                                 <label>物料名称:</label>
                                 <input type="text"/>
-                                <label>物料编号:</label>
+                                <label>负责人</label>
                                 <input type="text"/>
                             </div>
                             <div class="bar">
-                                <label>负责人</label>
-                                <input type="text"/>
                                 <label>调度类型</label>
                                 <select>
                                     <option value ="type">Type</option>
@@ -69,56 +67,20 @@
                                     <th>负责人</th>
                                     <th>调度数量</th>
                                     <th>调度时间</th>
-                                    <th>更多信息</th>
                                 </tr>
                                 </thead>
                                 <tbody>
-                                <tr>
-                                    <td>
-                                        <input type="radio">
-                                    </td>
-                                    <td>1</td>
-                                    <td>1</td>
-                                    <td>1</td>
-                                    <td>1</td>
-                                    <td>1</td>
-                                    <td>1</td>
-                                    <td>1</td>
-                                    <td><a href="<%=request.getContextPath() %>/main/repertorycontrolrecordinfo">更多信息</a></td>
-                                </tr>
-                                <tr>
-                                    <td>
-                                        <input type="radio">
-                                    </td>
-                                    <td>1</td>
-                                    <td>1</td>
-                                    <td>1</td>
-                                    <td>1</td>
-                                    <td>1</td>
-                                    <td>1</td>
-                                    <td>1</td>
-                                    <td><a href="<%=request.getContextPath() %>/main/repertorycontrolrecordinfo">更多信息</a></td>
-                                </tr>
                                 </tbody>
                             </table>
                             <nav>
-                                <ul class="pagination">
-                                    <li>
-                                        <a href="#" aria-label="Previous">
-                                            <span aria-hidden="true">&laquo;</span>
-                                        </a>
-                                    </li>
-                                    <li><a href="#">1</a></li>
-                                    <li><a href="#">2</a></li>
-                                    <li><a href="#">3</a></li>
-                                    <li><a href="#">4</a></li>
-                                    <li><a href="#">5</a></li>
-                                    <li>
-                                        <a href="#" aria-label="Next">
-                                            <span aria-hidden="true">&raquo;</span>
-                                        </a>
-                                    </li>
-                                </ul>
+                              <ul class="paging-section">
+                                  <li id="first"><span class="icon iconfont icon-first"></span></li>
+                                  <li id="previous"><span class="icon iconfont icon-previous"></span></li>
+                                  <li id="current">1页</li>
+                                  <li id="next"><span class="icon iconfont icon-next"></span></li>
+                                  <li id="last"><span class="icon iconfont icon-last"></span></li>
+                                  <li id="sum"><span>总共0页</span></li>
+                              </ul>
                             </nav>
                         </div>
                     </div>
@@ -127,11 +89,8 @@
         </main>
     </div>
 </div>
-<script src="<%=request.getContextPath() %>/views/js/custom/repertory/dateTimePicker.js"></script>
-<script>
-    window.onload = function () {
-        highlightTab('nav-repertory','nav-repertory-control-records');
-    };
-</script>
+<script src="<%=request.getContextPath() %>/views/js/custom/repertory/dateTimePicker.js" charset="utf-8"></script>
+<script src="<%=request.getContextPath() %>/views/js/common/common.js" charset="utf-8"></script>
+<script src="<%=request.getContextPath() %>/views/js/custom/repertory/repertory_control_records.js" charset="utf-8"></script>
 </body>
 </html>
