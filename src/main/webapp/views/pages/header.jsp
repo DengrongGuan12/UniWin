@@ -22,3 +22,4 @@
 <script src="<%=request.getContextPath() %>/views/js/common/nav.js" charset="utf-8"></script>
 <script src="<%=request.getContextPath() %>/views/js/common/bootstrap-datetimepicker.js" charset="utf-8"></script>
 <script src="<%=request.getContextPath() %>/views/js/common/bootstrap-datetimepicker.zh-CN.js" charset="utf-8"></script>
+<script src="<%=request.getContextPath() %>/views/js/common/common.js" charset="utf-8"></script>
