@@ -10,7 +10,7 @@ import java.util.List;
  */
 public class Suppliers {
     private int count;
-    private List<Supplier> supplierList = new ArrayList<>();
+    private List<Supplier> list = new ArrayList<>();
 
     public int getCount() {
         return count;
@@ -20,11 +20,11 @@ public class Suppliers {
         this.count = count;
     }
 
-    public List<Supplier> getSupplierList() {
-        return supplierList;
+    public List<Supplier> getList() {
+        return list;
     }
 
-    public void setSupplierList(List<Supplier> supplierList) {
-        this.supplierList = supplierList;
+    public void setList(List<Supplier> supplierList) {
+        this.list = supplierList;
     }
 }

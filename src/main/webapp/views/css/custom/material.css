@@ -151,7 +151,7 @@
 .main-material-supplier > .material-supplier-header > .supplier-operation button {
   display: block;
 }
-.main-material-supplier > .material-list {
+.main-material-supplier > .supplier-list {
   flex: 1 1 720px;
   padding: 10px 20px 10px 20px;
 }

@@ -66,7 +66,7 @@ public class SupplierServiceImpl implements SupplierService {
         Suppliers suppliers1 = new Suppliers();
         suppliers1.setCount(suppliers.size());
         suppliers = ListUtil.slice(suppliers,page,num);
-        suppliers1.setSupplierList(suppliers);
+        suppliers1.setList(suppliers);
         return RestResult.CreateResult(1,suppliers1);
     }
 
