@@ -75,7 +75,7 @@ public class MaterialServiceImpl implements MaterialService {
             item.setSupplier(supplier.getName());
             items.add(item);
         }
-        materials1.setMaterialItems(items);
+        materials1.setList(items);
         return RestResult.CreateResult(1,materials1);
     }
 

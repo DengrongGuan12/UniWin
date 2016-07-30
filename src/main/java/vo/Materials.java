@@ -8,7 +8,7 @@ import java.util.List;
  */
 public class Materials {
     private int count;
-    private List<MaterialItem> materialItems = new ArrayList<>();
+    private List<MaterialItem> list = new ArrayList<>();
 
     public int getCount() {
         return count;
@@ -18,11 +18,11 @@ public class Materials {
         this.count = count;
     }
 
-    public List<MaterialItem> getMaterialItems() {
-        return materialItems;
+    public List<MaterialItem> getList() {
+        return list;
     }
 
-    public void setMaterialItems(List<MaterialItem> materialItems) {
-        this.materialItems = materialItems;
+    public void setList(List<MaterialItem> list) {
+        this.list = list;
     }
 }

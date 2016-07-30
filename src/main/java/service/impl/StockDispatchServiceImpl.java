@@ -57,7 +57,7 @@ public class StockDispatchServiceImpl implements StockDispatchService {
             stockDispatchItems.add(stockDispatchItem);
 
         }
-        stockDispatchs.setStockDispatchList(stockDispatchItems);
+        stockDispatchs.setList(stockDispatchItems);
         return RestResult.CreateResult(1,stockDispatchs);
     }
 

@@ -9,7 +9,7 @@ import java.util.List;
  */
 public class StockDispatchs {
     private int count;
-    private List<StockDispatchItem> stockDispatchList=new ArrayList<>();
+    private List<StockDispatchItem> list=new ArrayList<>();
 
     public int getCount() {
         return count;
@@ -19,11 +19,11 @@ public class StockDispatchs {
         this.count = count;
     }
 
-    public List<StockDispatchItem> getStockDispatchList() {
-        return stockDispatchList;
+    public List<StockDispatchItem> getList() {
+        return list;
     }
 
-    public void setStockDispatchList(List<StockDispatchItem> stockDispatchList) {
-        this.stockDispatchList = stockDispatchList;
+    public void setList(List<StockDispatchItem> list) {
+        this.list = list;
     }
 }
