@@ -7,7 +7,7 @@
 error 设置了默认处理函数,也可以自定义
 data 设置了默认函数，可以不传
 */
-function getData(url, data)
+function getDataByAjax(url, data)
 {
     if (!arguments || arguments.length < 1)
     {
@@ -16,19 +16,25 @@ function getData(url, data)
 
     var secureData = data ? data : null;
 
-    $.ajax({
-        url,
-        method: "GET",
-        dataType: "json",
-        data: secureData,
-        success: function(result) {
-            return $.extend({successful: true}, result);
-        },
-        error: defaultError
-    });
+
+    return new Promise((resolve, reject) => {
+            $.ajax({
+                url,
+                method: "GET",
+                dataType: "json",
+                data: secureData,
+                success: function(result) {
+                    resolve(result);
+                },
+                error: function(reason) {
+                    reject(reason);
+                }
+            });
+        }
+    );
 }
 
-function postData(url, data)
+function postDataByAjax(url, data)
 {
     if (!arguments || arguments.length < 1)
     {
@@ -50,7 +56,7 @@ function postData(url, data)
 }
 
 
-function deleteData(url, data)
+function deleteDataByAjax(url, data)
 {
     if (!arguments || arguments.length < 1)
     {
@@ -70,7 +76,7 @@ function deleteData(url, data)
     });
 }
 
-function putData(url, data)
+function putDataByAjax(url, data)
 {
     if (!arguments || arguments.length < 1)
     {
@@ -90,7 +96,7 @@ function putData(url, data)
     });
 }
 
-function patchData(url, data)
+function patchDataByAjax(url, data)
 {
     if (!arguments || arguments.length < 1)
     {
