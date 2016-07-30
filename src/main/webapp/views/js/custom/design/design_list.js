@@ -23,6 +23,14 @@ $(document).ready(function(){
                 field: "code"
             });
         }
+        else
+        {
+            loadDesignList({
+                page: 1,
+                num: 10,
+                operation: "NORMAl"
+            });
+        }
     });
 
     $("#detail-button").on("click", (e) => {
