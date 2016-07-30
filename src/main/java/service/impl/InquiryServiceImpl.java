@@ -11,6 +11,9 @@ import service.InquiryService;
 import vo.Error;
 import vo.RestResult;
 
+import java.sql.Timestamp;
+import java.util.Date;
+
 /**
  * Created by dengrong on 2016/7/30.
  */
@@ -49,14 +52,29 @@ public class InquiryServiceImpl implements InquiryService {
         }
         switch (inquiry.getState()){
             case PASS:
+                inquiryOld.setState(InquiryState.PASS);
+                inquiryOld.setCheckTime(new Timestamp(new Date().getTime()));
                 break;
             case REJECT:
+                inquiryOld.setState(InquiryState.REJECT);
+                inquiryOld.setCheckTime(new Timestamp(new Date().getTime()));
                 break;
             case NOCHECK:
+                inquiryOld.setPlateMakePrice(inquiry.getPlateMakePrice());
+                inquiryOld.setProducePrice(inquiry.getProducePrice());
+                inquiryOld.setPurchasePrice(inquiry.getPurchasePrice());
+                inquiryOld.setTechnologyPrice(inquiry.getTechnologyPrice());
+                inquiryOld.setPlatRemark(inquiry.getPlatRemark());
+                inquiryOld.setProdRemark(inquiry.getProdRemark());
+                inquiryOld.setPurcRemark(inquiry.getPurcRemark());
+                inquiryOld.setTechRemark(inquiry.getTechRemark());
                 break;
         }
-
-        return null;
+        if(inquiryDao.update(inquiryOld)){
+            return RestResult.CreateResult(1,null);
+        }else{
+            return RestResult.CreateResult(0,new Error(Error.BAD_PARAM,"数据库写入错误"));
+        }
     }
 
     @Override
