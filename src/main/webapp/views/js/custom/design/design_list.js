@@ -76,6 +76,7 @@ function queryPageData(e)
 
     params.page = curPage;
     $("#design-table").data("curPage", curPage);
+    $("#design-table").data("pageNum", params.num);
     loadDesignList(params);
 
 
@@ -98,7 +99,7 @@ function renderDesignTable(data)
     var $designtable = $("#design-table");
     $designtable.find("tbody").children("tr").remove();
     $("#current").text($("#design-table").data("curPage") + " 页");
-    $("#sum").text("总共 " + data.count + " 页");
+    $("#sum").text("总共 " + (data.count / $("#design-table").data("pageNum")) + " 页");
     items.forEach(function(item)
     {
         $designtable.find("tbody").append(renderDesignItem(item));
@@ -108,7 +109,6 @@ function renderDesignTable(data)
 function renderDesignItem(item)
 {
     var status = item.pass ? "已审核" : "未审核";
-    var c = $("#design-table").data("curPage");
     var $tr = $(`
         <tr>
             <td>
@@ -116,7 +116,7 @@ function renderDesignItem(item)
             </td>
             <td><img width=30px height=20px src=${item.imgUrl}></td>
             <td>${item.code}</td>
-            <td>${c}</td>
+            <td>${item.name}</td>
             <td>${status}</td>
             <td>${item.description}</td>
         </tr>
