@@ -2,10 +2,7 @@ package model;
 
 import org.hibernate.annotations.GenericGenerator;
 
-import javax.persistence.Column;
-import javax.persistence.Entity;
-import javax.persistence.GeneratedValue;
-import javax.persistence.Id;
+import javax.persistence.*;
 import java.io.Serializable;
 import java.sql.Timestamp;
 import java.util.Date;
@@ -16,6 +13,7 @@ import java.util.Date;
 @Entity(name = "inquiry")
 public class Inquiry implements Serializable {
     private int id;
+    private int styleId;
     private Timestamp createTime = new Timestamp(new Date().getTime());//创建时间
     private double technologyPrice;
     private double producePrice;
@@ -25,7 +23,26 @@ public class Inquiry implements Serializable {
     private String prodRemark;
     private String purcRemark;
     private String platRemark;
-    private Boolean passed = false;
+    private InquiryState state = InquiryState.NOCHECK;
+
+    @Column(name = "state",nullable = false)
+    @Enumerated(EnumType.STRING)
+    public InquiryState getState() {
+        return state;
+    }
+
+    public void setState(InquiryState state) {
+        this.state = state;
+    }
+
+    @Column(name = "style_id",nullable = false)
+    public int getStyleId() {
+        return styleId;
+    }
+
+    public void setStyleId(int styleId) {
+        this.styleId = styleId;
+    }
 
     @Column(name = "check_time")
     public Timestamp getCheckTime() {
@@ -132,12 +149,4 @@ public class Inquiry implements Serializable {
         this.platRemark = platRemark;
     }
 
-    @Column(name = "passed")
-    public Boolean getPassed() {
-        return passed;
-    }
-
-    public void setPassed(Boolean passed) {
-        this.passed = passed;
-    }
 }

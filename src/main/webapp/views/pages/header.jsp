@@ -14,6 +14,7 @@
 <link rel="stylesheet" href="<%=request.getContextPath() %>/views/css/common/nav-style.css" />
 <link rel="stylesheet" href="<%=request.getContextPath() %>/views/css/common/bootstrap-datetimepicker.min.css" />
 <link rel="stylesheet" href="<%=request.getContextPath() %>/views/css/common/template.css" />
+<link rel="stylesheet" href="http://at.alicdn.com/t/font_1469720427_0023744.css" charset="utf-8">
 
 
 <script src="<%=request.getContextPath() %>/views/js/common/jquery-1.12.4.js" charset="utf-8"></script>
@@ -21,3 +22,4 @@
 <script src="<%=request.getContextPath() %>/views/js/common/nav.js" charset="utf-8"></script>
 <script src="<%=request.getContextPath() %>/views/js/common/bootstrap-datetimepicker.js" charset="utf-8"></script>
 <script src="<%=request.getContextPath() %>/views/js/common/bootstrap-datetimepicker.zh-CN.js" charset="utf-8"></script>
+<script src="<%=request.getContextPath() %>/views/js/common/common.js" charset="utf-8"></script>

@@ -33,7 +33,7 @@ version: v1
           description: 如果operation是SEARCH,该值就是要搜索的关键词
         field:
           type: string
-          example: NUMBER|NAME
+          example: code|description
           description: 要搜索的域,域之间用|隔开
           required: false
       responses:
@@ -43,12 +43,16 @@ version: v1
               example: |
                 {
                   "result":0失败1成功,
-                  "data":[{
-                  "number":款号,
-                  "imgUrl": 图片地址,
-                  "description": 描述,
-                  "pass":true或false
-                  },{},...],
+                  "data":{
+                      "count":100,
+                      "list":[{
+                          "code":款号,
+                          "imgUrl": 图片地址,
+                          "description": 描述,
+                          "passed":true或false,
+                          "createTimeStr":创建时间
+                          },{},...]
+                  },
                   "error":{
                     "code":错误码,"message":错误信息
                   }
@@ -56,7 +60,7 @@ version: v1
     post:
       description: 新建款式
       queryParameters:
-        number:
+        code:
           type: string
           example: 20160606
           required: true
@@ -66,48 +70,505 @@ version: v1
           example: http://asdf.com/
           required: true
           description: 图片地址，先上传到七牛云然后获取地址
-  /materials:
-    description: 物料相关接口
-    get:
-      description: 获取物料信息
-    post:
-      queryParameters:
-        password:
-          displayName: password
+        description:
           type: string
-          example: 12345
+          example: asdfasdf
           required: true
-          description: 使用token加密
-        userName:
-          type: string
-          example: abcd
-          required: true
-          description: 必须由字母数字组成
-        sex:
-          type: string
-          example: 0(男),1(女)
-          required: true
-        birthday:
-          type: string
-          example: 2015-11-09,注意格式
-          required: true
-        schoolId:
-          type: number
-          example: 1
-          required: true
-        departmentId:
-          type: number
-          example: 1
-          required: true
+          description: 描述
       responses:
         200:
           body:
             application/json:
               example: |
                 {
-                  "data":{
-                    "result":0(表示失败,用户名重复),非0(表示userId)
-                  },
-                  "success": true,
-                  "status": 200
+                  "result":0失败1成功,
+                  "data":null,
+                  "error":{
+                    "code":错误码,"message":错误信息
+                  }
                 }
+    put:
+      description: 修改款式，提供所有修改过和未修改的信息
+      queryParameters:
+        id:
+          type: integer
+          example: 1
+          required: true
+          description: 款式id
+        code:
+          type: string
+          example: 20160606
+          required: true
+          description: 款号
+        imgUrl:
+          type: string
+          example: http://asdf.com/
+          required: true
+          description: 图片地址，先上传到七牛云然后获取地址
+        description:
+          type: string
+          example: asdfasdf
+          required: true
+          description: 描述
+      responses:
+        200:
+          body:
+            application/json:
+              example: |
+                {
+                  "result":0失败1成功,
+                  "data":null,
+                  "error":{
+                    "code":错误码,"message":错误信息
+                  }
+                }
+    delete:
+      description: 删除款式
+      queryParameters:
+        id:
+          type: integer
+          example: 20160606
+          required: true
+          description: 款式id
+      responses:
+        200:
+          body:
+            application/json:
+              example: |
+                {
+                  "result":0失败1成功,
+                  "data":null,
+                  "error":{
+                    "code":错误码,"message":错误信息
+                  }
+                }
+    /detail:
+      description: 款式详情
+      get:
+          queryParameters:
+            id:
+              type: integer
+              example: 20160606
+              required: true
+              description: 款式id
+          responses:
+            200:
+              body:
+                application/json:
+                  example: |
+                    {
+                      "result":0失败1成功,
+                      "data":{
+                      "code":款号,
+                      "imgUrl": 图片地址,
+                      "description": 描述,
+                      "pass":true或false,
+                      "orderList":[
+                      {
+                      "id":10,
+                      "state":状态描述
+                      },{},...
+                      ]
+                      },
+                      "error":{
+                        "code":错误码,"message":错误信息
+                      }
+                    }
+  /materials:
+    description: 物料相关接口
+    get:
+      description: 获取物料信息
+      queryParameters:
+        page:
+          type: integer
+          example: 1
+          required: true
+          description: 页码
+        num:
+          type: integer
+          example: 10
+          required: true
+          description: 每页数量
+      responses:
+        200:
+          body:
+            application/json:
+              example: |
+                {
+                  "result":0失败1成功,
+                  "data":{
+                      "count":100,
+                      "list":[{
+                          "id":物料id(更新时要用到),
+                          "number":物料编号,
+                          "name": 物料名称,
+                          "type": 描述,
+                          "supplierId": 供应商id,
+                          "inventoryAmount": 库存,
+                          "supplier":供应商名称,
+                          "component": 成分,
+                          },{},...]
+                  },
+                  "error":{
+                    "code":错误码,"message":错误信息
+                  }
+                }
+    post:
+      queryParameters:
+        name:
+          displayName: name
+          type: string
+          example: 12345
+          required: true
+          description: 物料名称
+        number:
+          type: string
+          example: abcd
+          required: true
+          description: 物料编号
+        component:
+          type: string
+          example: sdfsdf
+          required: true
+          description: 成分
+        unitprice:
+          type: string
+          example: 10
+          required: true
+          description: 单价
+        measurement:
+          type: string
+          example: 米
+          required: true
+          description: 单位
+        type:
+          type: string
+          example: MAIN/AUXILIARY
+          required: true
+          description: 类型
+        colorExplain:
+          type: string
+          required: true
+          description: 颜色说明
+        width:
+          type: string
+          required: true
+          description: 门幅
+        outAmount:
+          type: string
+          required: true
+          description: 出量
+        supplierId:
+          type: integer
+          required: true
+          description: 供应商id
+        storagePos:
+          type: string
+          required: true
+          description: 仓储位置
+        inventoryAmount:
+          type: string
+          required: true
+          description: 库存数量
+      responses:
+        200:
+          body:
+            application/json:
+              example: |
+                {
+                    "result":0失败1成功,
+                    "data":null,
+                    "error":{
+                      "code":错误码,"message":错误信息
+                    }
+                }
+    put:
+      description: 提供修改过和未修改过的所有信息
+      queryParameters:
+        id:
+          type: integer
+          description: 物料id
+        name:
+          displayName: name
+          type: string
+          example: 12345
+          required: true
+          description: 物料名称
+        number:
+          type: string
+          example: abcd
+          required: true
+          description: 物料编号
+        component:
+          type: string
+          example: sdfsdf
+          required: true
+          description: 成分
+        unitprice:
+          type: string
+          example: 10
+          required: true
+          description: 单价
+        measurement:
+          type: string
+          example: 米
+          required: true
+          description: 单位
+        type:
+          type: string
+          example: MAIN/AUXILIARY
+          required: true
+          description: 类型
+        colorExplain:
+          type: string
+          required: true
+          description: 颜色说明
+        width:
+          type: string
+          required: true
+          description: 门幅
+        outAmount:
+          type: string
+          required: true
+          description: 出量
+        supplierId:
+          type: integer
+          required: true
+          description: 供应商id
+        storagePos:
+          type: string
+          required: true
+          description: 仓储位置
+        inventoryAmount:
+          type: string
+          required: true
+          description: 库存数量
+      responses:
+        200:
+          body:
+            application/json:
+              example: |
+                {
+                    "result":0失败1成功,
+                    "data":null,
+                    "error":{
+                      "code":错误码,"message":错误信息
+                    }
+                }
+  /supplier:
+    post:
+      description: 添加供应商信息
+      queryParameters:
+        name:
+          description: 名称
+        number:
+          description: 编号
+        telNo:
+          description: 电话
+        mbNo:
+          description: 手机
+        address:
+          description: 地址
+        level:
+          description: 等级
+      responses:
+        200:
+          body:
+            application/json:
+              example: |
+                {
+                    "result":0失败1成功,
+                    "data":null,
+                    "error":{
+                      "code":错误码,"message":错误信息
+                    }
+                }
+    get:
+      description: 获取供应商列表
+      queryParameters:
+        page:
+          description: 页码
+        num:
+          description: 每页数量
+        key:
+          description: 关键词
+        operation:
+          description: 操作
+          example: NORMAL\SEARCH
+        field:
+          description: 搜索字段
+          example: name|number
+      responses:
+        200:
+          body:
+            application/json:
+              example: |
+                {
+                    "result":0失败1成功,
+                    "data":{
+                      "count": 总共数量,
+                      "list": [
+                      {
+                      "name":名称,
+                      "number":编号,
+                      "telNo":电话,
+                      "mbNo":手机,
+                      "address":地址,
+                      "level":等级
+                      },{},..
+                      ]
+                    },
+                    "error":{
+                      "code":错误码,"message":错误信息
+                    }
+                }
+  /stockDispatch:
+    get:
+      description: 获取库存调度列表
+      queryParameters:
+        page:
+          description: 页码
+        num:
+          description: 每页数量
+      responses:
+        200:
+          body:
+            application/json:
+              example: |
+                {
+                    "result":0失败1成功,
+                    "data":{
+                      "count": 总共数量,
+                      "list": [
+                      {
+                      "materialName":物料名称,
+                      "type":类型(出库|入库),
+                      "quantity":数量,
+                      "time":时间,
+                      "userName":用户名
+                      },{},..
+                      ]
+                    },
+                    "error":{
+                      "code":错误码,"message":错误信息
+                    }
+                }
+    post:
+      description: 添加一条库存记录
+      queryParameters:
+        materialId:
+          description: 物料id
+        type:
+          description: 类型
+          example: IN|OUT
+        quantity:
+          description: 数量
+          example: 3.4
+      responses:
+        200:
+          body:
+            application/json:
+              example: |
+                {
+                    "result":0失败1成功,
+                    "data":null,
+                    "error":{
+                      "code":错误码,"message":错误信息
+                    }
+                }
+  /inquiry:
+    description: 询价单相关接口
+    post:
+      description: 添加询价单
+      queryParameters:
+        styleId:
+          description: 款式id
+      responses:
+        200:
+          body:
+            application/json:
+              example: |
+                {
+                    "result":0失败1成功,
+                    "data":null,
+                    "error":{
+                      "code":错误码,"message":错误信息
+                    }
+                }
+    get:
+      description: 根据款式id查询询价单
+      queryParameters:
+        styleId:
+          description: 款式id
+      responses:
+        200:
+          body:
+            application/json:
+              example: |
+                {
+                    "result":0失败1成功,
+                    "data":{
+                    "id":询价单id,
+                    "createTime":创建时间,
+                    "technologyPrice":工艺部报价,
+                    "producePrice":生产部报价,
+                    "purchasePrice":采购部报价,
+                    "plateMakePrice":制版部报价,
+                    "techRemark":工艺部备注,
+                    "prodRemark":生产部备注,
+                    "purcRemark":采购部备注,
+                    "platRemark":制版部备注,
+                    "checkTime":审核时间
+                    },
+                    "error":{
+                      "code":错误码,"message":错误信息
+                    }
+                }
+    put:
+      description: 更新询价单信息
+      queryParameters:
+        id:
+          type: integer
+          description: 询价单id
+          example: 1
+        technologyPrice:
+          type: string
+          description: 工艺部报价
+        producePrice:
+          type: string
+          description: 生产部报价
+        purchasePrice:
+          type: string
+          description: 采购部报价
+        plateMakePrice:
+          type: string
+          description: 制版部报价
+        techRemark:
+          type: string
+          description: 工艺部备注
+        prodRemark:
+          type: string
+          description: 生产部备注
+        purcRemark:
+          type: string
+          description: 采购部备注
+        platRemark:
+          type: string
+          description: 制版部备注
+        state:
+          type: string
+          description: PASS|REJECT
+      responses:
+        200:
+          body:
+            application/json:
+              example: |
+                {
+                    "result":0失败1成功,
+                    "data":null,
+                    "error":{
+                      "code":错误码,"message":错误信息
+                    }
+                }
+
+

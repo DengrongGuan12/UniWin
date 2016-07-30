@@ -22,12 +22,16 @@ public interface BaseDao {
 
     public List getAllList(Class c);
 
+    public List getAllList(Class c,String[] orderFields,boolean[] isAsc);
+
     public List getList(Class c, String para, String val);
 
     public List getList(Class c, String[] para, String[] val,
                         String[] operation, String order, boolean isAsc);
 
     public List getList(Class c, String[] para, String[] val, String[] operation);
+
+    public List getList(Class c,String[] para,String[] val,String[] operation,String condition,String order, boolean isAsc);
 
     public List getList(Class[] c, String[] para, String[] val,
                         String[] operation, String order, boolean isAsc);

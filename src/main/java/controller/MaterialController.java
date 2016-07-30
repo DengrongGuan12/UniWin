@@ -1,11 +1,13 @@
 package controller;
 
 import model.Material;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.ResponseBody;
+import service.MaterialService;
 import vo.RestResult;
 
 /**
@@ -15,24 +17,47 @@ import vo.RestResult;
 @RequestMapping("/v1/materials")
 public class MaterialController {
 
+    @Autowired
+    MaterialService materialService;
+
+    @RequestMapping("materialadd")
+    public String materialAdd(){
+        return "material/material_add";
+    }
+
+    @RequestMapping("materialquery")
+    public String materialQuery(){
+        return "material/material_query";
+    }
+
+    @RequestMapping("materialmodify")
+    public String materialModify(){
+        return "material/material_modify";
+    }
+
+    @RequestMapping("materialsupplier")
+    public String materialSupplier(){
+        return "material/material_supplier";
+    }
+
     @RequestMapping(method = RequestMethod.GET)
     @ResponseBody
-    public RestResult get(Integer page, Integer per_page){
-        return RestResult.CreateResult(1,page);
+    public RestResult get(Integer page, Integer num){
+        return materialService.getMaterials(page,num);
     }
 
     @RequestMapping(method = RequestMethod.POST)
     @ResponseBody
     public RestResult post(@ModelAttribute("material")Material material){
         //添加
-        return RestResult.CreateResult(1,material);
+        return materialService.addMaterial(material);
     }
 
     @RequestMapping(method = RequestMethod.PUT)
     @ResponseBody
-    public RestResult put(String a, String b){
+    public RestResult put(@ModelAttribute("material")Material material){
         //在服务器更新资源（客户端提供改变后的完整资源)
-        return RestResult.CreateResult(1,a+";"+b);
+        return materialService.modifyMaterial(material);
     }
 
     @RequestMapping(method = RequestMethod.PATCH)

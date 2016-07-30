@@ -25,4 +25,9 @@ public class UserDaoImpl implements UserDao {
     public List<User> findAll() {
         return baseDao.getAllList(User.class);
     }
+
+    @Override
+    public User getById(int id) {
+        return (User) baseDao.load(User.class,id);
+    }
 }

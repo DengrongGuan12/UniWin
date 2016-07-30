@@ -15,10 +15,12 @@ import java.util.Date;
  */
 @Entity(name = "style")
 public class Style implements Serializable{
-    private int id;
-    private String imgUrl;
-    private String code;//款式编号
-    private String description;//款式描述
+    protected int id;
+    protected String imgUrl;
+    protected String code;//款式编号
+    protected String name;//款式名称
+    protected String description;//款式描述
+    protected Boolean passed = false;
 
     @Column(name = "create_time", nullable = false)
     public Timestamp getCreateTime() {
@@ -29,7 +31,7 @@ public class Style implements Serializable{
         this.createTime = createTime;
     }
 
-    private Timestamp createTime = new Timestamp(new Date().getTime());//创建时间
+    protected Timestamp createTime = new Timestamp(new Date().getTime());//创建时间
 
     @Id
     @Column(name="id",length = 32,nullable = true)
@@ -70,5 +72,21 @@ public class Style implements Serializable{
         this.description = description;
     }
 
+    @Column(name = "passed", nullable = false)
+    public Boolean getPassed() {
+        return passed;
+    }
 
+    public void setPassed(Boolean passed) {
+        this.passed = passed;
+    }
+
+    @Column(name = "name",nullable = false)
+    public String getName() {
+        return name;
+    }
+
+    public void setName(String name) {
+        this.name = name;
+    }
 }

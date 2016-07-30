@@ -10,4 +10,5 @@ import java.util.List;
 public interface UserDao {
     public void save(User u);
     public List<User> findAll();
+    public User getById(int id);
 }

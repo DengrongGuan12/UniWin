@@ -27,6 +27,16 @@ public class User implements Serializable {
     private String wechat;
     private String companyName;
     private int departmentId;
+    private String password;
+
+    @Column(name = "password",nullable = false)
+    public String getPassword() {
+        return password;
+    }
+
+    public void setPassword(String password) {
+        this.password = password;
+    }
 
     @Column(name = "address")
     public String getAddress() {

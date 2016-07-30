@@ -1,0 +1,217 @@
+/*
+the common css of inquiry html
+*/
+label {
+    margin: 8px;
+    width: 100px;
+    font-size: 12px;
+    font-weight: 300;
+}
+input {
+    width: 150px;
+    height: 30px;
+    margin: 5px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+}
+input[type="radio"] {
+    width: 15px;
+    height: 15px;
+}
+textarea {
+    margin: 5px;
+    height: 200px;
+    width: 430px;
+
+}
+
+.normal-img {
+    width: 200px;
+    height: 200px;
+    border: 1px seagreen;
+    margin: 5px;
+}
+
+.short-img
+{
+    width: 50px;
+    height: 50px;
+    margin: 5px;
+}
+
+select {
+    width: 150px;
+    height: 30px;
+    margin: 5px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+}
+button {
+    display: inline-block;
+    padding: 6px 12px;
+    margin-bottom: 0;
+    font-size: 14px;
+    font-weight: 400;
+    line-height: 1.42857143;
+    text-align: center;
+    white-space: nowrap;
+    vertical-align: middle;
+    touch-action: manipulation;
+    cursor: pointer;
+    -webkit-user-select: none;
+    background-image: none;
+    border: 1px solid transparent;
+    border-radius: 4px;
+}
+th {
+    text-align: center;
+    font-size: 16px;
+    font-weight: 900;
+}
+td {
+    text-align: center;
+    font-weight: 400;
+}
+.btn-save {
+    color: #fff;
+    background-color: #337ab7;
+}
+.btn-query {
+    color: #fff;
+    background-color: #337ab7;
+}
+.btn-add {
+    color: #fff;
+    background-color: #f0ad4e;
+}
+.btn-modify {
+    color: #fff;
+    background-color: #31b0d5;
+}
+.btn-delete {
+    color: #fff;
+    background-color: #d9534f;
+    border-color: #d43f3a;
+}
+.btn-back {
+    color: #fff;
+    background-color: #7687b8;
+
+}
+
+/*
+inquiry-modify style css
+*/
+
+.main-inquiry-modify {
+    display: flex;
+    flex-direction: column;
+}
+
+
+.main-inquiry-modify > .style-info {
+    flex: 1 1 560px;
+    display: flex;
+    flex-direction: column;
+}
+
+.main-inquiry-modify > .style-info > .bar {
+    flex: 1 1 40px;
+    padding-left: 20px;
+    display: flex;
+}
+
+.main-inquiry-modify > .style-info > .big-bar {
+    flex: 1 1 200px;
+    padding-left: 20px;
+    display: flex;
+    flex-direction: row;
+    align-items: flex-start;
+}
+
+.main-inquiry-modify > .inquiry-price {
+    flex: 1 1 1200px;
+    display: flex;
+    flex-direction: column;
+}
+.main-inquiry-modify > .inquiry-price > .bar{
+    flex: 1 1 40px;
+    padding-left: 20px;
+    display: flex;
+}
+.main-inquiry-modify > .inquiry-price > .big-bar {
+    flex: 1 1 220px;
+    padding-left: 20px;
+    display: flex;
+    flex-direction: row;
+    align-items: flex-start;
+}
+
+
+.main-inquiry-modify > .inquiry-modify-submit {
+    flex: 1 1 100px;
+}
+.main-inquiry-modify > .inquiry-modify-submit > .bar {
+    padding-left: 40px;
+}
+.main-inquiry-modify > .inquiry-modify-submit > .bar > button {
+    margin-right: 20px;
+}
+
+/*
+inquiry-manage style css
+*/
+.main-inquiry-query {
+    height: 800px;
+    display: flex;
+    flex-direction: column;
+}
+.main-inquiry-query > .inquiry-query-header {
+    padding-top: 20px;
+    padding-bottom: 20px;
+    flex: 1 1 80px;
+    display: flex;
+    flex-direction: row;
+}
+.main-inquiry-query > .inquiry-query-header > .query-info {
+    flex: 1 1 90%;
+    display: flex;
+    flex-direction: column;
+}
+.main-inquiry-query > .inquiry-query-header > .query-info .bar {
+    flex: 1 1 40px;
+    padding-left: 20px;
+    display: inline-block;
+}
+
+
+.main-inquiry-query > .inquiry-query-header > .query-info .btn-query {
+    margin-left: 40px;
+}
+.main-inquiry-query > .inquiry-query-header > .inquiry-operation {
+    flex: 1 1 10%;
+}
+.main-inquiry-query > .inquiry-query-header > .inquiry-operation button {
+    display: block;
+}
+.main-inquiry-query > .inquiry-query-header > .inquiry-operation button:last-child {
+    margin-top: 10px;
+}
+.main-inquiry-query > .inquiry-list {
+    flex: 1 1 720px;
+    padding: 10px 20px 10px 20px;
+}
+.main-inquiry-query > .inquiry-list > .inquiry-table {
+    border-top: 2px solid #3c8dbc;
+    background: #ffffff;
+    margin-bottom: 20px;
+    -webkit-border-radius: 3px;
+    -moz-border-radius: 3px;
+    border-radius: 3px;
+    width: 100%;
+    box-shadow: 0px 1px 3px rgba(0, 0, 0, 0.1);
+}
+.main-inquiry-query > .inquiry-list > .inquiry-table > nav {
+    float: right;
+    margin-right: 20px;
+}
