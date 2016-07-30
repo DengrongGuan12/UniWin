@@ -83,6 +83,5 @@
 </div>
 
 <script src="<%=request.getContextPath() %>/views/js/custom/design/design_list.js" charset="utf-8"></script>
-
 </body>
 </html>
