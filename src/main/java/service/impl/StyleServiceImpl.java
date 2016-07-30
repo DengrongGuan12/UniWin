@@ -12,6 +12,7 @@ import vo.*;
 import vo.Error;
 import vo.Process;
 
+import java.sql.Time;
 import java.sql.Timestamp;
 import java.text.SimpleDateFormat;
 import java.util.ArrayList;
@@ -138,9 +139,12 @@ public class StyleServiceImpl implements StyleService {
         styleDetail.setImgUrl(style.getImgUrl());
         styleDetail.setPass(style.getPassed());
         List<Process> processes = new ArrayList<>();
+        String timeStr = TimeUtil.toString(new Timestamp(new Date().getTime()));
         for(int i = 0;i<10;i++){
             Process process = new Process();
             process.setId(i);
+            process.setCreateTime(timeStr);
+            process.setOrderNumber(timeStr.replace(" ","").replace("-","").replace(":","")+"0000"+i);
             process.setState("正在询价中...");
             processes.add(process);
         }

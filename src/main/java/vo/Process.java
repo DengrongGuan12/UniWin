@@ -6,6 +6,24 @@ package vo;
 public class Process {
     private int id;
     private String state;
+    private String createTime;
+    private String orderNumber;
+
+    public String getCreateTime() {
+        return createTime;
+    }
+
+    public void setCreateTime(String createTime) {
+        this.createTime = createTime;
+    }
+
+    public String getOrderNumber() {
+        return orderNumber;
+    }
+
+    public void setOrderNumber(String orderNumber) {
+        this.orderNumber = orderNumber;
+    }
 
     public int getId() {
         return id;
