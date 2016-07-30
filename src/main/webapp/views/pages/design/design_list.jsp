@@ -30,8 +30,8 @@
                         <div class="query-info">
                             <div class="bar">
                                 <label>款号:</label>
-                                <input id="design-code" type="text"/>
-                                <button type="button" class="btn-query">查询</button>
+                                <input id="query-code" type="text"/>
+                                <button id="query-button" type="button" class="btn-query">查询</button>
                             </div>
                         </div>
                         <div class="design-operation">
@@ -47,6 +47,7 @@
                                         <th>图片</th>
                                         <th>款号</th>
                                         <th>款式名称</th>
+                                        <th>创建时间</th>
                                         <th>状态</th>
                                         <th>描述</th>
                                     </tr>
@@ -73,6 +74,5 @@
 </div>
 
 <script src="<%=request.getContextPath() %>/views/js/custom/design/design_list.js" charset="utf-8"></script>
-
 </body>
 </html>

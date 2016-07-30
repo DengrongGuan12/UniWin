@@ -1,3 +1,8 @@
+window.onload = function () {
+    highlightTab('nav-repertory','nav-repertory-records');
+};
+
+
 init();
 function init() {
     $("input").prop("disabled", true);
@@ -38,3 +43,31 @@ $(".tab-nav").each(function(index){
         });
     }
 });
+
+$(document).ready(() => {
+
+});
+
+function updateTable(options)
+{
+
+}
+
+function renderTable(data)
+{
+    /*
+    <th></th>
+    <th>出库时间</th>
+    <th>物料编号</th>
+    <th>物料名称</th>
+    <th>物料类型</th>
+    <th>出库数量</th>
+    <th>单价</th>
+    <th>负责人</th>
+    <th>供应商编号</th>
+    <th>供应商名称</th>
+    <th>供应商地址</th>
+    */
+
+
+}

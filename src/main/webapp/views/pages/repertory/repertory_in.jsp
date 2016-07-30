@@ -39,7 +39,7 @@
                             <label>物料名称:</label>
                             <input type="text"/>
                             <label>物料编号:</label>
-                            <input type="text"/>
+                            <input id="material-id" type="text"/>
                         </div>
                         <div class="bar">
                             <label>物料成分:</label>
@@ -74,8 +74,8 @@
                         <div class="bar">
                             <label>供应商名称:</label>
                             <input type="text" disabled />
-                            <label>出量:</label>
-                            <input type="text"/>
+                            <label>数量:</label>
+                            <input id="repertory-in-quantity" type="text"/>
                             <label>米/公斤</label>
                         </div>
                         <div class="bar">
@@ -98,8 +98,8 @@
                     </div>
                     <div class="repertoryIn-add-submit">
                         <div class="bar">
-                            <button type="submit" class="btn-save">保存</button>
-                            <button type="button" >返回</button>
+                            <button type="buttom" class="btn-save">保存</button>
+                            <button type="button" class="btn-remove">清空</button>
                         </div>
                     </div>
                 </div>
@@ -107,12 +107,8 @@
         </main>
     </div>
 </div>
-
-<script>
-    window.onload = function () {
-        highlightTab('nav-repertory','nav-inRepertory');
-    };
-</script>
+<script src="<%=request.getContextPath() %>/views/js/common/common.js" charset="utf-8"></script>
+<script src="<%=request.getContextPath() %>/views/js/custom/repertory/repertory_in.js" charset="utf-8"></script>
+</body>
 </body>
 </html>
-

@@ -13,12 +13,14 @@ $(document).ready(function(){
             {
                 var imgUrl = res;
                 var code = $("#design-code").val();
+                var name = $("#design-name").val();
                 var description = $("#design-description").val();
 
-                if (imgUrl && code && description)
+                if (imgUrl && code && name)
                 {
                     addDesign({
                         imgUrl,
+                        name,
                         code,
                         description
                     });

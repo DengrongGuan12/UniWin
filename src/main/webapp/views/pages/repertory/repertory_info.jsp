@@ -40,7 +40,7 @@
                     <li class="tab-nav"><a href="#repertoryOut-records">出库记录</a></li>
                 </ul>
                 <div class="tab-panel repertory-info">
-                    <div class="material-info">
+                    <div class="repertory-info">
                         <div class="bar"><a class="table-header">基础信息>></a></div>
                         <div class="bar">
                             <label>物料名称:</label>
@@ -85,7 +85,7 @@
                             <input type="text" class="input-lg" disabled />
                         </div>
                     </div>
-                    <div class="material-inventory">
+                    <div class="repertory-inventory">
                         <div class="bar"><a class="table-header">库存信息>></a></div>
                         <div class="bar">
                             <label>仓储位置:</label>
@@ -151,23 +151,14 @@
                             </tbody>
                         </table>
                         <nav>
-                            <ul class="pagination">
-                                <li>
-                                    <a href="#" aria-label="Previous">
-                                        <span aria-hidden="true">&laquo;</span>
-                                    </a>
-                                </li>
-                                <li><a href="#">1</a></li>
-                                <li><a href="#">2</a></li>
-                                <li><a href="#">3</a></li>
-                                <li><a href="#">4</a></li>
-                                <li><a href="#">5</a></li>
-                                <li>
-                                    <a href="#" aria-label="Next">
-                                        <span aria-hidden="true">&raquo;</span>
-                                    </a>
-                                </li>
-                            </ul>
+                          <ul class="paging-section">
+                              <li id="first"><span class="icon iconfont icon-first"></span></li>
+                              <li id="previous"><span class="icon iconfont icon-previous"></span></li>
+                              <li id="current">1页</li>
+                              <li id="next"><span class="icon iconfont icon-next"></span></li>
+                              <li id="last"><span class="icon iconfont icon-last"></span></li>
+                              <li id="sum"><span>总共0页</span></li>
+                          </ul>
                         </nav>
                     </div>
 
@@ -224,23 +215,14 @@
                             </tbody>
                         </table>
                         <nav>
-                            <ul class="pagination">
-                                <li>
-                                    <a href="#" aria-label="Previous">
-                                        <span aria-hidden="true">&laquo;</span>
-                                    </a>
-                                </li>
-                                <li><a href="#">1</a></li>
-                                <li><a href="#">2</a></li>
-                                <li><a href="#">3</a></li>
-                                <li><a href="#">4</a></li>
-                                <li><a href="#">5</a></li>
-                                <li>
-                                    <a href="#" aria-label="Next">
-                                        <span aria-hidden="true">&raquo;</span>
-                                    </a>
-                                </li>
-                            </ul>
+                          <ul class="paging-section">
+                              <li id="first"><span class="icon iconfont icon-first"></span></li>
+                              <li id="previous"><span class="icon iconfont icon-previous"></span></li>
+                              <li id="current">1页</li>
+                              <li id="next"><span class="icon iconfont icon-next"></span></li>
+                              <li id="last"><span class="icon iconfont icon-last"></span></li>
+                              <li id="sum"><span>总共0页</span></li>
+                          </ul>
                         </nav>
                     </div>
 
@@ -250,11 +232,7 @@
         </main>
     </div>
 </div>
-<script src="<%=request.getContextPath() %>/views/js/custom/repertory/repertoryInfo.js"></script>
-<script>
-    window.onload = function () {
-        highlightTab('nav-repertory','nav-repertory-records');
-    };
-</script>
+<script src="<%=request.getContextPath() %>/views/js/common/common.js" charset="utf-8"></script>
+<script src="<%=request.getContextPath() %>/views/js/custom/repertory/repertory_info.js"></script>
 </body>
 </html>

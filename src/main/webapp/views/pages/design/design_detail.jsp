@@ -30,80 +30,47 @@
                         <div class="bar"><a class="table-header">款式信息>></a></div>
                         <div class="bar">
                             <label>款号:</label>
-                            <input type="text"/>
-                            <label>状态:</label>
-                            <select>
-                                <option value ="volvo">Volvo</option>
-                                <option value ="volvo">Volvo</option>
-                            </select>
+                            <input name="design-code" type="text" readonly/>
+                            <label>名称:</label>
+                            <input name="design-name" type="text" readonly/>
                         </div>
                         <div class="bar">
-                            <label>图片:</label>
-                            <input type="text" class="input-lg"/>
+                            <label>创建时间:</label>
+                            <input name="design-createTime" type="text" readonly/>
+                            <label>状态:</label>
+                            <input name="design-status" type="text" readonly/>
                         </div>
                         <div class="bar-text-field">
                             <label>描述:</label>
                             <div class="text-area">
-                                <textarea name="" id="" cols="59" rows="10"></textarea>
+                                <textarea name="design-description" cols="59" rows="10" readonly></textarea>
                             </div>
                         </div>
 
                         <div class="design-modify-submit">
                             <div class="submit-bar">
-                                <button type="button" class="btn-modify">编辑</button>
                                 <button type="button" class="btn-add">新建询价单</button>
                             </div>
                         </div>
                     </div>
                     <div class="design-img">
-                        <img src="http://d03.res.meilishuo.net/pic/_o/af/c0/06c1acc094c2c0e214e290969679_311_309.c1.jpg" alt="" />
+                        <img src="" alt="" />
                     </div>
 
-                    <div class="design-query-list">
+                    <div class="design-order-list">
                         <div class="table-wrapper table-responsive">
                             <table class="table table-striped table-hover">
                                 <thead>
                                     <tr>
-                                        <th></th>
-                                        <th>图片</th>
-                                        <th>款号</th>
-                                        <th>款式名称</th>
-                                        <th>状态</th>
-                                        <th>描述</th>
+                                        <th>订单ID</th>
+                                        <th>订单号</th>
+                                        <th>创建时间</th>
+                                        <th>订单状态</th>
                                     </tr>
                                 </thead>
                                 <tbody>
-                                    <tr>
-                                        <td>
-                                            <input type="radio">
-                                        </td>
-                                        <td>1</td>
-                                        <td>1</td>
-                                        <td>1</td>
-                                        <td>1</td>
-                                        <td>1</td>
-                                    </tr>
                                 </tbody>
                             </table>
-                            <nav>
-                              <ul class="pagination">
-                                <li>
-                                  <a href="#" aria-label="Previous">
-                                    <span aria-hidden="true">&laquo;</span>
-                                  </a>
-                                </li>
-                                <li><a href="#">1</a></li>
-                                <li><a href="#">2</a></li>
-                                <li><a href="#">3</a></li>
-                                <li><a href="#">4</a></li>
-                                <li><a href="#">5</a></li>
-                                <li>
-                                  <a href="#" aria-label="Next">
-                                    <span aria-hidden="true">&raquo;</span>
-                                  </a>
-                                </li>
-                              </ul>
-                            </nav>
                         </div>
                     </div>
                 </div>
