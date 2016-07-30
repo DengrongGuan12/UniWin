@@ -30,8 +30,8 @@
                         <div class="query-info">
                             <div class="bar">
                                 <label>款号:</label>
-                                <input id="design-code" type="text"/>
-                                <button type="button" class="btn-query">查询</button>
+                                <input id="query-code" type="text"/>
+                                <button id="query-button" type="button" class="btn-query">查询</button>
                             </div>
                         </div>
                         <div class="design-operation">

@@ -11,6 +11,20 @@ $(document).ready(function(){
         $("#detail-button").data("id", $tr.data("id"));
     });
 
+    $("#query-button").on("click", (e) => {
+        var keyword = $("#query-code").val().trim();
+        if (keyword !== "")
+        {
+            loadDesignList({
+                page: 1,
+                num: 10,
+                operation: "SEARCH",
+                key: keyword,
+                field: "code"
+            });
+        }
+    });
+
     $("#detail-button").on("click", (e) => {
         var id = $(e.currentTarget).data("id");
         location.href = "./designdetail?" + "id=" + id;
@@ -30,7 +44,7 @@ function queryPageData(e)
     var id = $(e.currentTarget).attr("id");
     var params = {};
     var curPage = $("#design-table").data("curPage");
-    var queryDesignCode = $("#design-code").val();
+    var queryDesignCode = $("#query-code").val();
     var sumPage = $("#design-table").data("sumPage");
 
     if (queryDesignCode !== "")
