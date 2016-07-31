@@ -9,13 +9,13 @@ function _inquiry_add()
     if ($("#inquiry-add").data("styleId"))
     {
         const id = $("#inquiry-add").data("styleId");
-        const url = "/uniwin//v1/inquiry?styleId=" + id;
+        const url = "/uniwin/v1/inquiry?styleId=" + id;
         postDataByAjax(url).then((result) => {
             if (result.result === 1)
             {
                 alert("创建成功");
                 // 如何传ID
-                window.location = "./inquirymodify";
+                window.location = "./inquirymodify?styleId=" + id;
             }
             else
             {

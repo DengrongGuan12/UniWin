@@ -99,10 +99,5 @@
     </div>
 </div>
 <script src="<%=request.getContextPath() %>/views/js/common/common.js"></script>
-<script>
-    window.onload = function () {
-        highlightTab('nav-inquiry','nav-inquiry-manage');
-    };
-</script>
 </body>
 </html>

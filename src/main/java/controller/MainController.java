@@ -68,12 +68,6 @@ public class MainController {
     @RequestMapping("repertoryinfo")
     public String repertoryInfo() { return "repertory/repertory_info";};
 
-    @RequestMapping("inquirymodify")
-    public String inquiryModify() { return "inquiry/inquiry-modify"; }
-
-    @RequestMapping("inquirymanage")
-    public String inquiryManage() { return "inquiry/inquiry-manage"; }
-
 
     @RequestMapping("/json")
     @ResponseBody
