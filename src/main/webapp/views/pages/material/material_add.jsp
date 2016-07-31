@@ -55,7 +55,7 @@
                         </div>
                         <div class="bar">
                             <label>入库时间:</label>
-                            <input name="material-time" type="text" class="date-picker"/>
+                            <input name="material-time" type="text" disabled class="date-picker"/>
                             <label>颜色说明:</label>
                             <input name="material-colorExplain" type="text"/>
                         </div>

@@ -1,19 +1,40 @@
-var repertoryRootURL = "/uniwin/v1/stockDispatch";
+
+var repertoryRootURL = "/uniwin/v1/materials";
 var numOfPage = 4;
+
 window.onload = function () {
-    highlightTab('nav-repertory','nav-repertory-control-records');
+    highlightTab('nav-repertory','nav-repertory-records');
 };
 
 $(document).ready(function() {
     updateTable({page: 1, num: 4});
     $(".paging-section").on("click", "li", _pagination_click);
     $(".btn-query").on("click", _search);
-    $(".repertory-control-records-table > table").on("click", "tr", _toggleChecked);
+    $(".repertory-records-table > table").on("click", "tr", _toggleChecked);
+    $(".btn-add").on("click", () => {
+        const id = $(".btn-add").data("id");
+        if (id)
+        {
+            console.log(id);
+            window.location.href = "./repertoryin?id=" + id;
+        }
+    });
+    $(".btn-modify").on("click", () => {
+        const id  = $(".btn-modify").data("id");
+        if (id)
+        {
+            console.log(id);
+            window.location.href = "./repertoryout?id=" + id;
+        }
+    });
 });
 
 function _toggleChecked(e)
 {
-    $(e.currentTarget).find("input").attr("checked", !$(e.currentTarget).find("input").attr("checked"));
+    $("input[type='radio']").prop("checked", false);
+    $(e.currentTarget).find("input").prop("checked", "checked");
+    $(".btn-modify").data("id", $(e.currentTarget).data("id"));
+    $(".btn-add").data("id", $(e.currentTarget).data("id"));
 }
 
 function _search(e)
@@ -27,8 +48,8 @@ function _search(e)
 function _pagination_click(e)
 {
     const id = $(e.currentTarget).attr("id");
-    const sum = $(".repertory-control-records-table > table").data("sumPage");
-    let page = $(".repertory-control-records-table > table").data("curPage");
+    const sum = $(".repertory-records-table > table").data("sumPage");
+    let page = $(".repertory-records-table > table").data("curPage");
     let canUpdate = true;
     switch(id)
     {
@@ -79,12 +100,13 @@ function updateTable(options)
 {
     if (options && options.page && options.num)
     {
-        var url = repertoryRootURL + "?page=" + options.page + "&num=" + options.num;
+        var url = repertoryRootURL + "?page=" + options.page + "&num=" + options.num + "&operation=NORMAL";
         var result = getDataByAjax(url).then((result) => {
+            console.log(result.data);
             if (result.result === 1)
             {
-                $(".repertory-control-records-table > table").data("curPage", options.page);
-                $(".repertory-control-records-table > table").data("sumPage", Math.ceil(result.data.count / options.num));
+                $(".repertory-records-table > table").data("curPage", options.page);
+                $(".repertory-records-table > table").data("sumPage", Math.ceil(result.data.count / options.num));
                 updatePagination();
                 renderTable(result.data);
             }
@@ -97,8 +119,8 @@ function updateTable(options)
 // 更新分页信息
 function updatePagination()
 {
-    const current = $(".repertory-control-records-table > table").data("curPage");
-    const sum = $(".repertory-control-records-table > table").data("sumPage");
+    const current = $(".repertory-records-table > table").data("curPage");
+    const sum = $(".repertory-records-table > table").data("sumPage");
 
     $("#current").text(current + "页");
     $("#sum > span").text("总共" + sum + "页");
@@ -111,22 +133,26 @@ function renderTable(data)
     <th></th>
     <th>物料编号</th>
     <th>物料名称</th>
-    <th>调度类型</th>
+    <th>类型</th>
+    <th>供应商名称</th>
+    <th>供应商编号</th>
+    <th>仓储数量</th>
     <th>仓储位置</th>
-    <th>负责人</th>
-    <th>调度数量</th>
-    <th>调度时间</th>
+    <th>更多信息</th>
 
 
     table绑定数据和产生ID
-    "materialName":物料名称,
-      "type":类型(出库|入库),
-      "quantity":数量,
-      "time":时间,
-      "userName":用户名
+    "id":物料id(更新时要用到),
+          "number":物料编号,
+          "name": 物料名称,
+          "type": 描述,
+          "supplierId": 供应商id,
+          "inventoryAmount": 库存,
+          "supplier":供应商名称,
+          "component": 成分,
     */
     $(".repertory-control-records-list").data("data", data);
-    const $container = $(".repertory-control-records-table > table");
+    const $container = $(".repertory-records-table > table");
     $container.children("tbody").find("tr").remove();
     if (data && data.list.length > 0)
     {
@@ -138,14 +164,16 @@ function renderTable(data)
             <td>
             <input type="radio">
             </td>
-            <td>1</td>
-            <td>${item.materialName}</td>
+            <td>${item.id}</td>
+            <td>${item.name}</td>
             <td>${item.type}</td>
+            <td>${item.supplier}</td>
+            <td>${item.supplierId}</td>
+            <td>${item.inventoryAmount}</td>
             <td>1</td>
-            <td>${item.userName}</td>
-            <td>${item.quantity}</td>
-            <td>${item.time}</td>
+            <td><a href="./repertoryinfo?id=${item.id}">更多信息</a></td>
             </tr>`);
+            $item.data("id", item.id);
             $container.append($item);
             index++;
         }

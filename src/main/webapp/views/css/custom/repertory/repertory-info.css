@@ -46,7 +46,7 @@ inherint from cengshuo
 */
 
 .tab-panel {
-    height: 600px;
+    height: 510px;
     display: flex;
     flex-direction: column;
 }
@@ -72,7 +72,7 @@ inherint from cengshuo
     flex-direction: column;
 }
 .tab-panel > .repertory-inventory {
-    flex: 1 1 150px;
+    flex: 1 1 60px;
     display: flex;
     flex-direction: column;
 }

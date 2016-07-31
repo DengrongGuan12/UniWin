@@ -49,7 +49,7 @@
 
                         <div class="design-modify-submit">
                             <div class="submit-bar">
-                                <button type="button" class="btn-add">新建询价单</button>
+                                <button id="inquiry-add-button" type="button" class="btn-add">新建询价单</button>
                             </div>
                         </div>
                     </div>

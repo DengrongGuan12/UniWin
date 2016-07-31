@@ -99,6 +99,20 @@ td {
 
 }
 
+nav > .paging-section {
+  margin-top: 5px;
+  margin-bottom: 5px;
+  padding-left: 20px;
+  padding-right: 20px;
+  display: flex;
+  flex-direction: row;
+}
+nav > .paging-section li {
+  flex: 1 1 auto;
+  padding-left: 8px;
+  padding-right: 8px;
+}
+
 /*
 inquiry-modify style css
 */

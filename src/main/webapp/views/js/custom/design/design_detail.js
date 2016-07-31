@@ -3,11 +3,29 @@ $(document).ready(function(){
 
     var param = location.href.split("?")[1];
     var id = param.split("=")[1];
+    $("#inquiry-add-button").data("styleId", id);
     getDataByAjax("./detail",{ id }).then(result => {
         if (result.result === 1) {
             console.log(result.data);
             renderDesignDetail(result.data);
         }
+    });
+
+    $("#inquiry-add-button").on("click", (e) => {
+        var styleId = $("#inquiry-add-button").data("styleId");
+        const url = "/uniwin/v1/inquiry?styleId=" + id;
+        postDataByAjax(url).then((result) => {
+            if (result.result === 1)
+            {
+                alert("创建成功");
+                // 如何传ID
+                window.location = "../inquiry/inquirymodify";
+            }
+            else
+            {
+                alert("创建失败");
+            }
+        });
     });
 });
 

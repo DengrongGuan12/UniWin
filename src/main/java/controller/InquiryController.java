@@ -18,6 +18,12 @@ public class InquiryController {
     @Autowired
     InquiryService inquiryService;
 
+    @RequestMapping("inquirymodify")
+    public String inquiryModify() { return "inquiry/inquiry-modify"; }
+
+    @RequestMapping("inquirymanage")
+    public String inquiryManage() { return "inquiry/inquiry-manage"; }
+
     @RequestMapping(method = RequestMethod.POST)
     @ResponseBody
     public RestResult post(Integer styleId){

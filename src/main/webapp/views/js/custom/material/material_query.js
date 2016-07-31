@@ -7,9 +7,29 @@ $(document).ready(function(){
     $("#material-table").data("curPage", 1);
     // $(".paging-section").on("click", "li", queryPageData);
 
+    $("#material-table > tbody").on("click", "tr", (e) => {
+        var $tr = $(e.currentTarget);
+        $tr.find("input").prop("checked", true);
+        $("#material-modify-button").data("id", $tr.data("id"));
+    });
+
+    $("#material-modify-button").on("click", (e) => {
+        var id = $(e.currentTarget).data("id");
+        if (id)
+        {
+            location.href = "./materialmodify?" + "id=" + id;
+        }
+        else
+        {
+            alert("请选择");
+        }
+
+    });
+
     loadMaterialList({
         page: 1,
-        num: 10
+        num: 10,
+        operation: "NORMAl"
     });
 });
 
@@ -42,11 +62,13 @@ function renderMaterialTable(data)
 
 function renderMaterialItem(item)
 {
+    var type = (item.type === "MAIN") ? "面料" : "辅料" ;
     var $tr = $(`
         <tr>
+            <td><input name="select" type="radio" /></td>
             <td>${item.number}</td>
             <td>${item.name}</td>
-            <td>${item.type}</td>
+            <td>${type}</td>
             <td>${item.supplierId}</td>
             <td>${item.supplier}</td>
             <td>${item.inventoryAmount}</td>

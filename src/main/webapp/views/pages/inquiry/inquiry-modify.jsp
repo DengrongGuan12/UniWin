@@ -98,11 +98,6 @@
         </main>
     </div>
 </div>
-<script src="<%=request.getContextPath() %>/views/js/custom/repertory/repertoryInfo.js"></script>
-<script>
-    window.onload = function () {
-        highlightTab('nav-inquiry','nav-inquiry-manage');
-    };
-</script>
+<script src="<%=request.getContextPath() %>/views/js/common/common.js"></script>
 </body>
 </html>

@@ -77,15 +77,14 @@
         {
             flex: 0 0 200px;
             height: 200px;
-            border: 1px solid gray;
             margin-right: 5px;
+            border: none;
         }
 
-        .modal-body .style-info .info
+        .modal-body .style-info .style-description
         {
             flex: 0 0 200px;
-            margin-left: 5px;
-            border: 1px solid gray;
+            margin-left: 25px;
         }
 
 
@@ -110,8 +109,8 @@
                 <!--   款式ID输入  -->
                 <div class="style-input">
                     <label>款式ID</label>
-                    <input type="text">
-                    <button type="button">验证ID</button>
+                    <input id="style-id" type="text">
+                    <button id="checkId" type="button">验证ID</button>
                 </div>
                 <!-- error info -->
                 <div class="error-info">
@@ -119,18 +118,20 @@
                 </div>
                 <!--  款式信息 -->
                 <div class="style-info">
-                    <div class="style-image">款式图片</div>
-                    <div class="info">款式的相关信息</div>
+                    <img class="style-image" alt="" />
+
+                    <div class="style-description"></div>
                 </div>
             </div>
             <div class="modal-footer">
                 <button type="button" class="btn btn-default"
                         data-dismiss="modal">关闭
                 </button>
-                <button type="button" class="btn btn-primary">
+                <button id="inquiry-add" type="button" class="btn btn-primary">
                     提交新建
                 </button>
             </div>
         </div><!-- /.modal-content -->
     </div><!-- /.modal -->
 </div>
+<script src="<%=request.getContextPath() %>/views/js/custom/inquiry/inquiry_add.js" charset="utf-8"></script>
