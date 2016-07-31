@@ -46,7 +46,7 @@
                         </div>
                         <div class="material-operation">
                             <button id="material-add-button" type="button" class="btn-add">新增</button>
-                            <button type="button" class="btn-modify">修改</button>
+                            <button id="material-modify-button" type="button" class="btn-modify">修改</button>
                         </div>
                     </div>
                     <div class="material-list">
@@ -54,6 +54,7 @@
                             <table id="material-table" class="table table-striped table-hover">
                                 <thead>
                                     <tr>
+                                        <th></th>
                                         <th>物料编号</th>
                                         <th>物料名称</th>
                                         <th>类型</th>

@@ -13,7 +13,6 @@
         <ul class="submenu">
             <li id="nav-material-add"><a href="<%=request.getContextPath() %>/v1/materials/materialadd">物料新增</a></li>
             <li id="nav-material-query"><a href="<%=request.getContextPath() %>/v1/materials/materialquery">物料查询</a></li>
-            <li id="nav-material-modify"><a href="<%=request.getContextPath() %>/v1/materials/materialmodify">物料修改</a></li>
             <li id="nav-material-supplier"><a href="<%=request.getContextPath() %>/v1/materials/materialsupplier">供应商管理</a></li>
         </ul>
     </li>
