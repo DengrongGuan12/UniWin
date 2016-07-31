@@ -16,7 +16,7 @@ $(document).ready(function() {
         if (id)
         {
             console.log(id);
-            window.location.href = "./repertoryin?id=" + id;
+            window.location.href = "./repertoryout?id=" + id;
         }
     });
     $(".btn-modify").on("click", () => {
@@ -24,7 +24,7 @@ $(document).ready(function() {
         if (id)
         {
             console.log(id);
-            window.location.href = "./repertoryout?id=" + id;
+            window.location.href = "./repertoryin?id=" + id;
         }
     });
 });

@@ -38,58 +38,58 @@
                         <div class="bar"><a class="table-header">款式信息>></a></div>
                         <div class="bar">
                             <label>款号:</label>
-                            <input type="text"/>
-                            <label>状态:</label>
-                            <input type="text"/>
+                            <input id="style-id"  type="text" disabled="disabled"/>
+                            <label>名称:</label>
+                            <input id="style-name" type="text" disabled="disabled"/>
                         </div>
                         <div class="big-bar">
                             <label>图片:</label>
-                            <img class="normal-img" src="" alt="缺少图片">
+                            <img id="style-img" class="normal-img" src="" alt="缺少图片">
                         </div>
                         <div class="big-bar">
                             <label>描述:</label>
-                            <textarea name=""  cols="59" rows="10"></textarea>
+                            <textarea id="style-description"  cols="59" rows="10" disabled="disabled"></textarea>
                         </div>
                     </div>
                     <div class="inquiry-price">
                         <div class="bar"><a class="table-header">报价信息>></a></div>
                         <div class="bar">
                             <label>生产部门报价:</label>
-                            <input type="text"/>
+                            <input id="inquiry-price-p" type="text"/>
                         </div>
                         <div class="big-bar">
                             <label>生产部门备注:</label>
-                            <textarea name=""  cols="59" rows="10"></textarea>
+                            <textarea id="inquiry-description-p"  cols="59" rows="10"></textarea>
                         </div>
                         <div class="bar">
                             <label>工艺部门报价:</label>
-                            <input type="text"/>
+                            <input id="inquiry-price-t" type="text"/>
                         </div>
                         <div class="big-bar">
                             <label>工艺部门备注:</label>
-                            <textarea name=""  cols="59" rows="10"></textarea>
+                            <textarea id="inquiry-description-t"  cols="59" rows="10"></textarea>
                         </div>
                         <div class="bar">
                             <label>采购部门报价:</label>
-                            <input type="text"/>
+                            <input id="inquiry-price-b" type="text"/>
                         </div>
                         <div class="big-bar">
                             <label>采购部门备注:</label>
-                            <textarea name=""  cols="59" rows="10"></textarea>
+                            <textarea id="inquiry-description-b" cols="59" rows="10"></textarea>
                         </div>
                         <div class="bar">
                             <label>制版部门报价:</label>
-                            <input type="text"/>
+                            <input id="inquiry-price-m" type="text"/>
                         </div>
                         <div class="big-bar">
                             <label>制版部门备注:</label>
-                            <textarea name=""  cols="59" rows="10"></textarea>
+                            <textarea id="inquiry-description-m" cols="59" rows="10"></textarea>
                         </div>
                     </div>
                     <div class="inquiry-modify-submit">
                         <div class="bar">
-                            <button type="submit" class="btn-save">保存</button>
-                            <button type="button" >返回</button>
+                            <button type="submit" id="commit-btn" class="btn-save">提交</button>
+                            <button type="button" id="remove-btn">清空</button>
                         </div>
                     </div>
                 </div>
@@ -99,5 +99,6 @@
     </div>
 </div>
 <script src="<%=request.getContextPath() %>/views/js/common/common.js"></script>
+<script src="<%=request.getContextPath() %>/views/js/custom/inquiry/inquiry-modify.js"></script>
 </body>
 </html>

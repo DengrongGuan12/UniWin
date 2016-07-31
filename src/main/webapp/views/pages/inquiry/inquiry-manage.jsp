@@ -60,36 +60,17 @@
                                 <tr>
                                     <th></th>
                                     <th>图片</th>
-                                    <th>询价单编号</th>
-                                    <th>部门</th>
-                                    <th>部门报价</th>
+                                    <th>款式ID</th>
+                                    <th>工艺部门报价</th>
+                                    <th>生产部门报价</th>
+                                    <th>采购部门报价</th>
+                                    <th>制版部门报价</th>
                                     <th>进度</th>
-                                    <th>详细信息</th>
+                                    <th>更多操作</th>
                                 </tr>
                                 </thead>
                                 <tbody>
-                                <tr>
-                                    <td>
-                                        <input type="radio">
-                                    </td>
-                                    <td>1</td>
-                                    <td>1</td>
-                                    <td>1</td>
-                                    <td>1</td>
-                                    <td>1</td>
-                                    <td><a href="<%=request.getContextPath() %>/main/inquirymodify">修改</a></td>
-                                </tr>
-                                <tr>
-                                    <td>
-                                        <input type="radio">
-                                    </td>
-                                    <td>1</td>
-                                    <td>1</td>
-                                    <td>1</td>
-                                    <td>1</td>
-                                    <td>1</td>
-                                    <td><a href="<%=request.getContextPath() %>/main/inquirymodify">修改</a></td>
-                                </tr>
+
                                 </tbody>
                             </table>
                             <nav>

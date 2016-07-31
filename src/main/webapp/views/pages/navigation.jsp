@@ -53,7 +53,7 @@
     <li id="nav-inquiry">
         <div class="link"><i class="glyphicon glyphicon-th"></i>询价管理<i class="glyphicon glyphicon-chevron-down"></i></div>
         <ul class="submenu">
-            <li id="nav-inquiry-manage"><a href="<%=request.getContextPath() %>/main/inquirymanage">询价单管理</a></li>
+            <li id="nav-inquiry-manage"><a href="<%=request.getContextPath() %>/v1/inquiry/inquirymanage">询价单管理</a></li>
         </ul>
     </li>
 

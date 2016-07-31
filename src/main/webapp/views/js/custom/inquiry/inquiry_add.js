@@ -64,7 +64,6 @@ function updateInquiry(data)
 function updateStyle(id)
 {
     const url = "/uniwin/v1/styles/detail?id=" + id;
-    alert(url);
     getDataByAjax(url).then((result) => {
         if (result.result === 1)
         {

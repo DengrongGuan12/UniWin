@@ -7,7 +7,7 @@ window.onload = function () {
 };
 
 $(document).ready(function() {
-    //updateTable({page: 1, num: 4});
+    updateTable({page: 1, num: 4});
     $(".paging-section").on("click", "li", _pagination_click);
     $(".btn-query").on("click", _search);
     $(".inquiry-table > table").on("click", "tr", _toggleChecked);
@@ -15,7 +15,8 @@ $(document).ready(function() {
 
 function _toggleChecked(e)
 {
-    $(e.currentTarget).find("input").attr("checked", !$(e.currentTarget).find("input").attr("checked"));
+    $("input[type='radio']").prop("checked", false);
+    $(e.currentTarget).find("input").prop("checked", "checked");
 }
 
 function _search(e)
@@ -72,7 +73,7 @@ function _pagination_click(e)
 
     if (canUpdate)
     {
-        //updateTable({page, num: numOfPage});
+        updateTable({page, num: numOfPage});
     }
 }
 
@@ -85,14 +86,12 @@ function updateTable(options)
         var result = getDataByAjax(url).then((result) => {
             if (result.result === 1)
             {
-                console.log(result.data);
                 $(".inquiry-table > table").data("curPage", options.page);
                 $(".inquiry-table > table").data("sumPage", Math.ceil(result.data.count / options.num));
                 updatePagination();
                 renderTable(result.data);
             }
-        }, (reason) => {
-            console.log(reason);
+
         });
 
     }
@@ -112,28 +111,25 @@ function renderTable(data)
     /*
     table tr
     <th></th>
-    <th>物料编号</th>
-    <th>物料名称</th>
-    <th>类型</th>
-    <th>供应商名称</th>
-    <th>供应商编号</th>
-    <th>仓储数量</th>
-    <th>仓储位置</th>
-    <th>更多信息</th>
-
+    <th>图片</th>
+    <th>款式ID</th>
+    <th>工艺部门报价</th>
+    <th>生产部门报价</th>
+    <th>采购部门报价</th>
+    <th>制版部门报价</th>
+    <th>进度</th>
+    <th>更多操作</th>
 
     table绑定数据和产生ID
-    id":询价单id,
+    "id":询价单id,
+    "styleId":款式id,
     "createTime":创建时间,
     "technologyPrice":工艺部报价,
     "producePrice":生产部报价,
     "purchasePrice":采购部报价,
     "plateMakePrice":制版部报价,
-    "techRemark":工艺部备注,
-    "prodRemark":生产部备注,
-    "purcRemark":采购部备注,
-    "platRemark":制版部备注,
-    "checkTime":审核时间
+    "checkTime":审核时间,
+    "state":状态
     */
     $(".repertory-control-records-list").data("data", data);
     const $container = $(".inquiry-table > table");
@@ -144,20 +140,31 @@ function renderTable(data)
         while(index < data.list.length)
         {
             const item = data.list[index];
+            console.log(item.imgUrl);
+            console.log(item.styleId);
+            console.log(item);
             const $item = $(`<tr id="index-${index}">
             <td>
             <input type="radio">
             </td>
-            <td>${item.id}</td>
-            <td>${item.name}</td>
-            <td>${item.type}</td>
-            <td>${item.supplier}</td>
-            <td>${item.supplierId}</td>
-            <td>${item.inventoryAmount}</td>
-            <td>1</td>
-            <td><a href="./repertoryinfo">更多信息</a></td>
+            <td><img class="short-img" /></td>
+            <td>${item.styleId}</td>
+            <td>${item.technologyPrice}</td>
+            <td>${item.producePrice}</td>
+            <td>${item.purchasePrice}</td>
+            <td>${item.plateMakePrice}</td>
+            <td>${item.checkTime ? "passed" : "pending"}</td>
+            <td><a href="./inquirymodify?styleId=${item.styleId}">修改</a></td>
             </tr>`);
-            $item.data("id", item.id);
+            const newurl = "/uniwin/v1/styles/detail?id=" + item.styleId;
+            getDataByAjax(newurl).then((result) => {
+                if (result.result === 1)
+                {
+                    $item.find("img").attr("src", result.data.imgUrl);
+                }
+            });
+
+            $item.data("id", item.styleId);
             $container.append($item);
             index++;
         }
