@@ -30,10 +30,16 @@ public class InquiryController {
         return inquiryService.addInquiry(styleId);
     }
 
+    @RequestMapping(value = "/detail",method = RequestMethod.GET)
+    @ResponseBody
+    public RestResult detail(Integer styleId){
+        return inquiryService.get(styleId);
+    }
+
     @RequestMapping(method = RequestMethod.GET)
     @ResponseBody
-    public RestResult get(Integer styleId){
-        return inquiryService.get(styleId);
+    public RestResult get(Integer page,Integer num){
+        return inquiryService.getList(page,num);
     }
 
     @RequestMapping(method = RequestMethod.PUT)

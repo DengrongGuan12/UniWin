@@ -10,4 +10,5 @@ public interface InquiryService {
     public RestResult addInquiry(Integer styleId);
     public RestResult updateInquiry(Inquiry inquiry);
     public RestResult get(Integer styleId);
+    public RestResult getList(Integer page,Integer num);
 }

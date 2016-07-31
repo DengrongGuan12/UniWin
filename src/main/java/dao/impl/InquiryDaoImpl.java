@@ -50,4 +50,11 @@ public class InquiryDaoImpl implements InquiryDao {
         }
         return true;
     }
+
+    @Override
+    public List<Inquiry> getAllList() {
+        String[] a = {"create_time"};
+        boolean[] b = {false};
+        return baseDao.getAllList(Inquiry.class,a,b);
+    }
 }
