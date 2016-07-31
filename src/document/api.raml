@@ -539,10 +539,12 @@ version: v1
                     }
                 }
     get:
-      description: 根据款式id查询询价单
+      description: 获取询价单列表
       queryParameters:
-        styleId:
-          description: 款式id
+        page:
+          description: 页码
+        num:
+          description: 每页数量
       responses:
         200:
           body:
@@ -551,17 +553,20 @@ version: v1
                 {
                     "result":0失败1成功,
                     "data":{
+                    "count":100,
+                    "list":[
+                    {
                     "id":询价单id,
+                    "styleId":款式id,
                     "createTime":创建时间,
                     "technologyPrice":工艺部报价,
                     "producePrice":生产部报价,
                     "purchasePrice":采购部报价,
                     "plateMakePrice":制版部报价,
-                    "techRemark":工艺部备注,
-                    "prodRemark":生产部备注,
-                    "purcRemark":采购部备注,
-                    "platRemark":制版部备注,
-                    "checkTime":审核时间
+                    "checkTime":审核时间,
+                    "state":状态
+                    },...
+                    ]
                     },
                     "error":{
                       "code":错误码,"message":错误信息
@@ -613,5 +618,35 @@ version: v1
                       "code":错误码,"message":错误信息
                     }
                 }
-
+    /detail:
+      description: 根据款式id获取询价单详情
+      get:
+          queryParameters:
+            styleId:
+              description: 款式id
+          responses:
+            200:
+              body:
+                application/json:
+                  example: |
+                    {
+                        "result":0失败1成功,
+                        "data":{
+                        "id":询价单id,
+                        "createTime":创建时间,
+                        "technologyPrice":工艺部报价,
+                        "producePrice":生产部报价,
+                        "purchasePrice":采购部报价,
+                        "plateMakePrice":制版部报价,
+                        "techRemark":工艺部备注,
+                        "prodRemark":生产部备注,
+                        "purcRemark":采购部备注,
+                        "platRemark":制版部备注,
+                        "checkTime":审核时间,
+                        "state":状态
+                        },
+                        "error":{
+                          "code":错误码,"message":错误信息
+                        }
+                    }
 
