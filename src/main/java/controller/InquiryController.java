@@ -3,6 +3,7 @@ package controller;
 import model.Inquiry;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
+import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.ResponseBody;
@@ -44,7 +45,7 @@ public class InquiryController {
 
     @RequestMapping(method = RequestMethod.PUT)
     @ResponseBody
-    public RestResult put(Inquiry inquiry){
+    public RestResult put(@ModelAttribute("inquiry") Inquiry inquiry){
         return inquiryService.updateInquiry(inquiry);
     }
 }
