@@ -189,6 +189,15 @@ version: v1
           example: 10
           required: true
           description: 每页数量
+        operation:
+          type: string
+          description: NORMAL/SEARCH
+        keys:
+          type: string
+          description: abc|gc
+        fields:
+          type: string
+          description: name|number
       responses:
         200:
           body:
@@ -355,6 +364,40 @@ version: v1
                       "code":错误码,"message":错误信息
                     }
                 }
+    /detail:
+      get:
+        description: 获取物料的详情
+        queryParameters:
+          id:
+            description: 物料id
+        responses:
+            200:
+              body:
+                application/json:
+                  example: |
+                    {
+                      "result":0失败1成功,
+                      "data":{
+                         "id":物料id(更新时要用到),
+                         "number":物料编号,
+                         "name": 物料名称,
+                         "supplierId": 供应商id,
+                         "inventoryAmount": 库存,
+                         "supplier":供应商名称,
+                         "component": 成分,
+                         "unitPrice": 单价,
+                         "measurement": 单位,
+                         "type": 类型MAIN|AUXILIARY,
+                         "colorExplain": 颜色说明,
+                         "width": 门幅,
+                         "outAmount": 出量,
+                         "storagePos": 仓储位置,
+                         "inventoryAmount": 库存数量
+                      },
+                      "error":{
+                        "code":错误码,"message":错误信息
+                      }
+                    }
   /supplier:
     post:
       description: 添加供应商信息

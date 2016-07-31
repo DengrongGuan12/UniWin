@@ -47,4 +47,9 @@ public class MaterialDaoImpl implements MaterialDao {
         }
         return true;
     }
+
+    @Override
+    public List<Material> selectByCondition(String[] param, String[] val, String[] operation, String condition, String order, boolean isAsc) {
+        return baseDao.getList(Material.class,param,val,operation,condition,order,isAsc);
+    }
 }
