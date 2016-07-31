@@ -12,16 +12,29 @@ $(document).ready(function() {
     $(".btn-query").on("click", _search);
     $(".repertory-records-table > table").on("click", "tr", _toggleChecked);
     $(".btn-add").on("click", () => {
-        window.location.href = "./repertoryin";
+        const id = $(".btn-add").data("id");
+        if (id)
+        {
+            console.log(id);
+            window.location.href = "./repertoryin?id=" + id;
+        }
     });
     $(".btn-modify").on("click", () => {
-        window.location.href = "./repertoryout";
+        const id  = $(".btn-modify").data("id");
+        if (id)
+        {
+            console.log(id);
+            window.location.href = "./repertoryout?id=" + id;
+        }
     });
 });
 
 function _toggleChecked(e)
 {
-    $(e.currentTarget).find("input").attr("checked", !$(e.currentTarget).find("input").attr("checked"));
+    $("input[type='radio']").prop("checked", false);
+    $(e.currentTarget).find("input").prop("checked", "checked");
+    $(".btn-modify").data("id", $(e.currentTarget).data("id"));
+    $(".btn-add").data("id", $(e.currentTarget).data("id"));
 }
 
 function _search(e)
@@ -87,11 +100,11 @@ function updateTable(options)
 {
     if (options && options.page && options.num)
     {
-        var url = repertoryRootURL + "?page=" + options.page + "&num=" + options.num;
+        var url = repertoryRootURL + "?page=" + options.page + "&num=" + options.num + "&operation=NORMAL";
         var result = getDataByAjax(url).then((result) => {
+            console.log(result.data);
             if (result.result === 1)
             {
-                console.log(result.data);
                 $(".repertory-records-table > table").data("curPage", options.page);
                 $(".repertory-records-table > table").data("sumPage", Math.ceil(result.data.count / options.num));
                 updatePagination();
@@ -140,7 +153,7 @@ function renderTable(data)
     */
     $(".repertory-control-records-list").data("data", data);
     const $container = $(".repertory-records-table > table");
-    $container.children("tr").remove();
+    $container.children("tbody").find("tr").remove();
     if (data && data.list.length > 0)
     {
         let index = 0;
@@ -158,7 +171,7 @@ function renderTable(data)
             <td>${item.supplierId}</td>
             <td>${item.inventoryAmount}</td>
             <td>1</td>
-            <td><a href="./repertoryinfo">更多信息</a></td>
+            <td><a href="./repertoryinfo?id=${item.id}">更多信息</a></td>
             </tr>`);
             $item.data("id", item.id);
             $container.append($item);
