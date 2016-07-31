@@ -127,7 +127,7 @@ function renderTable(data)
     */
     $(".repertory-control-records-list").data("data", data);
     const $container = $(".repertory-control-records-table > table");
-    $container.children("tr").remove();
+    $container.children("tbody").find("tr").remove();
     if (data && data.list.length > 0)
     {
         let index = 0;
