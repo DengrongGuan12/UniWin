@@ -12,4 +12,5 @@ public interface MaterialDao {
     public List<Material> getAllList();
     public Material getById(int id);
     public boolean update(Material material);
+    public List<Material> selectByCondition(String[] param, String[] val, String[] operation, String condition,String order,boolean isAsc);
 }

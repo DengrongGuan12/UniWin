@@ -28,20 +28,20 @@ import java.util.Date;
 
 @Entity(name = "material")
 public class Material implements Serializable{
-    private int id;
-    private String name;
-    private String number;
-    private String component;
-    private double unitprice=0;
-    private String measurement;
-    private MaterialType type = MaterialType.DEFAULT;
-    private Timestamp timestamp = new Timestamp(new Date().getTime());
-    private String colorExplain;
-    private double width=0;
-    private double outAmount=0;
-    private int supplierId=0;
-    private String storagePos;
-    private double inventoryAmount= 0;
+    protected int id;
+    protected String name;
+    protected String number;
+    protected String component;
+    protected double unitprice=0;
+    protected String measurement;
+    protected MaterialType type = MaterialType.DEFAULT;
+    protected Timestamp timestamp = new Timestamp(new Date().getTime());
+    protected String colorExplain;
+    protected double width=0;
+    protected double outAmount=0;
+    protected int supplierId=0;
+    protected String storagePos;
+    protected double inventoryAmount= 0;
 
     @Column(name = "time",nullable = false)
     public Timestamp getTimestamp() {
