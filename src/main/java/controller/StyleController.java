@@ -44,8 +44,8 @@ public class StyleController {
 
     @RequestMapping(method = RequestMethod.PUT)
     @ResponseBody
-    public RestResult put(@ModelAttribute("style")Style style){
-        return styleService.updateStyle(style);
+    public RestResult put(@ModelAttribute("style")Style style,String materials){
+        return styleService.updateStyle(style,materials);
     }
 
     @RequestMapping(method = RequestMethod.DELETE)

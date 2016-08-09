@@ -45,7 +45,8 @@ public class InquiryController {
 
     @RequestMapping(method = RequestMethod.PUT)
     @ResponseBody
-    public RestResult put(@ModelAttribute("inquiry") Inquiry inquiry){
-        return inquiryService.updateInquiry(inquiry);
+    public RestResult put(@ModelAttribute("inquiry") Inquiry inquiry,String materials){
+//        return RestResult.CreateResult(1,materials+inquiry.getPlatRemark());
+        return inquiryService.updateInquiry(inquiry,materials);
     }
 }

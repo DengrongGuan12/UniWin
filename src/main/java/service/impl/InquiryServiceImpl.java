@@ -5,6 +5,8 @@ import dao.StyleDao;
 import model.Inquiry;
 import model.InquiryState;
 import model.Style;
+import org.json.JSONArray;
+import org.json.JSONObject;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 import service.InquiryService;

@@ -3,6 +3,8 @@ package service.impl;
 import dao.StyleDao;
 import dao.UserDao;
 import model.Style;
+import org.json.JSONArray;
+import org.json.JSONObject;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 import service.StyleService;
@@ -86,7 +88,7 @@ public class StyleServiceImpl implements StyleService {
     }
 
     @Override
-    public RestResult updateStyle(Style style) {
+    public RestResult updateStyle(Style style,String materials) {
 //        return RestResult.CreateResult(1,style);
         if(style.getId() == 0 ||style.getCode() == null){
             return RestResult.CreateResult(0,new Error(Error.BAD_PARAM,"款号和id不能为空"));
@@ -103,6 +105,14 @@ public class StyleServiceImpl implements StyleService {
         }
         if(style.getDescription() != null){
             style1.setDescription(style.getDescription());
+        }
+        if(materials != null && !materials.equals("")){
+            JSONArray jsonArray = new JSONArray(materials);
+            for(int i = 0;i<jsonArray.length();i++){
+                JSONObject jsonObject = jsonArray.optJSONObject(i);
+                int materialId = jsonObject.optInt("id");
+                double amount = jsonObject.optDouble("amount");
+            }
         }
         styleDao.update(style1);
         return RestResult.CreateResult(1,null);
