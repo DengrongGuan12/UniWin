@@ -49,6 +49,13 @@
                                 <textarea name="" id="design-description" cols="59" rows="10"></textarea>
                             </div>
                         </div>
+                        <div class="bar"><a class="table-header">款式物料信息>></a></div>
+                        <div class="bar">
+                            <label>款号:</label>
+                            <input id="design-code" type="text"/>
+                            <label>款式名称:</label>
+                            <input id="design-name" type="text"/>
+                        </div>
                         <div class="design-add-submit">
                             <div class="submit-bar">
                                 <button type="submit" class="btn-save" id="submit">保存</button>
