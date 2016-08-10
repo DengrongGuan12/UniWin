@@ -33,6 +33,11 @@ public class MainController {
         return "index";
     }
 
+    @RequestMapping("login")
+    public String Login(){
+        return "index";
+    }
+
 
 
     @RequestMapping("usermanage")
