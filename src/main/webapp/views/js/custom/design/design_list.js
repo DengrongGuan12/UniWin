@@ -35,7 +35,14 @@ $(document).ready(function(){
 
     $("#detail-button").on("click", (e) => {
         var id = $(e.currentTarget).data("id");
-        location.href = "./designdetail?" + "id=" + id;
+        if (id)
+        {
+            location.href = "./designdetail?" + "id=" + id;
+        }
+        else
+        {
+            alert("请选择");
+        }
     });
 
 

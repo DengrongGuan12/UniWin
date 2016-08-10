@@ -45,70 +45,37 @@
                             </div>
                         </div>
                         <div class="material-operation">
-                            <button type="button" class="btn-add">新增</button>
-                            <button type="button" class="btn-modify">修改</button>
+                            <button id="material-add-button" type="button" class="btn-add">新增</button>
+                            <button id="material-modify-button" type="button" class="btn-modify">修改</button>
                         </div>
                     </div>
                     <div class="material-list">
                         <div class="table-wrapper table-responsive">
-                            <table class="table table-striped table-hover">
+                            <table id="material-table" class="table table-striped table-hover">
                                 <thead>
                                     <tr>
                                         <th></th>
                                         <th>物料编号</th>
                                         <th>物料名称</th>
                                         <th>类型</th>
-                                        <th>供应商</th>
+                                        <th>供应商ID</th>
+                                        <th>供应商名称</th>
                                         <th>库存数量</th>
-                                        <th>规格</th>
                                         <th>成分</th>
                                     </tr>
                                 </thead>
                                 <tbody>
-                                    <tr>
-                                        <td>
-                                            <input type="radio">
-                                        </td>
-                                        <td>1</td>
-                                        <td>1</td>
-                                        <td>1</td>
-                                        <td>1</td>
-                                        <td>1</td>
-                                        <td>1</td>
-                                        <td>1</td>
-                                    </tr>
-                                    <tr>
-                                        <td>
-                                            <input type="radio">
-                                        </td>
-                                        <td>1</td>
-                                        <td>1</td>
-                                        <td>1</td>
-                                        <td>1</td>
-                                        <td>1</td>
-                                        <td>1</td>
-                                        <td>1</td>
-                                    </tr>
                                 </tbody>
                             </table>
                             <nav>
-                              <ul class="pagination">
-                                <li>
-                                  <a href="#" aria-label="Previous">
-                                    <span aria-hidden="true">&laquo;</span>
-                                  </a>
-                                </li>
-                                <li><a href="#">1</a></li>
-                                <li><a href="#">2</a></li>
-                                <li><a href="#">3</a></li>
-                                <li><a href="#">4</a></li>
-                                <li><a href="#">5</a></li>
-                                <li>
-                                  <a href="#" aria-label="Next">
-                                    <span aria-hidden="true">&raquo;</span>
-                                  </a>
-                                </li>
-                              </ul>
+                                <ul class="paging-section">
+                                    <li id="first"><span class="icon iconfont icon-first"></span></li>
+                                    <li id="previous"><span class="icon iconfont icon-previous"></span></li>
+                                    <li id="current">1页</li>
+                                    <li id="next"><span class="icon iconfont icon-next"></span></li>
+                                    <li id="last"><span class="icon iconfont icon-last"></span></li>
+                                    <li id="sum"><span>总共0页</span></li>
+                                </ul>
                             </nav>
                         </div>
                     </div>

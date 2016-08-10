@@ -34,9 +34,8 @@ textarea {
 
 .short-img
 {
-    width: 50px;
-    height: 50px;
-    margin: 5px;
+    width: 30px;
+    height: 30px;
 }
 
 select {
@@ -97,6 +96,20 @@ td {
     color: #fff;
     background-color: #7687b8;
 
+}
+
+nav > .paging-section {
+  margin-top: 5px;
+  margin-bottom: 5px;
+  padding-left: 20px;
+  padding-right: 20px;
+  display: flex;
+  flex-direction: row;
+}
+nav > .paging-section li {
+  flex: 1 1 auto;
+  padding-left: 8px;
+  padding-right: 8px;
 }
 
 /*

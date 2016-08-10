@@ -37,45 +37,44 @@
                         <div class="bar"><a class="table-header">基础信息>></a></div>
                         <div class="bar">
                             <label>物料名称:</label>
-                            <input type="text"/>
+                            <input id="material-name" type="text"/>
                             <label>物料编号:</label>
-                            <input id="material-id" type="text"/>
+                            <input id="material-number" type="text"/>
                         </div>
                         <div class="bar">
                             <label>物料成分:</label>
-                            <input type="text"/>
+                            <input id="material-component" type="text"/>
                             <label>物料单价:</label>
-                            <input type="text"/>
+                            <input id="material-unitPrice" type="text"/>
                         </div>
                         <div class="bar">
                             <label>单位:</label>
-                            <select>
-                                <option value ="volvo">Volvo</option>
-                                <option value ="volvo">Volvo</option>
-                            </select>
+                            <input id="material-measurement" type="text"/>
                             <label>类型:</label>
-                            <select>
-                                <option value ="volvo">Volvo</option>
+                            <select id="material-type">
+                                <option value ="MAIN">MAIN</option>
+                                <option value ="AUXILIARY">AUXILIARY</option>
+                                <option value="DEFAULT">DEFAULT</option>
                             </select>
                         </div>
                         <div class="bar">
                             <label>入库时间:</label>
-                            <input type="text" class="date-picker"/>
+                            <input id="material-time" type="text" class="date-picker"/>
                             <label>颜色说明:</label>
-                            <input type="text"/>
+                            <input id="material-colorExplain"type="text"/>
                         </div>
                         <div class="bar">
                             <label>供应商编号:</label>
-                            <input type="text" />
+                            <input id="material-supplierId" type="text" />
                             <label>门幅:</label>
-                            <input type="text"/>
+                            <input id="material-width" type="text"/>
                             <label>米</label>
                         </div>
                         <div class="bar">
                             <label>供应商名称:</label>
-                            <input type="text" disabled />
-                            <label>数量:</label>
-                            <input id="repertory-in-quantity" type="text"/>
+                            <input id="material-supplier" type="text" disabled />
+                            <label>出量:</label>
+                            <input id="material-outAmount" type="text"/>
                             <label>米/公斤</label>
                         </div>
                         <div class="bar">
@@ -84,16 +83,16 @@
                         </div>
                     </div>
                     <div class="material-inventory">
-                        <div class="bar"><a class="table-header">库存信息>></a></div>
+                        <div class="bar"><a class="table-header">入库信息>></a></div>
                         <div class="bar">
+                            <label>入库数量:</label>
+                            <input id="repertory-in-quantity" type="text"/>
                             <label>仓储位置:</label>
-                            <input type="text"/>
-                            <label>库存数量:</label>
-                            <input type="text"/>
+                            <input id="repertory-in-location" type="text"/>
                         </div>
                         <div class="bar">
                             <label>可用库存:</label>
-                            <input type="text" disabled />
+                            <input id="material-inventoryAmount" type="text" disabled />
                         </div>
                     </div>
                     <div class="repertoryIn-add-submit">

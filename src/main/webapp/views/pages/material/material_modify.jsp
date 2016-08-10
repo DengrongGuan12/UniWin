@@ -30,45 +30,47 @@
                         <div class="bar"><a class="table-header">基础信息>></a></div>
                         <div class="bar">
                             <label>物料名称:</label>
-                            <input type="text"/>
+                            <input name="material-name" type="text"/>
                             <label>物料编号:</label>
-                            <input type="text"/>
+                            <input name="material-number" type="text"/>
                         </div>
                         <div class="bar">
                             <label>物料成分:</label>
-                            <input type="text"/>
+                            <input name="material-component" type="text"/>
                             <label>物料单价:</label>
-                            <input type="text"/>
+                            <input name="material-unitprice" type="text"/>
                         </div>
                         <div class="bar">
                             <label>单位:</label>
-                            <select>
-                                <option value ="volvo">Volvo</option>
-                                <option value ="volvo">Volvo</option>
+                            <select name="material-measurement">
+                                <option value ="米">米</option>
+                                <option value ="尺">尺</option>
+                                <option value ="寸">寸</option>
                             </select>
                             <label>类型:</label>
-                            <select>
-                                <option value ="volvo">Volvo</option>
+                            <select name="material-type">
+                                <option value ="MAIN">面料</option>
+                                <option value ="AUXILIARY">辅料</option>
                             </select>
                         </div>
                         <div class="bar">
                             <label>入库时间:</label>
-                            <input type="text" class="date-picker"/>
+                            <input name="material-time" type="text" disabled/>
                             <label>颜色说明:</label>
-                            <input type="text"/>
+                            <input name="material-colorExplain" type="text"/>
                         </div>
                         <div class="bar">
                             <label>供应商编号:</label>
-                            <input type="text" />
+                            <input name="material-supplierId" type="text" />
                             <label>门幅:</label>
-                            <input type="text"/>
+                            <input name="material-width" type="text"/>
                             <label>米</label>
                         </div>
                         <div class="bar">
                             <label>供应商名称:</label>
-                            <input type="text" disabled />
+                            <input name="material-supplierName" type="text" disabled />
                             <label>出量:</label>
-                            <input type="text"/>
+                            <input name="material-outAmount" type="text"/>
                             <label>米/公斤</label>
                         </div>
                         <div class="bar">
@@ -80,9 +82,9 @@
                         <div class="bar"><a class="table-header">库存信息>></a></div>
                         <div class="bar">
                             <label>仓储位置:</label>
-                            <input type="text"/>
+                            <input name="material-storagePos" type="text"/>
                             <label>库存数量:</label>
-                            <input type="text"/>
+                            <input name="material-inventoryAmount" type="text"/>
                         </div>
                         <div class="bar">
                             <label>可用库存:</label>
@@ -91,7 +93,7 @@
                     </div>
                     <div class="material-modify-submit">
                         <div class="bar">
-                            <button type="submit" class="btn-save">保存</button>
+                            <button id="material-modify-button" type="submit" class="btn-save">保存</button>
                             <button type="button" >返回</button>
                         </div>
                     </div>

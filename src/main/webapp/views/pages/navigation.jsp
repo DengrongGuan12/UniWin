@@ -13,7 +13,6 @@
         <ul class="submenu">
             <li id="nav-material-add"><a href="<%=request.getContextPath() %>/v1/materials/materialadd">物料新增</a></li>
             <li id="nav-material-query"><a href="<%=request.getContextPath() %>/v1/materials/materialquery">物料查询</a></li>
-            <li id="nav-material-modify"><a href="<%=request.getContextPath() %>/v1/materials/materialmodify">物料修改</a></li>
             <li id="nav-material-supplier"><a href="<%=request.getContextPath() %>/v1/materials/materialsupplier">供应商管理</a></li>
         </ul>
     </li>
@@ -23,8 +22,6 @@
         <ul class="submenu">
             <li id="nav-repertory-records"><a href="<%=request.getContextPath() %>/main/repertoryrecords">库存</a></li>
             <li id="nav-repertory-control-records"><a href="<%=request.getContextPath() %>/main/repertorycontrolrecords">库存调度</a></li>
-            <li id="nav-inRepertory"><a href="<%=request.getContextPath() %>/main/repertoryin">入库</a></li>
-            <li id="nav-outRepertory"><a href="<%=request.getContextPath() %>/main/repertoryout">出库</a></li>
         </ul>
     </li>
 
@@ -56,8 +53,7 @@
     <li id="nav-inquiry">
         <div class="link"><i class="glyphicon glyphicon-th"></i>询价管理<i class="glyphicon glyphicon-chevron-down"></i></div>
         <ul class="submenu">
-            <li id="nav-inquiry-manage"><a href="<%=request.getContextPath() %>/main/inquirymanage">询价单管理</a></li>
-            <li id="nav-inquiry-add"><a href="<%=request.getContextPath() %>/main/inquiryadd">新增询价单</a></li>
+            <li id="nav-inquiry-manage"><a href="<%=request.getContextPath() %>/v1/inquiry/inquirymanage">询价单管理</a></li>
         </ul>
     </li>
 

@@ -12,18 +12,18 @@ import java.util.Date;
  */
 @Entity(name = "inquiry")
 public class Inquiry implements Serializable {
-    private int id;
-    private int styleId;
-    private Timestamp createTime = new Timestamp(new Date().getTime());//创建时间
-    private double technologyPrice;
-    private double producePrice;
-    private double purchasePrice;
-    private double plateMakePrice;
+    protected int id;
+    protected int styleId;
+    protected Timestamp createTime = new Timestamp(new Date().getTime());//创建时间
+    protected double technologyPrice;
+    protected double producePrice;
+    protected double purchasePrice;
+    protected double plateMakePrice;
     private String techRemark;
     private String prodRemark;
     private String purcRemark;
     private String platRemark;
-    private InquiryState state = InquiryState.NOCHECK;
+    protected InquiryState state = InquiryState.NOCHECK;
 
     @Column(name = "state",nullable = false)
     @Enumerated(EnumType.STRING)

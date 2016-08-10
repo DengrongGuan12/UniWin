@@ -42,8 +42,8 @@ public class MaterialController {
 
     @RequestMapping(method = RequestMethod.GET)
     @ResponseBody
-    public RestResult get(Integer page, Integer num){
-        return materialService.getMaterials(page,num);
+    public RestResult get(Integer page, Integer num, String operation, String keys,String fields){
+        return materialService.getMaterials(page,num,operation,keys,fields);
     }
 
     @RequestMapping(method = RequestMethod.POST)
@@ -58,6 +58,12 @@ public class MaterialController {
     public RestResult put(@ModelAttribute("material")Material material){
         //在服务器更新资源（客户端提供改变后的完整资源)
         return materialService.modifyMaterial(material);
+    }
+
+    @RequestMapping(value = "/detail",method = RequestMethod.GET)
+    @ResponseBody
+    public RestResult detail(Integer id){
+        return materialService.detail(id);
     }
 
     @RequestMapping(method = RequestMethod.PATCH)
