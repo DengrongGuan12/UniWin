@@ -75,6 +75,9 @@ version: v1
           example: asdfasdf
           required: true
           description: 描述
+        materials:
+          type: string
+          example: "[{id:物料id,amount:用量},{},...]"
       responses:
         200:
           body:
@@ -110,9 +113,6 @@ version: v1
           example: asdfasdf
           required: true
           description: 描述
-        materials:
-          type: string
-          example: "[{id:物料id,amount:用量},{},...]"
       responses:
         200:
           body:
