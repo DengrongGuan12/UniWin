@@ -1,6 +1,7 @@
 package service.impl;
 
 import dao.StyleDao;
+import dao.StyleMaterialsDao;
 import dao.UserDao;
 import model.Style;
 import org.json.JSONArray;
@@ -28,12 +29,26 @@ import java.util.List;
 public class StyleServiceImpl implements StyleService {
     @Autowired
     StyleDao styleDao;
+    @Autowired
+    StyleMaterialsDao styleMaterialsDao;
     @Override
-    public RestResult addStyle(Style style) {
+    public RestResult addStyle(Style style,String materials) {
         if(style.getCode() == null || style.getImgUrl() == null || style.getName() == null){
             return RestResult.CreateResult(0,new Error(Error.BAD_PARAM,"款式编号,图片地址,名称均不能为空"));
         }
         styleDao.save(style);
+//        return RestResult.CreateResult(1,style);
+        if(materials != null && !materials.equals("")){
+            JSONArray jsonArray = new JSONArray(materials);
+            for(int i = 0;i<jsonArray.length();i++){
+                JSONObject jsonObject = jsonArray.optJSONObject(i);
+                int materialId = jsonObject.optInt("id");
+                double amount = jsonObject.optDouble("amount");
+                styleMaterialsDao.addData(style.getId(),materialId,amount);
+            }
+        }else{
+            return RestResult.CreateResult(0,new Error(Error.BAD_PARAM,"物料信息不能为空!"));
+        }
         return RestResult.CreateResult(1,null);
     }
 
@@ -88,7 +103,7 @@ public class StyleServiceImpl implements StyleService {
     }
 
     @Override
-    public RestResult updateStyle(Style style,String materials) {
+    public RestResult updateStyle(Style style) {
 //        return RestResult.CreateResult(1,style);
         if(style.getId() == 0 ||style.getCode() == null){
             return RestResult.CreateResult(0,new Error(Error.BAD_PARAM,"款号和id不能为空"));
@@ -106,14 +121,7 @@ public class StyleServiceImpl implements StyleService {
         if(style.getDescription() != null){
             style1.setDescription(style.getDescription());
         }
-        if(materials != null && !materials.equals("")){
-            JSONArray jsonArray = new JSONArray(materials);
-            for(int i = 0;i<jsonArray.length();i++){
-                JSONObject jsonObject = jsonArray.optJSONObject(i);
-                int materialId = jsonObject.optInt("id");
-                double amount = jsonObject.optDouble("amount");
-            }
-        }
+
         styleDao.update(style1);
         return RestResult.CreateResult(1,null);
     }
