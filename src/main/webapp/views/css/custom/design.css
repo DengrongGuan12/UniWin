@@ -39,11 +39,6 @@ label {
   flex: 0 0 400px;
   margin-top: 1px;
 }
-.main-design-add .bar-text-field > .text-area > textarea {
-  resize: none;
-  margin-top: 3px;
-  margin-left: 1px;
-}
 .main-design-add > .design-info {
   flex: 1 1 350px;
   display: flex;
@@ -175,11 +170,6 @@ label {
   padding-left: 60px;
   flex: 0 0 400px;
   margin-top: 1px;
-}
-.main-design-detail > .design-info .bar-text-field > .text-area > textarea {
-  resize: none;
-  margin-top: 3px;
-  margin-left: 1px;
 }
 .main-design-detail > .design-info > .design-modify-submit {
   flex: 1 1 100px;
