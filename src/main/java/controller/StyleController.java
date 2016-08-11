@@ -32,8 +32,8 @@ public class StyleController {
 
     @RequestMapping(method = RequestMethod.POST)
     @ResponseBody
-    public RestResult post(@ModelAttribute("style")Style style){
-        return styleService.addStyle(style);
+    public RestResult post(@ModelAttribute("style")Style style,String materials){
+        return styleService.addStyle(style,materials);
     }
 
     @RequestMapping(method = RequestMethod.GET)
@@ -44,8 +44,8 @@ public class StyleController {
 
     @RequestMapping(method = RequestMethod.PUT)
     @ResponseBody
-    public RestResult put(@ModelAttribute("style")Style style,String materials){
-        return styleService.updateStyle(style,materials);
+    public RestResult put(@ModelAttribute("style")Style style){
+        return styleService.updateStyle(style);
     }
 
     @RequestMapping(method = RequestMethod.DELETE)
