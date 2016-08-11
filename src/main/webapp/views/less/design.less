@@ -7,7 +7,7 @@ label{
     design_add css
 */
 .main-design-add{
-    height:600px;
+    height:800px;
     display: flex;
     flex-direction: column;
 
@@ -91,6 +91,27 @@ label{
             padding-left: 20px;
         }
 
+        .btn-group{
+            float: right;
+            width: 200px;
+            height: 100%;
+            padding: 8px 8px;
+
+            button{
+                margin-left: 8px;
+                margin-right: 8px;
+            }
+        }
+
+        > .material-list{
+            flex:1 1 200px;
+            margin: 10px 16px;
+
+            tr{
+                height: 30px;
+            }
+        }
+
         > .design-add-submit{
             flex:1 1 100px;
             padding-top: 20px;
@@ -102,6 +123,27 @@ label{
                     margin-right: 20px;
                 }
             }
+        }
+    }
+}
+
+#modal-material-bind{
+    .modal-body{
+        display: flex;
+        flex-direction: column;
+
+        > .bar{
+            flex:1 1 50px;
+            padding: 5px 10px 5px 10px;
+            border-bottom: 1px solid #ccc;
+        }
+
+        > .material-bind-list{
+            flex: 1 1 200px;
+            margin-top: 16px;
+            margin-bottom: 16px;
+            overflow-y: auto;
+
         }
     }
 }

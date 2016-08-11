@@ -7,7 +7,7 @@ $(document).ready(function(){
 
     $("#design-table > tbody").on("click", "tr", (e) => {
         var $tr = $(e.currentTarget);
-        $tr.find("input").attr("checked", true);
+        $tr.find("input").prop("checked", true);
         $("#detail-button").data("id", $tr.data("id"));
     });
 

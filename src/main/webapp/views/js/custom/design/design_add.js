@@ -7,6 +7,26 @@ $(document).ready(function(){
         $(".showFileName").html(fileName);
     });
 
+    $("#material-bind-table > tbody").on("click", "tr", (e) => {
+        var $tr = $(e.currentTarget);
+        var id = $tr.find(".id").html();
+        $tr.find("input").prop("checked", true);
+        $("input[name=material-id]").val(id);
+    });
+
+    $("#add-material-button").on("click", bindMaterial);
+
+
+    $("#material-design-table > tbody").on("click", "tr", (e) => {
+        var $tr = $(e.currentTarget);
+        var id = $tr.find(".id").html();
+        $tr.find("input").prop("checked", true);
+    });
+
+    $("#remove-material").on("click", (e) => {
+        $("#material-design-table > tbody").find("input:checked").parent().parent("tr").remove();
+    });
+
     $("#submit").on("click", () => {
         sendImg().then(res => {
             if (res)
@@ -70,4 +90,26 @@ function sendImg()
             }
         });
     });
+}
+
+function bindMaterial(e)
+{
+    var $modal = $("#modal-material-bind");
+    var id = $modal.find("input[name=material-id]").val();
+    var usage = $modal.find("input[name=material-usage]").val();
+    $modal.find("input").val("");
+    $modal.modal("hide");
+
+    var $tbody = $("#material-design-table> tbody");
+    var $tr = $(`
+        <tr>
+            <td>
+                <input type="radio" name="selected"/>
+            </td>
+            <td>${id}</td>
+            <td>name</td>
+            <td>${usage}</td>
+        </tr>
+    `);
+    $tbody.append($tr);
 }
