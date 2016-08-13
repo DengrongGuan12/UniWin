@@ -43,7 +43,7 @@ public class InquiryController {
         return inquiryService.getList(page,num);
     }
 
-    @RequestMapping(method = RequestMethod.POST)
+    @RequestMapping(value = "/update",method = RequestMethod.POST)
     @ResponseBody
     public RestResult update(@ModelAttribute("inquiry") Inquiry inquiry){
 //        return RestResult.CreateResult(1,materials+inquiry.getPlatRemark());
