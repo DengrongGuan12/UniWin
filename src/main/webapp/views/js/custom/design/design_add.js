@@ -1,4 +1,4 @@
-var isloadedData = false;
+
 
 $(document).ready(function(){
     highlightTab('nav-design','nav-design-add');
@@ -29,12 +29,9 @@ $(document).ready(function(){
     $("#add-material").on("click", (e) => {
         var $modal = $("#modal-material-bind");
         $modal.modal("show");
-        if (!isloadedData)
-        {
-            loadMaterialList();
-            isloadedData = true;
-        }
     });
+    loadMaterialList();
+
 
     $("#remove-material").on("click", (e) => {
         $("#material-design-table > tbody").find("input:checked").parent().parent("tr").remove();
