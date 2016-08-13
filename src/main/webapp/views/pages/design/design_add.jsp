@@ -52,7 +52,7 @@
                         <div class="bar">
                             <a class="table-header">款式物料信息>></a>
                             <div class="btn-group">
-                                <button id="add-material" type="button" class="btn-add" data-toggle="modal" data-target="#modal-material-bind">添加</button>
+                                <button id="add-material" type="button" class="btn-add" >添加</button>
                                 <button id="remove-material" type="button" class="btn-delete">删除</button>
                             </div>
                         </div>
@@ -68,14 +68,7 @@
                                         </tr>
                                     </thead>
                                     <tbody>
-                                        <tr>
-                                            <td>
-                                                <input type="radio" name="selected"/>
-                                            </td>
-                                            <td>11</td>
-                                            <td>1</td>
-                                            <td>1</td>
-                                        </tr>
+
                                     </tbody>
                                 </table>
                             </div>
