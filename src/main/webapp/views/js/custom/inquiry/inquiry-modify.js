@@ -4,17 +4,45 @@ window.onload = function () {
 };
 
 $(document).ready(() => {
+    $(".inquiry-info").find("input").attr("disabled", true);
+    $(".inquiry-info").find("textarea").attr("disabled", true);
     const id = window.location.href.split("?")[1].split("=")[1];
     updateInquiry(id);
-    $("#remove-btn").on("click", () => {
-        $(".inquiry-price").find("input").val("");
-        $(".inquiry-price").find("textarea").val("");
-    });
-
-    $("#commit-btn").on("click", () => {
-        putInquiry();
-    });
+    $(".inquiry-operation-btns > button").on("click", priceInputBtnChange);
+    $("#commit-price").on("click", commitPriceChange);
 });
+
+function priceInputBtnChange(e)
+{
+    /*
+    "id":询价单id,
+    "createTime":创建时间,
+    "technologyPrice":工艺部报价,
+    "producePrice":生产部报价,
+    "purchasePrice":采购部报价,
+    "plateMakePrice":制版部报价,
+    "techRemark":工艺部备注,
+    "prodRemark":生产部备注,
+    "purcRemark":采购部备注,
+    "platRemark":制版部备注,
+    "checkTime":审核时间,
+    "state":状态
+    */
+    const $target = $(e.currentTarget);
+    const data = $(".inquiry-price-list").data("data");
+    let ouputData = { price: null, description: null, index: null};
+    let offset = 42;
+    switch ($target.attr("id"))
+    {
+        case "p-price":  ouputData.price = data.producePrice; ouputData.description = data.prodRemark; ouputData.index = 0; break;
+        case "t-price": offset += 120; ouputData.price = data.technologyPrice; ouputData.description = data.techRemark; ouputData.index = 1; break;
+        case "b-price": offset += 120 * 2; ouputData.price = data.purchasePrice; ouputData.description = data.purcRemark; ouputData.index = 2; break;
+        case "c-price": offset += 120 * 3; ouputData.price = data.plateMakePrice; ouputData.description = data.platRemark; ouputData.index = 3; break;
+    }
+    $(".inquiry-wrapper").animate({left: offset});
+    renderPriceInput(ouputData);
+
+}
 
 function updateInquiry(id)
 {
@@ -32,8 +60,18 @@ function updateInquiry(id)
         {
             renderInquiry(result.data);
         }
-        console.log(result, "inquiry");
+
     });
+}
+
+function renderPriceInput(data)
+{
+    if (data)
+    {
+        $(".inquiry-price-content").data("data", data);
+        $("#department-price").val(data.price);
+        $("#editor").html(data.description);
+    }
 }
 
 function renderStyle(data, styleId)
@@ -60,19 +98,45 @@ function renderInquiry(data)
     "checkTime":审核时间,
     "state":状态
     */
-    console.log(data, "inter");
-    $(".inquiry-price").data("inquiry-id", data.id);
-    $("#inquiry-price-p").val(data.producePrice);
-    $("#inquiry-description-p").val(data.prodRemark);
-    $("#inquiry-price-t").val(data.technologyPrice);
-    $("#inquiry-description-t").val(data.technologyPrice);
-    $("#inquiry-price-m").val(data.plateMakePrice);
-    $("#inquiry-description-m").val(data.platRemark);
-    $("#inquiry-price-b").val(data.purchasePrice);
-    $("#inquiry-description-b").val(data.purcRemark);
+
+    $(".inquiry-price-list").data("data", data);
+    $(".inquiry-price-list > table > tbody").find(".price-value").eq(0).text(data.producePrice);
+    $(".inquiry-price-list > table > tbody").find(".price-value").eq(1).text(data.technologyPrice);
+    $(".inquiry-price-list > table > tbody").find(".price-value").eq(2).text(data.purchasePrice);
+    $(".inquiry-price-list > table > tbody").find(".price-value").eq(3).text(data.plateMakePrice);
+    $(".inquiry-price-list > table > tbody").find(".description").eq(0).text(data.prodRemark || "不存在备注");
+    $(".inquiry-price-list > table > tbody").find(".description").eq(1).text(data.techRemark || "不存在备注");
+    $(".inquiry-price-list > table > tbody").find(".description").eq(2).text(data.purcRemark || "不存在备注");
+    $(".inquiry-price-list > table > tbody").find(".description").eq(3).text(data.platRemark || "不存在备注");
 }
 
-function putInquiry()
+function commitPriceChange(e)
+{
+    const data = $(".inquiry-price-list").data("data");
+    const newData = $(".inquiry-price-content").data("data");
+    if (newData)
+    {
+        const price = $("#department-price").val();
+        const description = $("#editor").html();
+        console.log(newData);
+        switch (newData.index)
+        {
+            case 0: data.producePrice = price; data.prodRemark = description; break;
+            case 1: data.technologyPrice = price; data.techRemark = description; break;
+            case 2: data.purchasePrice = price; data.purcRemark = description; break;
+            case 3: data.plateMakePrice = price; data.platRemark = description; break;
+        }
+
+        putInquiry(data);
+    }
+    else
+    {
+        alert("请选中相应部门");
+    }
+
+}
+
+function putInquiry(data)
 {
     /*
     id: (integer)
@@ -108,29 +172,19 @@ platRemark: (string)
 state: (string)
     */
 
-    const inquiryId = $(".inquiry-price").data("inquiry-id");
 
-    const inquiryurl = "/uniwin/v1/inquiry?id=" + inquiryId +
-        "&producePrice=" +
-        $("#inquiry-price-p").val() + "&prodRemark=" +
-        $("#inquiry-description-p").val() + "&technologyPrice=" +
-        $("#inquiry-price-t").val() + "&techRemark="
-        $("#inquiry-description-t").val() + "&plateMakePrice=" +
-        $("#inquiry-price-m").val() + "&platRemark="
-        $("#inquiry-description-m").val() + "&purchasePrice=" +
-        $("#inquiry-price-b").val() + "&purcRemark=" +
-        $("#inquiry-description-b").val();
+    const inquiryurl = "/uniwin/v1/inquiry"
 
-    putDataByAjax(inquiryurl).then( (result) => {
+    putDataByAjax(inquiryurl, JSON.stringify(data)).then( (result) => {
         if　(result.result === 1)
         {
+            $(".inquiry-price-list").data("data", data);
             alert("提交成功");
-            const id = window.location.href.split("?")[1].split("=")[1];
-            updateInquiry(id);
-            console.log("message");
         }
         else
         {
+            console.log(data);
+            console.log(result);
             alert("服务器拒绝请求");
         }
     });
