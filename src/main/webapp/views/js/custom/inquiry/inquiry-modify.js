@@ -118,7 +118,6 @@ function commitPriceChange(e)
     {
         const price = $("#department-price").val();
         const description = $("#editor").html();
-        console.log(newData);
         switch (newData.index)
         {
             case 0: data.producePrice = price; data.prodRemark = description; break;
@@ -126,8 +125,17 @@ function commitPriceChange(e)
             case 2: data.purchasePrice = price; data.purcRemark = description; break;
             case 3: data.plateMakePrice = price; data.platRemark = description; break;
         }
-
-        putInquiry(data);
+        putInquiry({
+            id: data.id,
+            producePrice: data.producePrice,
+            technologyPrice: data.technologyPrice,
+            purchasePrice: data.purchasePrice,
+            plateMakePrice: data.plateMakePrice,
+            prodRemark: data.prodRemark || "",
+            techRemark: data.techRemark || "",
+            purcRemark:data.purcRemark || "",
+            platRemark: data.platRemark || ""
+        });
     }
     else
     {
@@ -173,17 +181,16 @@ state: (string)
     */
 
 
-    const inquiryurl = "/uniwin/v1/inquiry"
-
-    putDataByAjax(inquiryurl, JSON.stringify(data)).then( (result) => {
+    const inquiryurl = "/uniwin/v1/inquiry/update"
+    postDataByAjax(inquiryurl, data).then( (result) => {
         if　(result.result === 1)
         {
             $(".inquiry-price-list").data("data", data);
+            renderInquiry(data);
             alert("提交成功");
         }
         else
         {
-            console.log(data);
             console.log(result);
             alert("服务器拒绝请求");
         }
