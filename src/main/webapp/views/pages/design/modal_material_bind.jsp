@@ -8,7 +8,7 @@
       </div>
       <div class="modal-body">
         <div class="bar">
-            <label>物料编号:</label>
+            <label>物料ID:</label>
             <input type="text" name="material-id"/>
             <label>物料用量:</label>
             <input type="text" name="material-usage"/>
@@ -19,28 +19,13 @@
                 <thead>
                     <tr>
                         <th></th>
+                        <th>物料ID</th>
                         <th>物料编号</th>
                         <th>物料名称</th>
-                        <th>物料信息</th>
                     </tr>
                 </thead>
                 <tbody>
-                    <tr>
-                        <td>
-                            <input type="radio" name="selected"/>
-                        </td>
-                        <td class="id">1</td>
-                        <td>1</td>
-                        <td>1</td>
-                    </tr>
-                    <tr>
-                        <td>
-                            <input type="radio" name="selected"/>
-                        </td>
-                        <td class="id">2</td>
-                        <td>1</td>
-                        <td>1</td>
-                    </tr>
+
                 </tbody>
             </table>
         </div>

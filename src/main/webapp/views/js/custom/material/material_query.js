@@ -38,7 +38,6 @@ function loadMaterialList(params)
     $("#material-table").data("pageNum", params.num);
     var url = "./";
     getDataByAjax(url, params).then((data) => {
-        console.log(data);
         if (data.result === 1) {
             renderMaterialTable(data.data);
         }

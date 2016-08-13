@@ -58,18 +58,18 @@
     </li>
 
     <li>
-        <div class="link"><i class="glyphicon glyphicon-th"></i>生产管理<i class="glyphicon glyphicon-chevron-down"></i></div>
+        <div class="link"><i class="glyphicon glyphicon-th"></i>订单管理<i class="glyphicon glyphicon-chevron-down"></i></div>
         <ul class="submenu">
-            <li><a href="">生产单管理</a></li>
-            <li><a href="">生产单审核</a></li>
+            <li><a href="">订单列表</a></li>
+            <li><a href="">新建订单</a></li>
         </ul>
     </li>
 
     <li>
-        <div class="link"><i class="glyphicon glyphicon-th"></i>订单管理<i class="glyphicon glyphicon-chevron-down"></i></div>
+        <div class="link"><i class="glyphicon glyphicon-th"></i>生产管理<i class="glyphicon glyphicon-chevron-down"></i></div>
         <ul class="submenu">
-            <li><a href="">订单管理</a></li>
-            <li><a href="">新建订单</a></li>
+            <li><a href="">生产单管理</a></li>
+            <li><a href="">生产单审核</a></li>
         </ul>
     </li>
 
