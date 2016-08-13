@@ -575,52 +575,53 @@ version: v1
                       "code":错误码,"message":错误信息
                     }
                 }
-    put:
-      description: 更新询价单信息
-      queryParameters:
-        id:
-          type: integer
-          description: 询价单id
-          example: 1
-        technologyPrice:
-          type: string
-          description: 工艺部报价
-        producePrice:
-          type: string
-          description: 生产部报价
-        purchasePrice:
-          type: string
-          description: 采购部报价
-        plateMakePrice:
-          type: string
-          description: 制版部报价
-        techRemark:
-          type: string
-          description: 工艺部备注
-        prodRemark:
-          type: string
-          description: 生产部备注
-        purcRemark:
-          type: string
-          description: 采购部备注
-        platRemark:
-          type: string
-          description: 制版部备注
-        state:
-          type: string
-          description: PASS|REJECT
-      responses:
-        200:
-          body:
-            application/json:
-              example: |
-                {
-                    "result":0失败1成功,
-                    "data":null,
-                    "error":{
-                      "code":错误码,"message":错误信息
+    /update:
+        post:
+          description: 更新询价单信息
+          queryParameters:
+            id:
+              type: integer
+              description: 询价单id
+              example: 1
+            technologyPrice:
+              type: string
+              description: 工艺部报价
+            producePrice:
+              type: string
+              description: 生产部报价
+            purchasePrice:
+              type: string
+              description: 采购部报价
+            plateMakePrice:
+              type: string
+              description: 制版部报价
+            techRemark:
+              type: string
+              description: 工艺部备注
+            prodRemark:
+              type: string
+              description: 生产部备注
+            purcRemark:
+              type: string
+              description: 采购部备注
+            platRemark:
+              type: string
+              description: 制版部备注
+            state:
+              type: string
+              description: PASS|REJECT
+          responses:
+            200:
+              body:
+                application/json:
+                  example: |
+                    {
+                        "result":0失败1成功,
+                        "data":null,
+                        "error":{
+                          "code":错误码,"message":错误信息
+                        }
                     }
-                }
     /detail:
       description: 根据款式id获取询价单详情
       get:
@@ -652,4 +653,26 @@ version: v1
                           "code":错误码,"message":错误信息
                         }
                     }
+  /Order:
+    description: 订单相关接口
+    post:
+      description: 生成一个订单
+      queryParameters:
+        styleId:
+        productionOrderId:
+        purchaseOrderId:
+        customer:
+        priority:
+        type:
+
+  /ProductionOrder:
+    description: 生产单相关接口
+    post:
+      description: 生成一个生产单
+  /PurchaseOrder:
+    description: 采购单相关接口
+    post:
+      description: 生成一个采购单
+
+
 
