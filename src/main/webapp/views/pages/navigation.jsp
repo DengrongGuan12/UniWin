@@ -57,11 +57,11 @@
         </ul>
     </li>
 
-    <li>
+    <li id="nav-order">
         <div class="link"><i class="glyphicon glyphicon-th"></i>订单管理<i class="glyphicon glyphicon-chevron-down"></i></div>
         <ul class="submenu">
-            <li><a href="">订单列表</a></li>
-            <li><a href="">新建订单</a></li>
+            <li id="nav-order-list"><a href="<%=request.getContextPath() %>/v1/inquiry/inquirymanage">订单列表</a></li>
+            <li id="nav-order-add"><a href="<%=request.getContextPath() %>/v1/order/orderadd">新建订单</a></li>
         </ul>
     </li>
 

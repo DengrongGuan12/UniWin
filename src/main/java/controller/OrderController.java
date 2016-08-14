@@ -9,4 +9,9 @@ import org.springframework.web.bind.annotation.RequestMapping;
 @Controller
 @RequestMapping("/v1/order")
 public class OrderController {
+
+    @RequestMapping("orderadd")
+    public String materialAdd(){
+        return "order/order_add";
+    }
 }
