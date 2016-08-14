@@ -1,4 +1,4 @@
-
+var allMaterialList = null;
 
 $(document).ready(function(){
     highlightTab('nav-design','nav-design-add');
@@ -13,7 +13,7 @@ $(document).ready(function(){
         var $tr = $(e.currentTarget);
         var id = $tr.find(".id").html();
         $tr.find("input").prop("checked", true);
-        $("input[name=material-id]").val(id);
+        $("input[name=selected-material-id]").val(id);
         $("#add-material-button").data("item", $tr.data("item"));
     });
 
@@ -31,6 +31,29 @@ $(document).ready(function(){
         $modal.modal("show");
     });
     loadMaterialList();
+
+    var inputDelay = null;
+
+    $("input[name=material-qid]").on("input", (e) => {
+        if (inputDelay !== null)
+        {
+            window.clearTimeout(inputDelay);
+            inputDelay = null;
+        }
+        inputDelay = window.setTimeout(() => {
+            filterMaterial();
+        }, 500);
+    });
+    $("input[name=material-qname]").on("input", (e) => {
+        if (inputDelay !== null)
+        {
+            window.clearTimeout(inputDelay);
+            inputDelay = null;
+        }
+        inputDelay = window.setTimeout(() => {
+            filterMaterial();
+        }, 500);
+    });
 
 
     $("#remove-material").on("click", (e) => {
@@ -119,7 +142,7 @@ function sendImg()
 function bindMaterial(e)
 {
     var $modal = $("#modal-material-bind");
-    var id = $modal.find("input[name=material-id]").val();
+    var id = $modal.find("input[name=selected-material-id]").val();
     var usage = $modal.find("input[name=material-usage]").val();
     $modal.find("input").val("");
     $modal.modal("hide");
@@ -149,23 +172,27 @@ function loadMaterialList()
     }).then((data) => {
         if (data.result === 1)
         {
-            renderMaterialTable(data.data);
+            allMaterialList = data.data.list;
+            renderMaterialTable(data.data.list);
         }
     });
 }
 
 function renderMaterialTable(data)
 {
-    var list = data.list;
+    var list = data;
     var $tbody = $("#material-bind-table > tbody");
-    list.forEach((item) => {
-        renderMaterialItem(item, $tbody);
-    });
+    $tbody.children("tr").remove();
+
+    if (list.length > 0) {
+        list.forEach((item) => {
+            renderMaterialItem(item, $tbody);
+        });
+    }
 }
 
 function renderMaterialItem(item, $tbody)
 {
-
     var $tr = $(`
         <tr>
             <td>
@@ -178,4 +205,41 @@ function renderMaterialItem(item, $tbody)
     `);
     $tr.data("item", item);
     $tbody.append($tr);
+}
+
+function filterMaterial()
+{
+    var qid = $("input[name=material-qid]").val();
+    var qname = $("input[name=material-qname]").val();
+    console.log(typeof qid);
+    console.log(allMaterialList);
+
+    var dataList = null;
+    if (qid !== "" && qname !== "")
+    {
+        dataList = allMaterialList.filter((item) => {
+            var id = item.id + "";
+            return id.includes(qid) && item.name.includes(qname);
+        });
+        renderMaterialTable(dataList);
+    }
+    else if (qid === "" && qname !== "")
+    {
+        dataList = allMaterialList.filter((item) => {
+            return item.name.includes(qname);
+        });
+        renderMaterialTable(dataList);
+    }
+    else if (qid !== "" && qname === "")
+    {
+        dataList = allMaterialList.filter((item) => {
+            var id = item.id + "";
+            return id.includes(qid);
+        });
+        renderMaterialTable(dataList);
+    }
+    else
+    {
+        renderMaterialTable(allMaterialList);
+    }
 }

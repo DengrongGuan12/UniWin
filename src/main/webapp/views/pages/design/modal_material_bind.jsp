@@ -8,10 +8,16 @@
       </div>
       <div class="modal-body">
         <div class="bar">
-            <label>物料ID:</label>
-            <input type="text" name="material-id"/>
+            <label>选中物料ID:</label>
+            <input type="text" name="selected-material-id" readonly/>
             <label>物料用量:</label>
             <input type="text" name="material-usage"/>
+        </div>
+        <div class="last-bar">
+            <label>查询物料ID:</label>
+            <input type="text" name="material-qid"/>
+            <label>物料名称:</label>
+            <input type="text" name="material-qname"/>
         </div>
 
         <div class="material-bind-list">

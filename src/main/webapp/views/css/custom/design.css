@@ -112,6 +112,10 @@ label {
   padding: 5px 10px 5px 10px;
   border-bottom: 1px solid #ccc;
 }
+#modal-material-bind .modal-body > .last-bar {
+  flex: 1 1 50px;
+  padding: 5px 10px 5px 10px;
+}
 #modal-material-bind .modal-body > .material-bind-list {
   flex: 1 1 200px;
   margin-top: 16px;
