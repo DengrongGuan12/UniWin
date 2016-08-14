@@ -10,8 +10,9 @@
 <html lang="en">
 <head>
     <jsp:include page="../header.jsp"></jsp:include>
-
+    <link rel="stylesheet" href="<%=request.getContextPath() %>/views/model/editor/editor.css" charset="utf-8">
     <link rel="stylesheet" href="<%=request.getContextPath() %>/views/css/custom/inquiry.css" charset="utf-8">
+    <script src="<%=request.getContextPath() %>/views/model/editor/editor.js"></script>
 </head>
 <body>
 <div class="app">
@@ -33,67 +34,89 @@
                 </h1>
             </div>
             <div class="main-content">
-                <div class="tab-panel main-inquiry-modify">
-                    <div class="style-info">
-                        <div class="bar"><a class="table-header">款式信息>></a></div>
-                        <div class="bar">
-                            <label>款号:</label>
-                            <input id="style-id"  type="text" disabled="disabled"/>
-                            <label>名称:</label>
-                            <input id="style-name" type="text" disabled="disabled"/>
+                <div class="inquiry-modify">
+                    <a class="section-label">款式信息 >></a>
+                    <div class="inquiry-info">
+                        <div class="inquiry-img">
+                            <img id="style-img" src="" alt="款式图片缺少" />
                         </div>
-                        <div class="big-bar">
-                            <label>图片:</label>
-                            <img id="style-img" class="normal-img" src="" alt="缺少图片">
-                        </div>
-                        <div class="big-bar">
-                            <label>描述:</label>
-                            <textarea id="style-description"  cols="59" rows="10" disabled="disabled"></textarea>
-                        </div>
-                    </div>
-                    <div class="inquiry-price">
-                        <div class="bar"><a class="table-header">报价信息>></a></div>
-                        <div class="bar">
-                            <label>生产部门报价:</label>
-                            <input id="inquiry-price-p" type="text"/>
-                        </div>
-                        <div class="big-bar">
-                            <label>生产部门备注:</label>
-                            <textarea id="inquiry-description-p"  cols="59" rows="10"></textarea>
-                        </div>
-                        <div class="bar">
-                            <label>工艺部门报价:</label>
-                            <input id="inquiry-price-t" type="text"/>
-                        </div>
-                        <div class="big-bar">
-                            <label>工艺部门备注:</label>
-                            <textarea id="inquiry-description-t"  cols="59" rows="10"></textarea>
-                        </div>
-                        <div class="bar">
-                            <label>采购部门报价:</label>
-                            <input id="inquiry-price-b" type="text"/>
-                        </div>
-                        <div class="big-bar">
-                            <label>采购部门备注:</label>
-                            <textarea id="inquiry-description-b" cols="59" rows="10"></textarea>
-                        </div>
-                        <div class="bar">
-                            <label>制版部门报价:</label>
-                            <input id="inquiry-price-m" type="text"/>
-                        </div>
-                        <div class="big-bar">
-                            <label>制版部门备注:</label>
-                            <textarea id="inquiry-description-m" cols="59" rows="10"></textarea>
+                        <div class="inquiry-textInfo">
+                            <div class="bar">
+                                <label for="style-id">款式编号</label>
+                                <input type="text" name="id" id="style-id" />
+                            </div>
+                            <div class="bar">
+                                <label for="style-name">款式名称</label>
+                                <input type="text" name="name" id="style-name" />
+                            </div>
+                            <div class="bar">
+                                <label for="style-description">款式描述</label>
+                                <textarea name="description" rows="4" cols="40" id="style-description"></textarea>
+                            </div>
                         </div>
                     </div>
-                    <div class="inquiry-modify-submit">
-                        <div class="bar">
-                            <button type="submit" id="commit-btn" class="btn-save">提交</button>
-                            <button type="button" id="remove-btn">清空</button>
+                    <a class="section-label">已报价部门信息 >></a>
+                    <div class="inquiry-price-list">
+                        <table class="table table-striped table-hover">
+                            <thead>
+                                <tr>
+                                    <th></th>
+                                    <th>部门</th>
+                                    <th>报价</th>
+                                    <th>备注</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td><input type="radio" /> </td>
+                                    <td>生产部门</td>
+                                    <td class="price-value"></td>
+                                    <td><div class="description"></div></td>
+                                </tr>
+                                <tr>
+                                    <td><input type="radio" /> </td>
+                                    <td>工艺部门</td>
+                                    <td class="price-value"></td>
+                                    <td><div class="description"></div></td>
+                                </tr>
+                                <tr>
+                                    <td><input type="radio" /> </td>
+                                    <td>采购部门</td>
+                                    <td class="price-value"></td>
+                                    <td><div class="description"></div></td>
+                                </tr>
+                                <tr>
+                                    <td><input type="radio" /> </td>
+                                    <td>制版部门</td>
+                                    <td class="price-value"></td>
+                                    <td><div class="description"></div></td>
+                                </tr>
+                                </tbody>
+                            </table>
+                        </div>
+                    <a class="section-label">部门报价 >></a>
+                    <div class="inquiry-operation">
+                        <div class="inquiry-operation-btns">
+                            <button class="btn-save" type="button" id="p-price">生产部门报价</button>
+                            <button class="btn-save" type="button" id="t-price">工艺部门报价</button>
+                            <button class="btn-save" type="button" id="b-price">采购部门报价</button>
+                            <button class="btn-save" type="button" id="c-price">制版部门报价</button>
+                        </div>
+                        <div class="inquiry-price-input">
+                            <div class="inquiry-wrapper">
+
+                            </div>
+                            <div class="inquiry-price-content">
+                                <div class="bar">
+                                    <label for="department-price">部门报价</label>
+                                    <input type="text" name="name" id="department-price" />
+                                    <button class="btn-save" type="button" id="commit-price">确认提交</button>
+                                </div>
+                                <jsp:include page="../../model/editor/editor.jsp"></jsp:include>
+                            </div>
                         </div>
                     </div>
                 </div>
-
             </div>
         </main>
     </div>

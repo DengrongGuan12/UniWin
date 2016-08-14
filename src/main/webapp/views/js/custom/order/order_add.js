@@ -1,11 +1,11 @@
 $(document).ready(function(){
-    highlightTab('nav-design','nav-design-list');
+    highlightTab('nav-order','nav-order-add');
 
-    $("#design-table").data("curPage", 1);
+    $("#order-table").data("curPage", 1);
 
     $(".paging-section").on("click", "li", queryPageData);
 
-    $("#design-table > tbody").on("click", "tr", (e) => {
+    $("#order-table > tbody").on("click", "tr", (e) => {
         var $tr = $(e.currentTarget);
         $tr.find("input").prop("checked", true);
         $("#detail-button").data("id", $tr.data("id"));
@@ -15,7 +15,7 @@ $(document).ready(function(){
         var keyword = $("#query-code").val().trim();
         if (keyword !== "")
         {
-            loadDesignList({
+            loadorderList({
                 page: 1,
                 num: 10,
                 operation: "SEARCH",
@@ -25,7 +25,7 @@ $(document).ready(function(){
         }
         else
         {
-            loadDesignList({
+            loadorderList({
                 page: 1,
                 num: 10,
                 operation: "NORMAl"
@@ -37,7 +37,7 @@ $(document).ready(function(){
         var id = $(e.currentTarget).data("id");
         if (id)
         {
-            location.href = "./designdetail?" + "id=" + id;
+            location.href = "./orderdetail?" + "id=" + id;
         }
         else
         {
@@ -46,7 +46,7 @@ $(document).ready(function(){
     });
 
 
-    loadDesignList({
+    loadorderList({
         page: 1,
         num: 10,
         operation: "NORMAl"
@@ -58,14 +58,14 @@ function queryPageData(e)
 {
     var id = $(e.currentTarget).attr("id");
     var params = {};
-    var curPage = $("#design-table").data("curPage");
-    var queryDesignCode = $("#query-code").val();
-    var sumPage = $("#design-table").data("sumPage");
+    var curPage = $("#order-table").data("curPage");
+    var queryorderCode = $("#query-code").val();
+    var sumPage = $("#order-table").data("sumPage");
 
-    if (queryDesignCode !== "")
+    if (queryorderCode !== "")
     {
         params.operation = "SEARCH";
-        params.key = queryDesignCode;
+        params.key = queryorderCode;
         params.field = "code";
     }
     else
@@ -104,44 +104,44 @@ function queryPageData(e)
     }
 
     params.page = curPage;
-    $("#design-table").data("curPage", curPage);
+    $("#order-table").data("curPage", curPage);
 
-    loadDesignList(params);
+    loadorderList(params);
 
 }
 
-function loadDesignList(params)
+function loadorderList(params)
 {
-    $("#design-table").data("pageNum", params.num);
-    var url = "./?";
+    $("#order-table").data("pageNum", params.num);
+    var url = "../styles";
     getDataByAjax(url, params).then((data) => {
         if (data.result === 1) {
-            renderDesignTable(data.data);
+            renderorderTable(data.data);
         }
     });
 }
 
-function renderDesignTable(data)
+function renderorderTable(data)
 {
-    $("#design-table").data("sumPage", data.count);
+    $("#order-table").data("sumPage", data.count);
     var items = data.list;
-    var $designtable = $("#design-table");
-    $designtable.find("tbody").children("tr").remove();
-    $("#current").text($("#design-table").data("curPage") + " 页");
-    $("#sum").text("总共 " + Math.ceil(data.count / $("#design-table").data("pageNum")) + " 页");
+    var $ordertable = $("#order-table");
+    $ordertable.find("tbody").children("tr").remove();
+    $("#current").text($("#order-table").data("curPage") + " 页");
+    $("#sum").text("总共 " + Math.ceil(data.count / $("#order-table").data("pageNum")) + " 页");
     items.forEach(function(item)
     {
-        $designtable.find("tbody").append(renderDesignItem(item));
+        $ordertable.find("tbody").append(renderorderItem(item));
     });
 }
 
-function renderDesignItem(item)
+function renderorderItem(item)
 {
     var status = item.pass ? "已审核" : "未审核";
     var $tr = $(`
         <tr>
             <td>
-                <input name="design-select" type="radio">
+                <input name="order-select" type="radio">
             </td>
             <td><img width=30px height=20px src=${item.imgUrl}></td>
             <td>${item.code}</td>

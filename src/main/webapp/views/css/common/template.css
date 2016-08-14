@@ -28,6 +28,13 @@ select {
   border: 1px solid #ccc;
   border-radius: 4px;
 }
+textarea {
+  resize: none;
+  margin-top: 5px;
+  margin-left: 1px;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+}
 button {
   display: inline-block;
   padding: 6px 12px;
@@ -133,4 +140,40 @@ td {
 }
 .modal .modal-dialog {
   width: 650px;
+}
+.ul-container {
+  margin-top: 16px;
+  margin-bottom: 16px;
+  display: flex;
+  flex-direction: column;
+}
+.ul-container ul {
+  padding-left: 0;
+}
+.ul-container > .ul-header {
+  flex: 0 1 40px;
+  display: flex;
+  flex-direction: row;
+  border-bottom: 1px solid #ccc;
+}
+.ul-container > .ul-header li {
+  float: left;
+  flex: 1 1 auto;
+  font-size: 18px;
+  font-weight: 500;
+  padding: 4px 16px;
+}
+.ul-container > .ul-list {
+  flex: 5 1 auto;
+  overflow-y: auto;
+  display: block;
+}
+.ul-container > .ul-list li {
+  height: 30px;
+  display: flex;
+  flex-direction: row;
+}
+.ul-container > .ul-list li div {
+  flex: 1 1 auto;
+  padding: 4px 16px;
 }

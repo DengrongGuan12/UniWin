@@ -74,7 +74,9 @@ public class MaterialServiceImpl implements MaterialService {
         }
         Materials materials1 = new Materials();
         materials1.setCount(materials.size());
-        materials = ListUtil.slice(materials,page,num);
+        if(!operation.equals("ALL")){
+            materials = ListUtil.slice(materials,page,num);
+        }
         List<MaterialItem> items = new ArrayList<>();
         for (Material material:materials
              ) {

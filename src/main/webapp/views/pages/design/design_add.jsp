@@ -49,6 +49,30 @@
                                 <textarea name="" id="design-description" cols="59" rows="10"></textarea>
                             </div>
                         </div>
+                        <div class="bar">
+                            <a class="table-header">款式物料信息>></a>
+                            <div class="btn-group">
+                                <button id="add-material" type="button" class="btn-add" >添加</button>
+                                <button id="remove-material" type="button" class="btn-delete">删除</button>
+                            </div>
+                        </div>
+                        <div class="material-list">
+                            <div class="table-wrapper table-responsive">
+                                <table id="material-design-table" class="table table-striped table-hover">
+                                    <thead>
+                                        <tr>
+                                            <th></th>
+                                            <th>物料编号</th>
+                                            <th>物料名称</th>
+                                            <th>物料用量</th>
+                                        </tr>
+                                    </thead>
+                                    <tbody>
+
+                                    </tbody>
+                                </table>
+                            </div>
+                        </div>
                         <div class="design-add-submit">
                             <div class="submit-bar">
                                 <button type="submit" class="btn-save" id="submit">保存</button>
@@ -61,6 +85,8 @@
         </main>
     </div>
 </div>
+
+<jsp:include page="modal_material_bind.jsp"></jsp:include>
 <script src="<%=request.getContextPath() %>/views/js/custom/design/design_add.js" charset="utf-8"></script>
 </body>
 </html>

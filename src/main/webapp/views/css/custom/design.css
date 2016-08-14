@@ -5,7 +5,7 @@ label {
     design_add css
 */
 .main-design-add {
-  height: 600px;
+  height: 800px;
   display: flex;
   flex-direction: column;
 }
@@ -38,11 +38,6 @@ label {
   padding-left: 60px;
   flex: 0 0 400px;
   margin-top: 1px;
-}
-.main-design-add .bar-text-field > .text-area > textarea {
-  resize: none;
-  margin-top: 3px;
-  margin-left: 1px;
 }
 .main-design-add > .design-info {
   flex: 1 1 350px;
@@ -81,6 +76,23 @@ label {
   display: inline;
   padding-left: 20px;
 }
+.main-design-add > .design-info .btn-group {
+  float: right;
+  width: 200px;
+  height: 100%;
+  padding: 8px 8px;
+}
+.main-design-add > .design-info .btn-group button {
+  margin-left: 8px;
+  margin-right: 8px;
+}
+.main-design-add > .design-info > .material-list {
+  flex: 1 1 200px;
+  margin: 10px 16px;
+}
+.main-design-add > .design-info > .material-list tr {
+  height: 30px;
+}
 .main-design-add > .design-info > .design-add-submit {
   flex: 1 1 100px;
   padding-top: 20px;
@@ -90,6 +102,25 @@ label {
 }
 .main-design-add > .design-info > .design-add-submit > .submit-bar > button {
   margin-right: 20px;
+}
+#modal-material-bind .modal-body {
+  display: flex;
+  flex-direction: column;
+}
+#modal-material-bind .modal-body > .bar {
+  flex: 1 1 50px;
+  padding: 5px 10px 5px 10px;
+  border-bottom: 1px solid #ccc;
+}
+#modal-material-bind .modal-body > .last-bar {
+  flex: 1 1 50px;
+  padding: 5px 10px 5px 10px;
+}
+#modal-material-bind .modal-body > .material-bind-list {
+  flex: 1 1 200px;
+  margin-top: 16px;
+  margin-bottom: 16px;
+  overflow-y: auto;
 }
 /*
     design_list css
@@ -175,11 +206,6 @@ label {
   padding-left: 60px;
   flex: 0 0 400px;
   margin-top: 1px;
-}
-.main-design-detail > .design-info .bar-text-field > .text-area > textarea {
-  resize: none;
-  margin-top: 3px;
-  margin-left: 1px;
 }
 .main-design-detail > .design-info > .design-modify-submit {
   flex: 1 1 100px;
