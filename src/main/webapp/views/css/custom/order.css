@@ -39,3 +39,47 @@
   flex: 1 1 720px;
   padding: 10px 20px 10px 20px;
 }
+/*
+    order_add css
+*/
+.main-order-add {
+  height: 600px;
+  display: flex;
+  flex-direction: column;
+}
+.main-order-add .input-lg {
+  width: 436px;
+  height: 30px;
+  margin: 5px;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+}
+.main-order-add .bar {
+  flex: 1 1 40px;
+  padding-left: 20px;
+  display: inline-block;
+}
+.main-order-add > .order-info {
+  flex: 1 1 150px;
+  display: flex;
+  flex-direction: column;
+}
+.main-order-add > .production-info {
+  flex: 1 1 150px;
+  display: flex;
+  flex-direction: column;
+}
+.main-order-add > .purchase-info {
+  flex: 1 1 150px;
+  display: flex;
+  flex-direction: column;
+}
+.main-order-add > .order-add-submit {
+  flex: 1 1 100px;
+}
+.main-order-add > .order-add-submit > .bar {
+  padding-left: 40px;
+}
+.main-order-add > .order-add-submit > .bar > button {
+  margin-right: 20px;
+}
