@@ -49,7 +49,7 @@
                                         <th>款式名称</th>
                                         <th>创建时间</th>
                                         <th>状态</th>
-                                        <th>操作</th>
+                                        <th>描述</th>
                                     </tr>
                                 </thead>
                                 <tbody>

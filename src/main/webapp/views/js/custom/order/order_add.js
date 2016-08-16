@@ -37,7 +37,7 @@ $(document).ready(function(){
         var id = $(e.currentTarget).data("id");
         if (id)
         {
-            location.href = "./orderdetail?" + "id=" + id;
+            location.href = "./orderadddetail?" + "design_id=" + id;
         }
         else
         {
