@@ -11,7 +11,12 @@ import org.springframework.web.bind.annotation.RequestMapping;
 public class OrderController {
 
     @RequestMapping("orderadd")
-    public String materialAdd(){
+    public String orderList(){
         return "order/order_add";
+    }
+
+    @RequestMapping("orderadddetail")
+    public String orderAdd(){
+        return "order/order_addDetail";
     }
 }
