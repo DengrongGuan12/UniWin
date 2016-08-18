@@ -49,15 +49,56 @@
                     </div>
                     <div class="production-info">
                         <div class="bar"><a class="table-header">生产信息>></a></div>
-                        <div class="bar">
-                            <label>仓储位置:</label>
-                            <input name="material-storagePos" type="text"/>
-                            <label>库存数量:</label>
-                            <input name="material-inventoryAmount" type="text"/>
-                        </div>
-                        <div class="bar">
-                            <label>可用库存:</label>
-                            <input type="text" disabled />
+                        <div class="production-list">
+                            <div class="table-wrapper table-responsive">
+                                <table id="production-table" class="table table-striped table-hover">
+                                    <thead>
+                                        <tr>
+                                            <th>颜色</th>
+                                            <th>XS</th>
+                                            <th>S</th>
+                                            <th>M</th>
+                                            <th>L</th>
+                                            <th>XL</th>
+                                            <th>XXL</th>
+                                            <th>合计</th>
+                                            <th>操作</th>
+                                        </tr>
+                                    </thead>
+                                    <tbody>
+                                        <tr>
+                                            <td>
+                                                <input type="text" name="color"/>
+                                            </td>
+                                            <td>
+                                                <input type="text" name="xs"/>
+                                            </td>
+                                            <td>
+                                                <input type="text" name="s"/>
+                                            </td>
+                                            <td>
+                                                <input type="text" name="m"/>
+                                            </td>
+                                            <td>
+                                                <input type="text" name="l"/>
+                                            </td>
+                                            <td>
+                                                <input type="text" name="xl"/>
+                                            </td>
+                                            <td>
+                                                <input type="text" name="xxl"/>
+                                            </td>
+                                            <td>
+                                                <input type="text" name="sum" disabled />
+                                            </td>
+                                            <td>
+                                                <button class="btn-success" id="add-production"/>添加
+                                            </td>
+                                        </tr>
+
+                                    </tbody>
+                                </table>
+                            </div>
                         </div>
                     </div>
                     <div class="purchase-info">

@@ -43,7 +43,7 @@
     order_add css
 */
 .main-order-add {
-  height: 600px;
+  height: 900px;
   display: flex;
   flex-direction: column;
 }
@@ -55,27 +55,35 @@
   border-radius: 4px;
 }
 .main-order-add .bar {
-  flex: 1 1 40px;
+  flex: 0 1 40px;
   padding-left: 20px;
   display: inline-block;
 }
 .main-order-add > .order-info {
-  flex: 1 1 150px;
+  flex: 0 1 130px;
   display: flex;
   flex-direction: column;
 }
 .main-order-add > .production-info {
-  flex: 1 1 150px;
+  flex: 0 1 auto;
   display: flex;
   flex-direction: column;
 }
+.main-order-add > .production-info > .production-list {
+  flex: 1 1 auto;
+  margin-left: 20px;
+  margin-right: 20px;
+}
+.main-order-add > .production-info > .production-list input {
+  width: 70px;
+}
 .main-order-add > .purchase-info {
-  flex: 1 1 150px;
+  flex: 0 1 150px;
   display: flex;
   flex-direction: column;
 }
 .main-order-add > .order-add-submit {
-  flex: 1 1 100px;
+  flex: 0 1 100px;
 }
 .main-order-add > .order-add-submit > .bar {
   padding-left: 40px;
