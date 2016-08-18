@@ -129,6 +129,11 @@ td {
   background-color: #449d44;
   border-color: #398439;
 }
+.btn-success {
+  color: #fff;
+  background-color: #00a65a;
+  border-color: #008d4c;
+}
 /*
    模态框
 */
