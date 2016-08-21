@@ -25,7 +25,7 @@
                 </h1>
             </div>
             <div class="main-content">
-                <div class="main-order-list">
+                <div class="main-order-design-list">
                     <div class="order-query-header">
                         <div class="query-info">
                             <div class="bar">
