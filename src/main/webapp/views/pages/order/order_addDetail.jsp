@@ -102,18 +102,49 @@
                         </div>
                     </div>
                     <div class="purchase-info">
-                        <div class="bar"><a class="table-header">采购信息>></a></div>
                         <div class="bar">
-                            <label>仓储位置:</label>
-                            <input name="material-storagePos" type="text"/>
-                            <label>库存数量:</label>
-                            <input name="material-inventoryAmount" type="text"/>
+                            <a class="table-header">采购信息>></a>
+                            <div class="btn-group">
+                                <button id="edit-save" type="button" class="btn-save" >保存</button>
+                            </div>
+                        </div>
+                        <div class="purchase-list">
+                            <div class="table-wrapper table-responsive">
+                                <table id="purchase-table" class="table table-striped table-hover">
+                                    <thead>
+                                        <tr>
+                                            <th>物料名称</th>
+                                            <th>供应商</th>
+                                            <th>物料类型</th>
+                                            <th>采购数量</th>
+                                            <th>单位</th>
+                                        </tr>
+                                    </thead>
+                                    <tbody>
+                                        <tr>
+                                            <td>棉</td>
+                                            <td>xx供应商</td>
+                                            <td>面料</td>
+                                            <td><input type="text" /></td>
+                                            <td>米</td>
+                                        </tr>
+                                        <tr>
+                                            <td>棉</td>
+                                            <td>xx供应商</td>
+                                            <td>面料</td>
+                                            <td><input type="text" /></td>
+                                            <td>米</td>
+                                        </tr>
+                                    </tbody>
+                                </table>
+                            </div>
                         </div>
                     </div>
-                    <div class="order-add-submit">
-                        <div class="bar">
-                            <button id="submit" type="submit" class="btn-save">保存</button>
-                            <button type="button" >返回</button>
+                        <div class="order-add-submit">
+                            <div class="bar">
+                                <button id="submit" type="submit" class="btn-save">保存</button>
+                                <button type="button" >返回</button>
+                            </div>
                         </div>
                     </div>
                 </div>

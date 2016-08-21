@@ -95,9 +95,33 @@
     }
 
     > .purchase-info{
-        flex:0 1 150px;
+        flex:0 1 auto;
         display: flex;
         flex-direction: column;
+
+        > .purchase-list{
+            flex: 1 1 auto;
+            margin-left: 20px;
+            margin-right: 20px;
+
+            input{
+                width: 70px;
+                margin-top: 0;
+                margin-bottom: 0;
+            }
+        }
+
+        .btn-group{
+            float: right;
+            width: 200px;
+            height: 100%;
+            padding: 8px 8px;
+
+            button{
+                margin-left: 8px;
+                margin-right: 8px;
+            }
+        }
     }
 
     > .order-add-submit{

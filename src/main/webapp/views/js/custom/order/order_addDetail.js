@@ -11,6 +11,25 @@ $(document).ready(function(){
         cur.parent().parent().remove();
     });
 
+    $("#edit-save").on("click", (e) => {
+        var $button = $(e.currentTarget);
+        var $tbody = $("#purchase-table > tbody");
+        if ($button.attr("class") === "btn-save")
+        {
+            $button.removeClass("btn-save");
+            $button.addClass("btn-add");
+            $button.text("修改");
+            $tbody.find("input").prop("disabled", true);
+        }
+        else
+        {
+            $button.removeClass("btn-add");
+            $button.addClass("btn-save");
+            $button.text("保存");
+            $tbody.find("input").prop("disabled", false);
+        }
+    });
+
 });
 
 function addProduction(e)

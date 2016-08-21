@@ -78,9 +78,29 @@
   width: 70px;
 }
 .main-order-add > .purchase-info {
-  flex: 0 1 150px;
+  flex: 0 1 auto;
   display: flex;
   flex-direction: column;
+}
+.main-order-add > .purchase-info > .purchase-list {
+  flex: 1 1 auto;
+  margin-left: 20px;
+  margin-right: 20px;
+}
+.main-order-add > .purchase-info > .purchase-list input {
+  width: 70px;
+  margin-top: 0;
+  margin-bottom: 0;
+}
+.main-order-add > .purchase-info .btn-group {
+  float: right;
+  width: 200px;
+  height: 100%;
+  padding: 8px 8px;
+}
+.main-order-add > .purchase-info .btn-group button {
+  margin-left: 8px;
+  margin-right: 8px;
 }
 .main-order-add > .order-add-submit {
   flex: 0 1 100px;
