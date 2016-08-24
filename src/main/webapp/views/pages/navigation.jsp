@@ -68,7 +68,7 @@
     <li>
         <div class="link"><i class="glyphicon glyphicon-th"></i>生产管理<i class="glyphicon glyphicon-chevron-down"></i></div>
         <ul class="submenu">
-            <li><a href="">生产单管理</a></li>
+            <li id="nav-production-order"><a href="<%= request.getContextPath() %>/v1/productionOrder/productionorder">生产单管理</a></li>
             <li><a href="">生产单审核</a></li>
         </ul>
     </li>
