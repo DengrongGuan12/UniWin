@@ -5,7 +5,7 @@
 <html lang="en">
 <head>
     <jsp:include page="../header.jsp"></jsp:include>
-    <link rel="stylesheet" href="<%=request.getContextPath() %>/views/css/custom/production/production.css" />
+    <link rel="stylesheet" href="<%=request.getContextPath() %>/views/css/custom/production.css" />
 </head>
 <body>
 <div class="app">
@@ -31,54 +31,56 @@
                     <div class="order-info">
                         <div class="bar"><a class="table-header">订单信息>></a></div>
                         <div class="bar">
-                            <label>物料名称:</label>
+                            <label>款式名称:</label>
                             <input type="text" disabled />
-                            <label>物料编号:</label>
-                            <input type="text" disabled />
-                        </div>
-                        <div class="bar">
-                            <label>物料成分:</label>
-                            <input type="text" disabled />
-                            <label>物料单价:</label>
-                            <input type="text" disabled />
-                        </div>
-                        <div class="bar">
-                            <label>单位:</label>
+                            <label>订单类型:</label>
                             <select disabled >
                                 <option value ="volvo">Volvo</option>
                                 <option value ="volvo">Volvo</option>
                             </select>
-                            <label>类型:</label>
+                        </div>
+                        <div class="bar">
+                            <label>新款/老款:</label>
                             <select disabled >
+                                <option value ="volvo">Volvo</option>
+                                <option value ="volvo">Volvo</option>
+                            </select>
+                            <label>订单状态:</label>
+                            <select disabled >
+                                <option value ="volvo">Volvo</option>
                                 <option value ="volvo">Volvo</option>
                             </select>
                         </div>
                         <div class="bar">
-                            <label>入库时间:</label>
+                            <label>款号:</label>
+                            <input type="text" disabled />
+                            <label>下单日期:</label>
                             <input type="text" class="date-picker" disabled />
-                            <label>颜色说明:</label>
-                            <input type="text" disabled />
                         </div>
                         <div class="bar">
-                            <label>供应商编号:</label>
-                            <input type="text" disabled />
-                            <label>门幅:</label>
-                            <input type="text" disabled />
-                            <label>米</label>
+                            <label>订单类型:</label>
+                            <input type="text"  />
+                            <label>联系方式:</label>
+                            <input type="text"  />
                         </div>
                         <div class="bar">
-                            <label>供应商名称:</label>
-                            <input type="text" disabled />
-                            <label>出量:</label>
-                            <input type="text" disabled />
-                            <label>米/公斤</label>
+                            <label>客户名称:</label>
+                            <input type="text"  />
+                            <label>客户代表:</label>
+                            <input type="text"  />
                         </div>
-                        <div class="bar">
-                            <label>供应商地址:</label>
-                            <input type="text" class="input-lg" disabled />
+
+                        <div class="big-bar">
+                            <label>订单信息:</label>
+                            <textarea name="name" rows="8" cols="40" disabled="disabled"></textarea>
+                            <label>备注:</label>
+                            <textarea name="name" rows="8" cols="40" disabled="disabled"></textarea>
                         </div>
+                    </div>
+                    <div class="order-modify-submit">
                         <div class="bar">
-                            <button id="inquiry-add-button" type="button" class="btn-save">确认修改</button>
+                            <button id="order-modify-button" type="submit" class="btn-save">保存</button>
+                            <button type="button" >返回</button>
                         </div>
                     </div>
                 </div>

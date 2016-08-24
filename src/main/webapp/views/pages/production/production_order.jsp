@@ -79,7 +79,7 @@
                                         <th>采购单</th>
                                         <th>工艺单</th>
                                         <th>进度</th>
-                                        <th><a href="<%= request.getContextPath() %>/v1/production/productionordermodify">详细信息</a></th>
+                                        <th><a href="<%= request.getContextPath() %>/v1/productionOrder/productionordermodify">详细信息</a></th>
                                     </tr>
                                 </tbody>
                             </table>

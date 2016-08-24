@@ -50,3 +50,53 @@ label{
     }
 
 }
+
+/***
+production order modify css
+***/
+.main-production-order-modify{
+    height:800px;
+    display: flex;
+    flex-direction: column;
+
+    .input-lg{
+        width:436px;
+        height:30px;
+        margin: 5px;
+        border: 1px solid #ccc;
+        border-radius: 4px;
+    }
+
+    .bar{
+        flex:1 1 40px;
+        padding-left: 20px;
+        display: inline-block;
+    }
+
+    .big-bar{
+        flex:1 1 200px;
+        padding-left: 20px;
+        display: flex;
+        flex-direction: row;
+        align-items: flex-start;
+    }
+
+    > .order-info{
+        flex:1 1 400px;
+        display: flex;
+        flex-direction: column;
+    }
+
+
+    > .order-modify-submit{
+        flex:1 1 100px;
+
+        >.bar{
+            padding-left: 40px;
+            padding-top: 5px;
+            > button{
+                margin-right: 20px;
+            }
+        }
+    }
+}

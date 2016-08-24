@@ -1,3 +1,187 @@
+/*
+   控件组
+*/
+label {
+  margin: 8px;
+  width: 100px;
+  font-size: 12px;
+  font-weight: 300;
+}
+input {
+  width: 150px;
+  height: 30px;
+  margin: 5px;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+}
+input[type="radio"] {
+  width: 15px;
+  height: 15px;
+}
+input[type=file] {
+  display: inline-block;
+}
+select {
+  width: 150px;
+  height: 30px;
+  margin: 5px;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+}
+textarea {
+  resize: none;
+  margin-top: 5px;
+  margin-left: 1px;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+}
+button {
+  display: inline-block;
+  padding: 6px 12px;
+  margin-bottom: 0;
+  font-size: 14px;
+  font-weight: 400;
+  line-height: 1.42857143;
+  text-align: center;
+  white-space: nowrap;
+  vertical-align: middle;
+  touch-action: manipulation;
+  cursor: pointer;
+  -webkit-user-select: none;
+  background-image: none;
+  border: 1px solid transparent;
+  border-radius: 4px;
+}
+.table-header {
+  text-decoration: none;
+  line-height: 50px;
+}
+/*
+   table属性
+*/
+.table-wrapper {
+  border-top: 2px solid #3c8dbc;
+  background: #ffffff;
+  margin-bottom: 20px;
+  -webkit-border-radius: 3px;
+  -moz-border-radius: 3px;
+  border-radius: 3px;
+  width: 100%;
+  box-shadow: 0px 1px 3px rgba(0, 0, 0, 0.1);
+}
+.table-wrapper > nav {
+  float: right;
+  margin-right: 20px;
+  margin-bottom: 20px;
+}
+.table-wrapper > nav > .paging-section {
+  margin-top: 5px;
+  margin-bottom: 5px;
+  padding-left: 20px;
+  padding-right: 20px;
+  display: flex;
+  flex-direction: row;
+}
+.table-wrapper > nav > .paging-section li {
+  flex: 1 1 auto;
+  padding-left: 8px;
+  padding-right: 8px;
+}
+th {
+  text-align: center;
+  font-size: 16px;
+  font-weight: 900;
+}
+td {
+  text-align: center;
+  font-weight: 450;
+}
+/*
+   button颜色
+*/
+.btn-save {
+  color: #fff;
+  background-color: #337ab7;
+  border-color: #204d74;
+}
+.btn-query {
+  color: #fff;
+  background-color: #337ab7;
+  border-color: #204d74;
+}
+.btn-add {
+  color: #fff;
+  background-color: #f0ad4e;
+  border-color: #eea236;
+}
+.btn-modify {
+  color: #fff;
+  background-color: #31b0d5;
+  border-color: #269abc;
+}
+.btn-delete {
+  color: #fff;
+  background-color: #d9534f;
+  border-color: #d43f3a;
+}
+.btn-detail {
+  color: #fff;
+  background-color: #449d44;
+  border-color: #398439;
+}
+.btn-success {
+  color: #fff;
+  background-color: #00a65a;
+  border-color: #008d4c;
+}
+/*
+   模态框
+*/
+.modal .modal-header {
+  background-color: #3c8dbc;
+}
+.modal .modal-title {
+  color: #ffffff;
+}
+.modal .modal-dialog {
+  width: 650px;
+}
+.ul-container {
+  margin-top: 16px;
+  margin-bottom: 16px;
+  display: flex;
+  flex-direction: column;
+}
+.ul-container ul {
+  padding-left: 0;
+}
+.ul-container > .ul-header {
+  flex: 0 1 40px;
+  display: flex;
+  flex-direction: row;
+  border-bottom: 1px solid #ccc;
+}
+.ul-container > .ul-header li {
+  float: left;
+  flex: 1 1 auto;
+  font-size: 18px;
+  font-weight: 500;
+  padding: 4px 16px;
+}
+.ul-container > .ul-list {
+  flex: 5 1 auto;
+  overflow-y: auto;
+  display: block;
+}
+.ul-container > .ul-list li {
+  height: 30px;
+  display: flex;
+  flex-direction: row;
+}
+.ul-container > .ul-list li div {
+  flex: 1 1 auto;
+  padding: 4px 16px;
+}
 label {
   font-size: 16px;
 }
@@ -24,10 +208,8 @@ label {
 .main-production-order-list > .production-order-query-header > .query-info .bar {
   flex: 1 1 40px;
   padding-left: 20px;
-  display: inline-block;
-}
-.main-production-order-list > .production-order-query-header > .query-info .btn-query {
-  margin-left: 40px;
+  display: flex;
+  flex-direction: row;
 }
 .main-production-order-list > .production-order-query-header > .production-order-operation {
   flex: 1 1 10%;
@@ -41,4 +223,46 @@ label {
 .main-production-order-list > .production-order-list {
   flex: 1 1 720px;
   padding: 10px 20px 10px 20px;
+}
+/***
+production order modify css
+***/
+.main-production-order-modify {
+  height: 800px;
+  display: flex;
+  flex-direction: column;
+}
+.main-production-order-modify .input-lg {
+  width: 436px;
+  height: 30px;
+  margin: 5px;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+}
+.main-production-order-modify .bar {
+  flex: 1 1 40px;
+  padding-left: 20px;
+  display: inline-block;
+}
+.main-production-order-modify .big-bar {
+  flex: 1 1 200px;
+  padding-left: 20px;
+  display: flex;
+  flex-direction: row;
+  align-items: flex-start;
+}
+.main-production-order-modify > .order-info {
+  flex: 1 1 400px;
+  display: flex;
+  flex-direction: column;
+}
+.main-production-order-modify > .order-modify-submit {
+  flex: 1 1 100px;
+}
+.main-production-order-modify > .order-modify-submit > .bar {
+  padding-left: 40px;
+  padding-top: 5px;
+}
+.main-production-order-modify > .order-modify-submit > .bar > button {
+  margin-right: 20px;
 }
