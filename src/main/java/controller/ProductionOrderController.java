@@ -9,4 +9,15 @@ import org.springframework.web.bind.annotation.RequestMapping;
 @Controller
 @RequestMapping("/v1/productionOrder")
 public class ProductionOrderController {
+    @RequestMapping("productionorder")
+    public String productionOrderManage()
+    {
+        return "production/production_order";
+    }
+
+    @RequestMapping("productionordermodify")
+    public String productionOrderModify()
+    {
+        return "production/production_order_modify";
+    }
 }

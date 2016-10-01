@@ -1,4 +1,143 @@
 /*
+    order_design_list css
+*/
+.main-order-design-list{
+    height:800px;
+    display: flex;
+    flex-direction: column;
+
+    > .order-query-header{
+        padding-top: 20px;
+        padding-bottom: 20px;
+        flex:1 1 120px;
+        display: flex;
+        flex-direction: row;
+
+        > .query-info{
+            flex:1 1 90%;
+            display: flex;
+            flex-direction: column;
+
+            .bar{
+                flex:1 1 40px;
+                padding-left: 20px;
+                display: inline-block;
+            }
+
+            .btn-query{
+                margin-left: 40px;
+            }
+        }
+
+        > .order-operation{
+            flex:1 1 10%;
+
+            button{
+                display: block;
+            }
+            button:last-child{
+                margin-top: 10px;
+            }
+        }
+
+    }
+
+    > .order-list{
+        flex:1 1 720px;
+        padding: 10px 20px 10px 20px;
+    }
+
+}
+
+
+/*
+    order_add css
+*/
+.main-order-add{
+    height:900px;
+    display: flex;
+    flex-direction: column;
+
+    .input-lg{
+        width:436px;
+        height:30px;
+        margin: 5px;
+        border: 1px solid #ccc;
+        border-radius: 4px;
+    }
+
+    .bar{
+        flex:0 1 40px;
+        padding-left: 20px;
+        display: inline-block;
+    }
+
+    > .order-info{
+        flex:0 1 130px;
+        display: flex;
+        flex-direction: column;
+    }
+
+    > .production-info{
+        flex:0 1 auto;
+        display: flex;
+        flex-direction: column;
+
+        > .production-list{
+            flex: 1 1 auto;
+            margin-left: 20px;
+            margin-right: 20px;
+
+            input{
+                width: 70px;
+            }
+        }
+    }
+
+    > .purchase-info{
+        flex:0 1 auto;
+        display: flex;
+        flex-direction: column;
+
+        > .purchase-list{
+            flex: 1 1 auto;
+            margin-left: 20px;
+            margin-right: 20px;
+
+            input{
+                width: 70px;
+                margin-top: 0;
+                margin-bottom: 0;
+            }
+        }
+
+        .btn-group{
+            float: right;
+            width: 200px;
+            height: 100%;
+            padding: 8px 8px;
+
+            button{
+                margin-left: 8px;
+                margin-right: 8px;
+            }
+        }
+    }
+
+    > .order-add-submit{
+        flex:0 1 100px;
+
+        >.bar{
+            padding-left: 40px;
+
+            > button{
+                margin-right: 20px;
+            }
+        }
+    }
+}
+
+/*
     order_list css
 */
 .main-order-list{

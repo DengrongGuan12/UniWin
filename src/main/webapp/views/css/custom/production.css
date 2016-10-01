@@ -182,3 +182,87 @@ td {
   flex: 1 1 auto;
   padding: 4px 16px;
 }
+label {
+  font-size: 16px;
+}
+/*
+    production-order_list css
+*/
+.main-production-order-list {
+  height: 800px;
+  display: flex;
+  flex-direction: column;
+}
+.main-production-order-list > .production-order-query-header {
+  padding-top: 20px;
+  padding-bottom: 20px;
+  flex: 1 1 120px;
+  display: flex;
+  flex-direction: row;
+}
+.main-production-order-list > .production-order-query-header > .query-info {
+  flex: 1 1 90%;
+  display: flex;
+  flex-direction: column;
+}
+.main-production-order-list > .production-order-query-header > .query-info .bar {
+  flex: 1 1 40px;
+  padding-left: 20px;
+  display: flex;
+  flex-direction: row;
+}
+.main-production-order-list > .production-order-query-header > .production-order-operation {
+  flex: 1 1 10%;
+}
+.main-production-order-list > .production-order-query-header > .production-order-operation button {
+  display: block;
+}
+.main-production-order-list > .production-order-query-header > .production-order-operation button:last-child {
+  margin-top: 10px;
+}
+.main-production-order-list > .production-order-list {
+  flex: 1 1 720px;
+  padding: 10px 20px 10px 20px;
+}
+/***
+production order modify css
+***/
+.main-production-order-modify {
+  height: 800px;
+  display: flex;
+  flex-direction: column;
+}
+.main-production-order-modify .input-lg {
+  width: 436px;
+  height: 30px;
+  margin: 5px;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+}
+.main-production-order-modify .bar {
+  flex: 1 1 40px;
+  padding-left: 20px;
+  display: inline-block;
+}
+.main-production-order-modify .big-bar {
+  flex: 1 1 200px;
+  padding-left: 20px;
+  display: flex;
+  flex-direction: row;
+  align-items: flex-start;
+}
+.main-production-order-modify > .order-info {
+  flex: 1 1 400px;
+  display: flex;
+  flex-direction: column;
+}
+.main-production-order-modify > .order-modify-submit {
+  flex: 1 1 100px;
+}
+.main-production-order-modify > .order-modify-submit > .bar {
+  padding-left: 40px;
+  padding-top: 5px;
+}
+.main-production-order-modify > .order-modify-submit > .bar > button {
+  margin-right: 20px;
+}

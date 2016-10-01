@@ -129,11 +129,6 @@ td {
   background-color: #449d44;
   border-color: #398439;
 }
-.btn-success {
-  color: #fff;
-  background-color: #00a65a;
-  border-color: #008d4c;
-}
 /*
    模态框
 */
@@ -181,4 +176,46 @@ td {
 .ul-container > .ul-list li div {
   flex: 1 1 auto;
   padding: 4px 16px;
+}
+label {
+  font-size: 16px;
+}
+/*
+    production-order_list css
+*/
+.main-production-order-list {
+  height: 800px;
+  display: flex;
+  flex-direction: column;
+}
+.main-production-order-list > .production-order-query-header {
+  padding-top: 20px;
+  padding-bottom: 20px;
+  flex: 1 1 120px;
+  display: flex;
+  flex-direction: row;
+}
+.main-production-order-list > .production-order-query-header > .query-info {
+  flex: 1 1 90%;
+  display: flex;
+  flex-direction: column;
+}
+.main-production-order-list > .production-order-query-header > .query-info .bar {
+  flex: 1 1 40px;
+  padding-left: 20px;
+  display: flex;
+  flex-direction: row;
+}
+.main-production-order-list > .production-order-query-header > .production-order-operation {
+  flex: 1 1 10%;
+}
+.main-production-order-list > .production-order-query-header > .production-order-operation button {
+  display: block;
+}
+.main-production-order-list > .production-order-query-header > .production-order-operation button:last-child {
+  margin-top: 10px;
+}
+.main-production-order-list > .production-order-list {
+  flex: 1 1 720px;
+  padding: 10px 20px 10px 20px;
 }

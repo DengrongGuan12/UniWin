@@ -171,6 +171,9 @@ version: v1
                       "id":10,
                       "state":状态描述
                       },{},...
+                      ],
+                      "materialList":[
+                      {"id":物料id,"name":物料名称,"amount":物料用量},{}
                       ]
                       },
                       "error":{
@@ -659,11 +662,20 @@ version: v1
       description: 生成一个订单
       queryParameters:
         styleId:
+          description: 款式id
         productionOrderId:
+          description: 生产单id
         purchaseOrderId:
+          description: 采购单id
         customer:
+          description: 客户
+          type: string
         priority:
+          description: 优先级
+          type: string
         type:
+          description: 订单类型
+          type: string
 
   /ProductionOrder:
     description: 生产单相关接口

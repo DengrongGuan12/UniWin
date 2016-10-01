@@ -60,7 +60,7 @@
     <li id="nav-order">
         <div class="link"><i class="glyphicon glyphicon-th"></i>订单管理<i class="glyphicon glyphicon-chevron-down"></i></div>
         <ul class="submenu">
-            <li id="nav-order-list"><a href="<%=request.getContextPath() %>/v1/inquiry/inquirymanage">订单列表</a></li>
+            <li id="nav-order-list"><a href="<%=request.getContextPath() %>/v1/order/orderlist">订单列表</a></li>
             <li id="nav-order-add"><a href="<%=request.getContextPath() %>/v1/order/orderadd">新建订单</a></li>
         </ul>
     </li>
@@ -68,8 +68,7 @@
     <li>
         <div class="link"><i class="glyphicon glyphicon-th"></i>生产管理<i class="glyphicon glyphicon-chevron-down"></i></div>
         <ul class="submenu">
-            <li><a href="">生产单管理</a></li>
-            <li><a href="">生产单审核</a></li>
+            <li id="nav-production-order"><a href="<%= request.getContextPath() %>/v1/productionOrder/productionorder">生产单管理</a></li>
         </ul>
     </li>
 

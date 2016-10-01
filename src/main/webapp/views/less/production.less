@@ -1,0 +1,102 @@
+@import "./template.less";
+label{
+    font-size: 16px;
+}
+
+/*
+    production-order_list css
+*/
+.main-production-order-list{
+    height:800px;
+    display: flex;
+    flex-direction: column;
+
+    > .production-order-query-header{
+        padding-top: 20px;
+        padding-bottom: 20px;
+        flex:1 1 120px;
+        display: flex;
+        flex-direction: row;
+
+        > .query-info{
+            flex:1 1 90%;
+            display: flex;
+            flex-direction: column;
+
+            .bar{
+                flex:1 1 40px;
+                padding-left: 20px;
+                display: flex;
+                flex-direction: row;
+            }
+        }
+
+        > .production-order-operation{
+            flex:1 1 10%;
+
+            button{
+                display: block;
+            }
+            button:last-child{
+                margin-top: 10px;
+            }
+        }
+
+    }
+
+    > .production-order-list{
+        flex:1 1 720px;
+        padding: 10px 20px 10px 20px;
+    }
+
+}
+
+/***
+production order modify css
+***/
+.main-production-order-modify{
+    height:800px;
+    display: flex;
+    flex-direction: column;
+
+    .input-lg{
+        width:436px;
+        height:30px;
+        margin: 5px;
+        border: 1px solid #ccc;
+        border-radius: 4px;
+    }
+
+    .bar{
+        flex:1 1 40px;
+        padding-left: 20px;
+        display: inline-block;
+    }
+
+    .big-bar{
+        flex:1 1 200px;
+        padding-left: 20px;
+        display: flex;
+        flex-direction: row;
+        align-items: flex-start;
+    }
+
+    > .order-info{
+        flex:1 1 400px;
+        display: flex;
+        flex-direction: column;
+    }
+
+
+    > .order-modify-submit{
+        flex:1 1 100px;
+
+        >.bar{
+            padding-left: 40px;
+            padding-top: 5px;
+            > button{
+                margin-right: 20px;
+            }
+        }
+    }
+}

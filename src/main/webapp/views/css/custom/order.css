@@ -1,4 +1,117 @@
 /*
+    order_design_list css
+*/
+.main-order-design-list {
+  height: 800px;
+  display: flex;
+  flex-direction: column;
+}
+.main-order-design-list > .order-query-header {
+  padding-top: 20px;
+  padding-bottom: 20px;
+  flex: 1 1 120px;
+  display: flex;
+  flex-direction: row;
+}
+.main-order-design-list > .order-query-header > .query-info {
+  flex: 1 1 90%;
+  display: flex;
+  flex-direction: column;
+}
+.main-order-design-list > .order-query-header > .query-info .bar {
+  flex: 1 1 40px;
+  padding-left: 20px;
+  display: inline-block;
+}
+.main-order-design-list > .order-query-header > .query-info .btn-query {
+  margin-left: 40px;
+}
+.main-order-design-list > .order-query-header > .order-operation {
+  flex: 1 1 10%;
+}
+.main-order-design-list > .order-query-header > .order-operation button {
+  display: block;
+}
+.main-order-design-list > .order-query-header > .order-operation button:last-child {
+  margin-top: 10px;
+}
+.main-order-design-list > .order-list {
+  flex: 1 1 720px;
+  padding: 10px 20px 10px 20px;
+}
+/*
+    order_add css
+*/
+.main-order-add {
+  height: 900px;
+  display: flex;
+  flex-direction: column;
+}
+.main-order-add .input-lg {
+  width: 436px;
+  height: 30px;
+  margin: 5px;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+}
+.main-order-add .bar {
+  flex: 0 1 40px;
+  padding-left: 20px;
+  display: inline-block;
+}
+.main-order-add > .order-info {
+  flex: 0 1 130px;
+  display: flex;
+  flex-direction: column;
+}
+.main-order-add > .production-info {
+  flex: 0 1 auto;
+  display: flex;
+  flex-direction: column;
+}
+.main-order-add > .production-info > .production-list {
+  flex: 1 1 auto;
+  margin-left: 20px;
+  margin-right: 20px;
+}
+.main-order-add > .production-info > .production-list input {
+  width: 70px;
+}
+.main-order-add > .purchase-info {
+  flex: 0 1 auto;
+  display: flex;
+  flex-direction: column;
+}
+.main-order-add > .purchase-info > .purchase-list {
+  flex: 1 1 auto;
+  margin-left: 20px;
+  margin-right: 20px;
+}
+.main-order-add > .purchase-info > .purchase-list input {
+  width: 70px;
+  margin-top: 0;
+  margin-bottom: 0;
+}
+.main-order-add > .purchase-info .btn-group {
+  float: right;
+  width: 200px;
+  height: 100%;
+  padding: 8px 8px;
+}
+.main-order-add > .purchase-info .btn-group button {
+  margin-left: 8px;
+  margin-right: 8px;
+}
+.main-order-add > .order-add-submit {
+  flex: 0 1 100px;
+}
+.main-order-add > .order-add-submit > .bar {
+  padding-left: 40px;
+}
+.main-order-add > .order-add-submit > .bar > button {
+  margin-right: 20px;
+}
+/*
     order_list css
 */
 .main-order-list {
